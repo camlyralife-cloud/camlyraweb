@@ -1,4 +1,4 @@
-/* Assessment page — matches Hear & Heal style references */
+/* Assessment page */
 
 body.assessment-page {
     background: #fafaf8;
@@ -70,7 +70,7 @@ body.assessment-page {
     font-size: 1.05rem;
     line-height: 1.75;
     color: #5c5c5c;
-    max-width: 520px;
+    max-width: 36rem;
     margin: 0 0 2rem;
 }
 
@@ -213,10 +213,23 @@ body.assessment-page {
 
 .assess-steps li {
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 1rem;
     padding: 1.35rem 0;
     border-bottom: 1px solid #0a1128;
+}
+
+.assess-step-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.assess-step-desc {
+    margin: 0.65rem 0 0;
+    font-size: 0.98rem;
+    font-weight: 400;
+    line-height: 1.65;
+    color: #5a5a5a;
 }
 
 .assess-step-num {
@@ -230,10 +243,18 @@ body.assessment-page {
 }
 
 .assess-step-title {
+    display: block;
     font-size: clamp(1.1rem, 2.3vw, 1.45rem);
     font-weight: 700;
     color: #0a1128;
     line-height: 1.25;
+}
+
+.assess-step-title .assess-step-meta {
+    display: inline;
+    font-size: 0.72em;
+    font-weight: 600;
+    color: #5c6b7a;
 }
 
 .assess-process-bottom-pill .assess-pill-dot {
@@ -318,6 +339,10 @@ body.assessment-page {
     background: #f5f0fa;
 }
 
+.assess-card--slate {
+    background: #eef1f5;
+}
+
 .assess-card-img-wrap {
     aspect-ratio: 16 / 11;
     overflow: hidden;
@@ -362,6 +387,34 @@ body.assessment-page {
 
 .assess-card-body li {
     margin-bottom: 0.35rem;
+}
+
+.assess-card-tools {
+    margin: auto 0 0;
+    padding-top: 0.85rem;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #3d4a56;
+}
+
+.assess-card-tools strong {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.assess-cards-grid--six {
+    padding-bottom: 1.5rem;
+}
+
+.assess-cards-footnote {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4.5rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #5a5a5a;
+    text-align: center;
+    font-style: italic;
 }
 
 .assess-cards-row2 {
@@ -489,7 +542,8 @@ body.assessment-page {
         min-height: 280px;
     }
 
-    .assess-cards-grid {
+    .assess-cards-grid,
+    .assess-cards-grid--six {
         grid-template-columns: 1fr;
     }
 
@@ -526,7 +580,8 @@ body.assessment-page {
 
     .assess-process-inner,
     .assess-tests-head,
-    .assess-cards-grid {
+    .assess-cards-grid,
+    .assess-cards-footnote {
         padding-left: 1rem;
         padding-right: 1rem;
     }
