@@ -390,7 +390,7 @@ if (getStartedForm && getStartedNote) {
         }
         getStartedNote.hidden = false;
         getStartedNote.classList.remove('is-error');
-        getStartedNote.textContent = 'Thank you — we will be in touch shortly.';
+        getStartedNote.textContent = 'Thank you — we will respond within 4 working hours.';
         getStartedForm.reset();
     });
 }
