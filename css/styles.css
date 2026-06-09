@@ -586,6 +586,89 @@ a.nav-brand {
     color: #1f6fb4;
 }
 
+/* Grouped services mega menu */
+.mega-panel-inner.mega-layout-grouped {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 1.25rem 1rem 1.35rem;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    box-shadow: 0 28px 80px rgba(15, 23, 42, 0.14);
+    border: 1px solid rgba(230, 230, 230, 0.9);
+}
+
+.mega-group {
+    padding: 0.5rem 1rem 0.65rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.mega-group:last-child {
+    border-right: none;
+}
+
+.mega-group-title {
+    margin: 0 0 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.mega-group-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.mega-group-link {
+    display: block;
+    padding: 0.55rem 0.35rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #2a2a2a;
+    border-radius: 8px;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mega-group-link:hover {
+    background: rgba(31, 111, 180, 0.06);
+    color: #1f6fb4;
+}
+
+.mega-group-link--cta {
+    margin-top: 0.35rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.ns-dropdown--wide {
+    min-width: 280px;
+}
+
+.ns-dropdown-heading {
+    margin: 0;
+    padding: 0.65rem 1.15rem 0.35rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--secondary);
+}
+
+.ns-dropdown-heading:not(:first-child) {
+    padding-top: 0.85rem;
+    border-top: 1px solid #ececec;
+    margin-top: 0.25rem;
+}
+
+.ns-dropdown-link--cta {
+    font-weight: 600;
+    color: var(--primary);
+}
+
 @media (min-width: 769px) {
     .mega-panel {
         position: fixed;
@@ -653,6 +736,72 @@ a.nav-brand {
     .mega-l1 .mega-overline {
         padding-left: 0.25rem;
     }
+
+    .mega-panel-inner.mega-layout-grouped {
+        grid-template-columns: 1fr;
+    }
+
+    .mega-group {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 0.75rem 0.5rem;
+    }
+
+    .mega-group:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Trust bar */
+.trust-bar {
+    padding: 0 0 2.5rem;
+    background: var(--background);
+}
+
+.trust-bar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    padding: clamp(1.5rem, 3vw, 2rem) clamp(1rem, 2.5vw, 2rem);
+    background: linear-gradient(145deg, #d8ebe8 0%, #c5dfd9 100%);
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(95, 143, 139, 0.12);
+    border: 1px solid rgba(95, 143, 139, 0.2);
+}
+
+.trust-stat {
+    text-align: center;
+    padding: 0.35rem 0.25rem;
+}
+
+.trust-stat-num {
+    display: block;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #3d7a74;
+    letter-spacing: -0.02em;
+}
+
+.trust-stat-label {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #4a857e;
+}
+
+@media (max-width: 900px) {
+    .trust-bar-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .trust-bar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Hero Section */
@@ -701,10 +850,38 @@ a.nav-brand {
     margin-bottom: 2rem;
 }
 
+.hero-location-line {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin: -0.75rem 0 1.75rem;
+    opacity: 0.9;
+}
+
 .hero-actions {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 0.85rem;
+}
+
+.hero-trust-micro {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.hero-trust-strip {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--secondary);
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
+
+.hero-stage--clean .tag,
+.hero-stage--clean .pill {
+    display: none;
 }
 
 .hero-badge {
@@ -1864,6 +2041,7 @@ section.section-faq {
 
     .nav-menu.active .nav-menu-primary > a,
     .nav-menu.active .nav-menu-primary > .nav-ns-wrap,
+    .nav-menu.active .nav-menu-primary > .nav-coaching-wrap,
     .nav-menu.active .nav-menu-primary > .nav-mega-wrap {
         padding: 0.85rem 1.25rem;
         min-height: 44px;
@@ -1900,7 +2078,8 @@ section.section-faq {
         min-height: 44px;
     }
 
-    .nav-ns-wrap {
+    .nav-ns-wrap,
+    .nav-coaching-wrap {
         width: 100%;
     }
 

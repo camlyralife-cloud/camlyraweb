@@ -67,9 +67,19 @@ function closeMegaServices() {
 }
 
 function closeNewServicesNav() {
-    const wrap = document.querySelector('.nav-ns-wrap');
+    const wrap = document.querySelector('.nav-ns-wrap:not(.nav-coaching-wrap)');
     const btn = document.getElementById('nav-ns-btn');
     const panel = document.getElementById('ns-dropdown-panel');
+    if (!wrap || !btn || !panel) return;
+    wrap.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('hidden', '');
+}
+
+function closeCoachingNav() {
+    const wrap = document.querySelector('.nav-coaching-wrap');
+    const btn = document.getElementById('nav-coaching-btn');
+    const panel = document.getElementById('coaching-dropdown-panel');
     if (!wrap || !btn || !panel) return;
     wrap.classList.remove('is-open');
     btn.setAttribute('aria-expanded', 'false');
@@ -79,10 +89,12 @@ function closeNewServicesNav() {
 function closeAllNavDropdowns() {
     closeMegaServices();
     closeNewServicesNav();
+    closeCoachingNav();
 }
 
 function openMegaServices() {
     closeNewServicesNav();
+    closeCoachingNav();
     const wrap = document.querySelector('.nav-mega-wrap');
     const btn = document.getElementById('nav-mega-services-btn');
     const panel = document.getElementById('mega-services-panel');
@@ -175,7 +187,7 @@ function initMegaMenu() {
 }
 
 function initNewServicesNav() {
-    const wrap = document.querySelector('.nav-ns-wrap');
+    const wrap = document.querySelector('.nav-ns-wrap:not(.nav-coaching-wrap)');
     const btn = document.getElementById('nav-ns-btn');
     const panel = document.getElementById('ns-dropdown-panel');
     if (!wrap || !btn || !panel) return;
@@ -186,6 +198,29 @@ function initNewServicesNav() {
             closeNewServicesNav();
         } else {
             closeMegaServices();
+            closeCoachingNav();
+            wrap.classList.add('is-open');
+            btn.setAttribute('aria-expanded', 'true');
+            panel.removeAttribute('hidden');
+        }
+    });
+
+    panel.addEventListener('click', (e) => e.stopPropagation());
+}
+
+function initCoachingNav() {
+    const wrap = document.querySelector('.nav-coaching-wrap');
+    const btn = document.getElementById('nav-coaching-btn');
+    const panel = document.getElementById('coaching-dropdown-panel');
+    if (!wrap || !btn || !panel) return;
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (wrap.classList.contains('is-open')) {
+            closeCoachingNav();
+        } else {
+            closeMegaServices();
+            closeNewServicesNav();
             wrap.classList.add('is-open');
             btn.setAttribute('aria-expanded', 'true');
             panel.removeAttribute('hidden');
@@ -197,6 +232,7 @@ function initNewServicesNav() {
 
 initMegaMenu();
 initNewServicesNav();
+initCoachingNav();
 
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
