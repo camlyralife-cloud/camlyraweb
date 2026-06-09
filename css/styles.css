@@ -1594,6 +1594,20 @@ a.nav-brand {
     line-height: 1.7;
 }
 
+.feature-card strong {
+    display: block;
+    margin-bottom: 0.55rem;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
 .section-services {
     padding: 5rem 0;
 }
@@ -1877,8 +1891,66 @@ section.section-faq {
 .service-intro p {
     color: var(--text-secondary);
     font-size: 1.05rem;
-    max-width: 700px;
+    max-width: 720px;
     line-height: 1.8;
+}
+
+.service-tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.service-tile {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.35rem;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid rgba(46, 58, 57, 0.08);
+    box-shadow: 0 14px 36px rgba(46, 58, 57, 0.07);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.service-tile:hover {
+    transform: translateY(-3px);
+    border-color: rgba(31, 111, 180, 0.35);
+    box-shadow: 0 20px 48px rgba(46, 58, 57, 0.11);
+}
+
+.service-tile h3 {
+    margin-bottom: 0.65rem;
+    font-size: 1.08rem;
+    color: var(--text-primary);
+}
+
+.service-tile p {
+    flex: 1;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1.15rem;
+}
+
+.service-tile a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1100px) {
+    .service-tiles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .service-tiles-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-grid {
@@ -3214,7 +3286,7 @@ section#services.section-wellness-intro .intro-copy-wellness h2 {
 /* Final reference-exact layout */
 .section-specialized-reference .specialized-ref-layout {
     display: grid;
-    grid-template-columns: 95px 28px minmax(0, 1fr);
+    grid-template-columns: minmax(130px, 150px) 28px minmax(0, 1fr);
     align-items: start;
     gap: 0;
     max-width: 980px;
@@ -3223,28 +3295,30 @@ section#services.section-wellness-intro .intro-copy-wellness h2 {
 
 .section-specialized-reference .specialized-ref-left {
     position: relative;
-    min-height: 360px;
+    min-height: 400px;
 }
 
 .section-specialized-reference .specialized-ref-label {
     position: sticky;
     left: 0;
-    width: 78px;
+    width: 100%;
+    max-width: 140px;
     margin: 0;
     border-radius: 999px;
     background: #dcebe3;
     border: 1px solid #b6cec3;
     color: #2d4a45;
-    font-size: 0.72rem;
+    font-size: 0.66rem;
     font-weight: 700;
     text-align: center;
-    padding: 0.65rem 0.25rem;
-    line-height: 1;
+    padding: 0.6rem 0.45rem;
+    line-height: 1.25;
+    cursor: pointer;
 }
 
 .section-specialized-reference .specialized-ref-label-1 { top: 10px; }
-.section-specialized-reference .specialized-ref-label-2 { top: 110px; margin-top: 60px; }
-.section-specialized-reference .specialized-ref-label-3 { top: 210px; margin-top: 60px; }
+.section-specialized-reference .specialized-ref-label-2 { top: 120px; margin-top: 72px; }
+.section-specialized-reference .specialized-ref-label-3 { top: 230px; margin-top: 72px; }
 
 .section-specialized-reference .specialized-ref-right {
     position: relative;
