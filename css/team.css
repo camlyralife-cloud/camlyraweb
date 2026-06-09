@@ -109,6 +109,10 @@ body.team-page {
     color: #4a857e;
 }
 
+.team-stats-card--four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
 /* —— Vision / Mission / Motto —— */
 .team-pillars {
     padding: 0 0 4rem;
@@ -165,6 +169,102 @@ body.team-page {
 
 .team-pillar-body q {
     font-style: italic;
+}
+
+/* —— Core values —— */
+.team-values {
+    padding: 0 0 4rem;
+}
+
+.team-values-heading {
+    margin: 0 0 1.75rem;
+    font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+    font-weight: 700;
+    color: #0a1128;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.team-values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.team-value-card {
+    padding: 1.5rem 1.35rem;
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid rgba(46, 58, 57, 0.08);
+    box-shadow: 0 12px 36px rgba(46, 58, 57, 0.06);
+}
+
+.team-value-card h3 {
+    margin: 0 0 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3d7a74;
+}
+
+.team-value-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #555;
+}
+
+/* —— Join the team —— */
+.team-careers {
+    padding: 0 0 4.5rem;
+}
+
+.team-careers-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(2rem, 4vw, 2.75rem) clamp(1.5rem, 3vw, 2.5rem);
+    text-align: center;
+    background: linear-gradient(145deg, #d8ebe8 0%, #c5dfd9 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(95, 143, 139, 0.2);
+    box-shadow: 0 12px 40px rgba(95, 143, 139, 0.1);
+}
+
+.team-careers-inner h2 {
+    margin: 0 0 1rem;
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    font-weight: 700;
+    color: #0a1128;
+    letter-spacing: -0.02em;
+}
+
+.team-careers-inner > p {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: #4a5a58;
+}
+
+.team-careers-links {
+    margin: 1.35rem 0 0 !important;
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+.team-careers-links a {
+    color: #2d5f59;
+    text-decoration: none;
+}
+
+.team-careers-links a:hover {
+    text-decoration: underline;
+    color: #1f4a45;
+}
+
+.team-careers-sep {
+    margin: 0 0.45rem;
+    color: #5a7a75;
 }
 
 /* —— Founder teaser (team page) —— */
@@ -339,9 +439,14 @@ body.team-page {
 }
 
 @media (max-width: 900px) {
-    .team-stats-card {
-        grid-template-columns: 1fr;
+    .team-stats-card,
+    .team-stats-card--four {
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
+    }
+
+    .team-values-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .team-founder-card {
@@ -383,6 +488,16 @@ body.team-page {
         flex-direction: column;
         gap: 0.85rem;
         padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 540px) {
+    .team-stats-card--four {
+        grid-template-columns: 1fr;
+    }
+
+    .team-values-grid {
+        grid-template-columns: 1fr;
     }
 }
 
