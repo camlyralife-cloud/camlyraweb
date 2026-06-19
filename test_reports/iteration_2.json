@@ -1,0 +1,40 @@
+{
+  "summary": "Frontend-only end-to-end testing of the Calmyra static site unified header/footer rebrand. Tested 9 representative pages (root + deep /services/ paths). All 12 requested verification categories PASSED — no regressions found.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Mobile header (390px) on /index.html", "issues": ["Brand logo wordmark renders quite faint/light against the pastel mint background — readability is OK but visual prominence could be improved (consider slightly bolder/darker logo asset or a subtle drop shadow). Non-blocking, cosmetic only."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "sync-shell.js is well-structured (idempotent, depth-aware {BASE} substitution, nested-tag-safe block replacement). No issues found.",
+    "Footer column 'locations' id is duplicated with the index.html#locations target — works because only the footer instance retains it on inner pages, but on /index.html both the in-page section and the footer brand col carry id=locations. Browsers will jump to the FIRST occurrence (the section), which is the desired behaviour, but technically two elements with the same id is invalid HTML. Minor.",
+    "Backend (/app/backend/server.py) is a stub exposing only /api/health — confirmed returning 200 (out of scope per request)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (out of scope)", "frontend": "100%"},
+  "test_credentials": "N/A — static site, no auth",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Static HTML site served by Express on :3000, proxied via REACT_APP_BACKEND_URL. Header/footer are templated by /app/scripts/sync-shell.js across all .html pages with depth-aware {BASE}. The 11 canonical data-testids on every page are: site-nav, brand-logo, nav-home, nav-about, nav-services-btn, nav-coaching-btn, nav-assessment, nav-locations, header-book-cta, nav-toggle, site-footer. Mega panel id='mega-services-panel' must carry the 'hidden' attribute at page load. Sticky scroll adds .scrolled to #navbar after >50px. .reveal elements receive .is-visible via IntersectionObserver. .is-current highlights one nav link per page (resolved via /app/js/script.js using the actual pathname, NOT the hash — that is why /index.html highlights nav-home only and not nav-locations even though both link to index.html).",
+  "detailed_results": {
+    "header_footer_consistency": "PASS on all 9 pages (/, /team.html, /dr-safina.html, /assessment.html, /privacy.html, /terms.html, /services/relationship/couple-counselling.html, /services/specific-disorders/Anxiety.html, /services/coaching/life-coaching.html). All 11 data-testids present. mega-services-panel has 'hidden' attribute on every page. Footer has exactly 5 columns on every page.",
+    "logo_navigation": "PASS — clicking brand-logo from /team.html navigates to /index.html",
+    "nav_hrefs_root": "PASS — about=team.html, assessment=assessment.html, locations=index.html#locations, header-cta=index.html#get-started",
+    "nav_hrefs_deep": "PASS — on /services/relationship/couple-counselling.html, brand-logo href=../../index.html, nav-about href=../../team.html (depth-aware {BASE} substitution working)",
+    "sticky_header": "PASS — #navbar.className transitions from '' to 'scrolled' after window.scrollTo(0, 400)",
+    "scroll_reveal": "PASS — team: 7/7 .reveal got .is-visible; assessment: 5/5; couple-counselling: 7/7",
+    "active_nav_highlight": "PASS — /index.html → ['nav-home'] only (nav-locations NOT highlighted, confirming the prev bug is fixed); /team.html → ['nav-about']; /assessment.html → ['nav-assessment']",
+    "cta_hover_transform": "PASS — computed transform changed from 'none' to 'matrix(1, 0, 0, 1, 0, -1.91321)' (subtle ~2px translateY lift)",
+    "mobile_nav_toggle": "PASS at 390px on both /index.html and /team.html — nav-toggle visible, brand-logo visible, clicking toggle adds .active to #nav-menu",
+    "responsive_no_overflow": "PASS — scrollWidth == clientWidth at 1440 / 1024 / 390 (no horizontal overflow). Logo visible at all three widths. CTA visible at 1440 and 1024 (hidden on 390 mobile as expected — replaced by hamburger menu)."
+  }
+}

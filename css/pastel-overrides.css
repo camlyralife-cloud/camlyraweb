@@ -1244,3 +1244,105 @@ body.group-therapy-page {
 
 /* Hide leftover orphan elements that may cause empty boxes */
 #coaching:empty, #blog:empty { display: none; }
+
+/* ============================================================
+   ─── 25. CALMYRA · UNIFIED HEADER + PREMIUM POLISH (v2)
+   Layered on top of existing styles, never replacing them.
+   ============================================================ */
+
+/* Soft sticky header — smoother shadow + blur on scroll */
+.page-header { position: sticky; top: 0; z-index: 1000; background: rgba(250, 250, 246, 0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transition: background .35s ease, box-shadow .35s ease, padding .35s ease; }
+.page-header:has(#navbar.scrolled),
+#navbar.scrolled { background: rgba(250, 250, 246, 0.94) !important; box-shadow: 0 1px 0 rgba(31, 42, 37, 0.08), 0 18px 40px -28px rgba(31, 42, 37, 0.18) !important; }
+
+/* Logo: guaranteed visibility on any background */
+.nav-brand img { height: 44px !important; width: auto !important; display: block; transition: transform .45s cubic-bezier(.34,1.56,.64,1); }
+.nav-brand:hover img { transform: translateY(-1px) scale(1.03); }
+
+/* Nav link micro-interaction (underline grow) */
+.nav-menu-primary > a,
+.nav-mega-btn,
+.nav-ns-btn { position: relative; transition: color .25s ease; }
+.nav-menu-primary > a::after,
+.nav-mega-btn::after,
+.nav-ns-btn::after { content: ""; position: absolute; left: 16px; right: 16px; bottom: 6px; height: 2px; background: var(--mint-600, #5d8770); transform: scaleX(0); transform-origin: center; transition: transform .35s cubic-bezier(.2,.7,.2,1); border-radius: 2px; }
+.nav-menu-primary > a:hover::after,
+.nav-mega-btn:hover::after,
+.nav-ns-btn:hover::after,
+.nav-menu-primary > a.is-current::after { transform: scaleX(1); }
+
+/* Premium CTA — refined hover & focus */
+.btn.btn-primary { position: relative; isolation: isolate; transition: transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .35s ease, background .35s ease; }
+.btn.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 38px -16px rgba(93, 135, 112, 0.5); }
+.btn.btn-primary:active { transform: translateY(0); }
+.btn.btn-secondary { transition: transform .35s ease, background .35s ease, border-color .35s ease, color .35s ease; }
+.btn.btn-secondary:hover { transform: translateY(-2px); background: var(--mint-50, #E4F0E8); border-color: var(--mint-600, #5d8770); }
+
+/* Focus rings — accessible + branded */
+.btn:focus-visible, .nav-menu a:focus-visible, .nav-mega-btn:focus-visible, .nav-ns-btn:focus-visible, .nav-toggle:focus-visible {
+  outline: 2px solid var(--mint-600, #5d8770);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+/* Scroll-reveal animations (opt-in via .reveal / .reveal-stagger; safe default = no anim) */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(24px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.reveal-stagger.is-visible > * { opacity: 1; transform: translateY(0); }
+.reveal-stagger.is-visible > *:nth-child(1){transition-delay:.05s}
+.reveal-stagger.is-visible > *:nth-child(2){transition-delay:.15s}
+.reveal-stagger.is-visible > *:nth-child(3){transition-delay:.25s}
+.reveal-stagger.is-visible > *:nth-child(4){transition-delay:.35s}
+.reveal-stagger.is-visible > *:nth-child(5){transition-delay:.45s}
+.reveal-stagger.is-visible > *:nth-child(6){transition-delay:.55s}
+
+/* Auto-reveal common section headings & cards on inner pages */
+.team-hero, .team-hero-inner, .team-credentials, .team-stats,
+.assessment-hero-card, .ass-q,
+.svc-row, .legal-section, .legal-content > *,
+.pf-row, .pf-side, .insight-card, .relationship-hero,
+.hero-section .hero-copy, .hero-section .hero-visual,
+.section-eyebrow, .section-title, .footer-grid > * { will-change: opacity, transform; }
+
+/* Premium card hover */
+.team-card, .insight-card, .new-service-card,
+.pf-row, .legal-section,
+[class*="-card"]:not([class*="float"]) {
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease, border-color .45s ease;
+}
+.team-card:hover, .insight-card:hover, .new-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 56px -28px rgba(31, 42, 37, 0.32) !important;
+}
+
+/* Pastel light-green background tint on body for cohesion */
+body { background: var(--cream, #FAFAF6); }
+
+/* Smooth global scroll */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* Responsive: shrink logo + tighten nav at smaller widths to avoid wrap */
+@media (max-width: 1100px) {
+  .nav-brand img { height: 38px !important; }
+  .nav-menu-primary > a, .nav-mega-btn, .nav-ns-btn { padding-left: 12px; padding-right: 12px; }
+}
+
+/* Mobile: ensure logo & CTA stay visible, menu becomes drawer */
+@media (max-width: 768px) {
+  .nav-brand img { height: 36px !important; }
+  .nav-actions .btn-primary { display: none; }
+  .nav-menu { background: var(--cream, #FAFAF6) !important; }
+  .nav-menu.active { padding-top: 32px; }
+  .nav-menu-primary > a { font-size: 1.1rem; padding: 14px 18px; }
+}
+
+/* Selection styling */
+::selection { background: var(--mint-200, #B8D8C4); color: var(--mint-900, #1F2A26); }
+
+/* End of unified-header polish */

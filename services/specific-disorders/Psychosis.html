@@ -18,108 +18,64 @@
 
 <body class="relationship-service-page">
     <header class="page-header">
-        <nav id="navbar">
+                <nav id="navbar" data-testid="site-nav">
             <div class="nav-container">
-                <a href="../../index.html#hero" class="nav-brand" aria-label="Calmyra home">
+                <a href="../../index.html" class="nav-brand" aria-label="Calmyra home" data-testid="brand-logo">
                     <img src="../../assets/images/logo.png" alt="Calmyra — Where clarity meets calm" width="2000" height="2000" decoding="async" fetchpriority="high">
                 </a>
                 <div class="nav-menu" id="nav-menu">
                     <div class="nav-menu-primary">
-                    <a href="../../index.html#hero">Home</a>
+                    <a href="../../index.html" data-testid="nav-home">Home</a>
+                    <a href="../../team.html" data-testid="nav-about">About</a>
                     <div class="nav-mega-wrap">
                         <button type="button" class="nav-mega-btn" id="nav-mega-services-btn" aria-expanded="false"
-                            aria-controls="mega-services-panel" aria-haspopup="true">
+                            aria-controls="mega-services-panel" aria-haspopup="true" data-testid="nav-services-btn">
                             Services
                             <span class="nav-mega-chevron" aria-hidden="true"></span>
                         </button>
                         <div class="mega-panel" id="mega-services-panel" role="navigation" aria-label="Services menu" hidden>
-                            <div class="mega-panel-inner mega-layout">
-                                <aside class="mega-sidebar mega-l1">
-                                    <p class="mega-overline">Services</p>
-                                    <ul class="mega-list mega-l1-list">
-                                        <li><button type="button" class="mega-l1-btn is-active" data-l1="individual">Individual <span class="mega-chev" aria-hidden="true">›</span></button></li>
-                                        <li><button type="button" class="mega-l1-btn" data-l1="relationship">Relationship <span class="mega-chev" aria-hidden="true">›</span></button></li>
-                                        <li><button type="button" class="mega-l1-btn" data-l1="teen">Teen and Children <span class="mega-chev" aria-hidden="true">›</span></button></li>
-                                        <li><button type="button" class="mega-l1-btn" data-l1="group">Group Therapy <span class="mega-chev" aria-hidden="true">›</span></button></li>
-                                    </ul>
-                                </aside>
-                                <div class="mega-flyouts" id="mega-flyouts">
-                                    <div class="mega-flyout-row">
-                                        <div class="mega-card mega-l2-stack">
-                                            <div class="mega-l2-set is-active" data-l1="individual">
-                                                <ul class="mega-list mega-l2-list mega-l2-list--ruled mega-l2-list--scroll">
-                                                    <li><button type="button" class="mega-l2-btn is-active" data-l1="individual" data-l2="ind-specific">Specific Disorders <span class="mega-chev" aria-hidden="true">›</span></button></li>
-                                                    <li><button type="button" class="mega-l2-btn" data-l1="individual" data-l2="ind-crises">Life Crises / Specific Events <span class="mega-chev" aria-hidden="true">›</span></button></li>
-                                                    <li><button type="button" class="mega-l2-btn" data-l1="individual" data-l2="ind-career">Career <span class="mega-chev" aria-hidden="true">›</span></button></li>
-                                                </ul>
-                                            </div>
-                                            <div class="mega-l2-set" data-l1="relationship" hidden>
-                                                <nav class="mega-leaf-nav" aria-label="Relationship services">
-                                                    <a class="mega-leaf-link" href="../../services/relationship/couple-counselling.html">Couple Counselling</a>
-                                                    <a class="mega-leaf-link" href="../../services/relationship/divorce-counselling.html">Divorce Counselling</a>
-                                                    <a class="mega-leaf-link" href="../../services/relationship/marriage-counselling.html">Marriage Counselling</a>
-                                                    <a class="mega-leaf-link" href="../../services/relationship/parent-counselling.html">Parent Counselling</a>
-                                                    <a class="mega-leaf-link" href="../../services/relationship/pre-marital-counselling.html">Pre-Marital Counselling</a>
-                                                    <a class="mega-leaf-link" href="../../services/relationship/relationship-counselling.html">Relationship Counselling</a>
-                                                </nav>
-                                            </div>
-                                            <div class="mega-l2-set" data-l1="teen" hidden>
-                                                <nav class="mega-leaf-nav" aria-label="Teen and children services">
-                                                    <a class="mega-leaf-link" href="../../index.html#new-services">Adolescent anxiety &amp; mood</a>
-                                                    <a class="mega-leaf-link" href="../../index.html#new-services">School stress &amp; performance</a>
-                                                    <a class="mega-leaf-link" href="../../index.html#new-services">Behavioural &amp; emotional support</a>
-                                                    <a class="mega-leaf-link" href="../../index.html#new-services">Family sessions for teens</a>
-                                                    <a class="mega-leaf-link" href="../../index.html#new-services">Identity &amp; social skills</a>
-                                                </nav>
-                                            </div>
-                                            <div class="mega-l2-set" data-l1="group" hidden>
-                                                <nav class="mega-leaf-nav" aria-label="Group therapy">
-                                                    <a class="mega-leaf-link" href="../../services/group-therapy/Laughtertherapy.html">Laughter Therapy</a>
-                                                    <a class="mega-leaf-link" href="../../services/group-therapy/arttherapy.htm">Art Therapy</a>
-                                                    <a class="mega-leaf-link" href="../../services/group-therapy/yoga-therapy.html">Yoga Therapy</a>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                        <div class="mega-card mega-l3-stack" id="mega-l3-stack">
-                                            <div class="mega-l3-set is-active" data-l1="individual" data-l2="ind-specific">
-                                                <a href="../../services/specific-disorders/Anxiety.html">Specific Disorders (Overview)</a>
-                                                <a href="../../services/specific-disorders/Eatingdisorder.html">Eating Disorder</a>
-                                                <a href="../../services/specific-disorders/Mooddisorder.html">Mood Disorder</a>
-                                                <a href="../../services/specific-disorders/Anxiety.html">Anxiety</a>
-                                                <a href="../../services/specific-disorders/OCD.html">OCD</a>
-                                                <a href="../../services/specific-disorders/Postpartumdepression.html">Postpartum Depression</a>
-                                                <a href="../../services/specific-disorders/Personalitydisorder.html">Personality Disorder</a>
-                                                <a href="../../services/specific-disorders/Phobias.html">Phobias</a>
-                                                <a href="../../services/specific-disorders/Psychosis.html">Psychosis</a>
-                                                <a href="../../services/specific-disorders/PTSD.html">PTSD</a>
-                                                <a href="../../services/specific-disorders/Sleepingdisorder.html">Sleeping Disorder</a>
-                                                <a href="../../services/specific-disorders/Substanceabuse.html">Substance Abuse</a>
-                                            </div>
-                                            <div class="mega-l3-set" data-l1="individual" data-l2="ind-crises" hidden>
-                                                <a href="../../services/life-crises/Crisisintervention.html">Life Crises / Specific Events (Overview)</a>
-                                                <a href="../../services/life-crises/Abuse.html">Abuse</a>
-                                                <a href="../../services/life-crises/Crisisintervention.html">Crisis Intervention</a>
-                                                <a href="../../services/life-crises/Grief.html">Grief</a>
-                                                <a href="../../services/life-crises/Trauma.html">Trauma</a>
-                                            </div>
-                                            <div class="mega-l3-set" data-l1="individual" data-l2="ind-career" hidden>
-                                                <a href="../../services/career/Productivity.html">Career (Overview)</a>
-                                                <a href="../../services/career/Productivity.html">Productivity</a>
-                                                <a href="../../services/career/Burnout.html">Burnout</a>
-                                                <a href="../../services/career/Careercounselling.html">Career Counselling</a>
-                                                <a href="../../services/career/Effectivecommunication.html">Effective Communication</a>
-                                                <a href="../../services/career/Executivecoaching.html">Executive Coaching</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="mega-panel-inner mega-layout-grouped">
+                                <div class="mega-group">
+                                    <p class="mega-group-title">Clinical Therapy</p>
+                                    <nav class="mega-group-nav" aria-label="Clinical therapy">
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Anxiety.html">Anxiety &amp; Stress</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Mooddisorder.html">Depression &amp; Mood</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/PTSD.html">Trauma &amp; PTSD</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/OCD.html">OCD</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Postpartumdepression.html">Postpartum Depression</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Sleepingdisorder.html">Sleep Disorders</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Eatingdisorder.html">Eating Disorders</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Substanceabuse.html">Substance Abuse</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Personalitydisorder.html">Personality Disorders</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Phobias.html">Phobias</a>
+                                        <a class="mega-group-link" href="../../services/specific-disorders/Psychosis.html">Psychosis</a>
+                                    </nav>
+                                </div>
+                                <div class="mega-group">
+                                    <p class="mega-group-title">Relationships</p>
+                                    <nav class="mega-group-nav" aria-label="Relationship services">
+                                        <a class="mega-group-link" href="../../services/relationship/couple-counselling.html">Couple Counselling</a>
+                                        <a class="mega-group-link" href="../../services/relationship/marriage-counselling.html">Marriage Counselling</a>
+                                        <a class="mega-group-link" href="../../services/relationship/pre-marital-counselling.html">Pre-Marital Counselling</a>
+                                        <a class="mega-group-link" href="../../services/relationship/divorce-counselling.html">Divorce Counselling</a>
+                                        <a class="mega-group-link" href="../../services/relationship/parent-counselling.html">Parental Counselling</a>
+                                    </nav>
+                                </div>
+                                <div class="mega-group">
+                                    <p class="mega-group-title">Specialist Care</p>
+                                    <nav class="mega-group-nav" aria-label="Specialist care">
+                                        <a class="mega-group-link" href="../../assessment.html">Psychological Assessments</a>
+                                        <a class="mega-group-link" href="../../services/neuro-psychology.html">Neuro-Psychology</a>
+                                        <a class="mega-group-link" href="../../services/Teen-and-childern/adolescent-anxiety.html">Child &amp; Adolescent Psychology</a>
+                                        <a class="mega-group-link mega-group-link--cta" href="../../index.html#new-services">View All Services</a>
+                                    </nav>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                     <div class="nav-ns-wrap nav-coaching-wrap">
                         <button type="button" class="nav-ns-btn" id="nav-coaching-btn" aria-expanded="false"
-                            aria-controls="coaching-dropdown-panel" aria-haspopup="true">
+                            aria-controls="coaching-dropdown-panel" aria-haspopup="true" data-testid="nav-coaching-btn">
                             Coaching
                             <span class="nav-ns-chevron" aria-hidden="true"></span>
                         </button>
@@ -135,12 +91,14 @@
                             <a class="ns-dropdown-link ns-dropdown-link--cta" href="../../index.html#coaching">Explore All Coaching</a>
                         </div>
                     </div>
-                    <a href="../../assessment.html">Assessment</a>
-                    <a href="../../team.html">Team</a>
-</div>
-                    <div class="nav-actions"><a href="../../index.html#get-started" class="btn btn-primary btn-sm">Book a Consultation</a></div>
+                    <a href="../../assessment.html" data-testid="nav-assessment">Assessment</a>
+                    <a href="../../index.html#locations" data-testid="nav-locations">Locations</a>
+                    </div>
+                    <div class="nav-actions">
+                        <a href="../../index.html#get-started" class="btn btn-primary btn-sm" data-testid="header-book-cta">Book a Consultation</a>
+                    </div>
                 </div>
-                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu" data-testid="nav-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -386,14 +344,14 @@
         </div>
     </section>
 
-        <footer id="footer" class="site-footer">
+                <footer id="footer" class="site-footer" data-testid="site-footer">
         <div class="container footer-inner">
             <div class="footer-grid">
                 <div class="footer-col footer-brand" id="locations">
-                    <a href="../../index.html#hero" class="footer-logo-link" aria-label="Calmyra home">
-                        <img src="../../assets/images/logo.png" alt="Calmyra - Where clarity meets calm" width="2000" height="2000" decoding="async">
+                    <a href="../../index.html" class="footer-logo-link" aria-label="Calmyra home">
+                        <img src="../../assets/images/logo.png" alt="Calmyra — Where clarity meets calm" width="2000" height="2000" decoding="async">
                     </a>
-                    <p class="footer-tagline">Where clarity meets calm. Premium mental wellness &mdash; Dubai &middot; Bangalore &middot; Online Worldwide.</p>
+                    <p class="footer-tagline">Where clarity meets calm. Premium mental wellness — Dubai · Bangalore · Online Worldwide.</p>
                     <div class="footer-contact-block">
                         <span class="footer-address-label">Dubai</span>
                         <p class="footer-address">[Suite/Floor, Building, Area, Dubai, UAE]</p>
@@ -406,7 +364,7 @@
                         <span class="footer-address-label">Bangalore</span>
                         <p class="footer-address">R H Plaza, 1st Floor, No. 3<br>
                             Near Marks &amp; Spencer, 100 Feet Road<br>
-                            Ejipura, Koramangala, Bengaluru - 560047</p>
+                            Ejipura, Koramangala, Bengaluru — 560047</p>
                         <p class="footer-contact-links">
                             <a href="tel:+917092099209">+91 70920 99209</a><br>
                             <a href="mailto:bangalore@calmyra.com">bangalore@calmyra.com</a>
@@ -423,7 +381,13 @@
                         <li><a href="../../services/relationship/couple-counselling.html">Relationship Counselling</a></li>
                         <li><a href="../../assessment.html">Psychological Assessments</a></li>
                         <li><a href="../../services/neuro-psychology.html">Neuro-Psychology</a></li>
-                        <li><a href="../../index.html#new-services" class="footer-link-cta">View All Services</a></li>
+                        <li><a href="../../services/specific-disorders/Anxiety.html">Anxiety &amp; Stress</a></li>
+                        <li><a href="../../services/specific-disorders/Mooddisorder.html">Depression &amp; Mood</a></li>
+                        <li><a href="../../services/specific-disorders/PTSD.html">Trauma &amp; PTSD</a></li>
+                        <li><a href="../../services/specific-disorders/OCD.html">OCD</a></li>
+                        <li><a href="../../services/specific-disorders/Sleepingdisorder.html">Sleep</a></li>
+                        <li><a href="../../services/specific-disorders/Eatingdisorder.html">Eating Disorders</a></li>
+                        <li><a href="../../index.html#new-services" class="footer-link-cta">View All Services →</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -433,6 +397,7 @@
                         <li><a href="../../team.html">Our Team</a></li>
                         <li><a href="../../dr-safina.html">Dr. Safina Naaz</a></li>
                         <li><a href="../../assessment.html">Assessment</a></li>
+                        <li><a href="../../index.html#get-started">Careers</a></li>
                         <li><a href="../../index.html#locations">Dubai Centre</a></li>
                         <li><a href="../../index.html#locations">Bangalore Centre</a></li>
                         <li><a href="../../index.html#get-started">Online</a></li>
@@ -450,16 +415,16 @@
                 <div class="footer-col">
                     <h4 class="footer-col-title">Emergency Helplines</h4>
                     <ul class="footer-helpline-list">
-                        <li>UAE: Aman - 800 4673 (free, 24/7)</li>
-                        <li>UAE: MOHAP Mental Health - 800 4673</li>
-                        <li>India: iCall - +91 9152987821</li>
-                        <li>India: Tele MANAS - 14416</li>
-                        <li>India: NIMHANS - 080 4611 0007</li>
+                        <li>UAE: Aman — 800 4673 (free, 24/7)</li>
+                        <li>UAE: MOHAP Mental Health — 800 4673</li>
+                        <li>India: iCall — +91 9152987821</li>
+                        <li>India: Tele MANAS — 14416</li>
+                        <li>India: NIMHANS — 080 4611 0007</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom-bar">
-                <p class="footer-copyright footer-copyright--wide">Licensed by the Dubai Health Authority (DHA Licence No. [XXXXXX]) - RCI Registered (No. [XXXXXX]) - &copy; 2026 Calmyra Mental Wellness. All rights reserved.</p>
+                <p class="footer-copyright footer-copyright--wide">Licensed by the Dubai Health Authority (DHA Licence No. [XXXXXX]) · RCI Registered (No. [XXXXXX]) · &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
             </div>
         </div>
     </footer>

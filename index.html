@@ -15,18 +15,18 @@
 
 <body>
     <header class="page-header">
-        <nav id="navbar">
+                <nav id="navbar" data-testid="site-nav">
             <div class="nav-container">
-                <a href="#hero" class="nav-brand" aria-label="Calmyra home">
+                <a href="index.html" class="nav-brand" aria-label="Calmyra home" data-testid="brand-logo">
                     <img src="assets/images/logo.png" alt="Calmyra — Where clarity meets calm" width="2000" height="2000" decoding="async" fetchpriority="high">
                 </a>
                 <div class="nav-menu" id="nav-menu">
                     <div class="nav-menu-primary">
-                    <a href="#hero">Home</a>
-                    <a href="team.html">About</a>
+                    <a href="index.html" data-testid="nav-home">Home</a>
+                    <a href="team.html" data-testid="nav-about">About</a>
                     <div class="nav-mega-wrap">
                         <button type="button" class="nav-mega-btn" id="nav-mega-services-btn" aria-expanded="false"
-                            aria-controls="mega-services-panel" aria-haspopup="true">
+                            aria-controls="mega-services-panel" aria-haspopup="true" data-testid="nav-services-btn">
                             Services
                             <span class="nav-mega-chevron" aria-hidden="true"></span>
                         </button>
@@ -64,7 +64,7 @@
                                         <a class="mega-group-link" href="assessment.html">Psychological Assessments</a>
                                         <a class="mega-group-link" href="services/neuro-psychology.html">Neuro-Psychology</a>
                                         <a class="mega-group-link" href="services/Teen-and-childern/adolescent-anxiety.html">Child &amp; Adolescent Psychology</a>
-                                        <a class="mega-group-link mega-group-link--cta" href="#new-services">View All Services</a>
+                                        <a class="mega-group-link mega-group-link--cta" href="index.html#new-services">View All Services</a>
                                     </nav>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                     </div>
                     <div class="nav-ns-wrap nav-coaching-wrap">
                         <button type="button" class="nav-ns-btn" id="nav-coaching-btn" aria-expanded="false"
-                            aria-controls="coaching-dropdown-panel" aria-haspopup="true">
+                            aria-controls="coaching-dropdown-panel" aria-haspopup="true" data-testid="nav-coaching-btn">
                             Coaching
                             <span class="nav-ns-chevron" aria-hidden="true"></span>
                         </button>
@@ -85,17 +85,17 @@
                             <a class="ns-dropdown-link" href="services/coaching/executive-wellness.html">Executive Wellness Programme</a>
                             <a class="ns-dropdown-link" href="services/career/Executivecoaching.html">Leadership Psychology</a>
                             <a class="ns-dropdown-link" href="services/career/Productivity.html">High-Performance Coaching</a>
-                            <a class="ns-dropdown-link ns-dropdown-link--cta" href="#coaching">Explore All Coaching</a>
+                            <a class="ns-dropdown-link ns-dropdown-link--cta" href="index.html#coaching">Explore All Coaching</a>
                         </div>
                     </div>
-                    <a href="assessment.html">Assessment</a>
-                    <a href="#locations">Locations</a>
+                    <a href="assessment.html" data-testid="nav-assessment">Assessment</a>
+                    <a href="index.html#locations" data-testid="nav-locations">Locations</a>
                     </div>
                     <div class="nav-actions">
-                        <a href="#get-started" class="btn btn-primary btn-sm">Book a Consultation</a>
+                        <a href="index.html#get-started" class="btn btn-primary btn-sm" data-testid="header-book-cta">Book a Consultation</a>
                     </div>
                 </div>
-                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu" data-testid="nav-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -528,11 +528,11 @@
         </div>
     </section>
 
-    <footer id="footer" class="site-footer">
+        <footer id="footer" class="site-footer" data-testid="site-footer">
         <div class="container footer-inner">
             <div class="footer-grid">
                 <div class="footer-col footer-brand" id="locations">
-                    <a href="#hero" class="footer-logo-link" aria-label="Calmyra home">
+                    <a href="index.html" class="footer-logo-link" aria-label="Calmyra home">
                         <img src="assets/images/logo.png" alt="Calmyra — Where clarity meets calm" width="2000" height="2000" decoding="async">
                     </a>
                     <p class="footer-tagline">Where clarity meets calm. Premium mental wellness — Dubai · Bangalore · Online Worldwide.</p>
@@ -571,7 +571,7 @@
                         <li><a href="services/specific-disorders/OCD.html">OCD</a></li>
                         <li><a href="services/specific-disorders/Sleepingdisorder.html">Sleep</a></li>
                         <li><a href="services/specific-disorders/Eatingdisorder.html">Eating Disorders</a></li>
-                        <li><a href="#new-services" class="footer-link-cta">View All Services →</a></li>
+                        <li><a href="index.html#new-services" class="footer-link-cta">View All Services →</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -581,10 +581,10 @@
                         <li><a href="team.html">Our Team</a></li>
                         <li><a href="dr-safina.html">Dr. Safina Naaz</a></li>
                         <li><a href="assessment.html">Assessment</a></li>
-                        <li><a href="#get-started">Careers</a></li>
-                        <li><a href="#locations">Dubai Centre</a></li>
-                        <li><a href="#locations">Bangalore Centre</a></li>
-                        <li><a href="#get-started">Online</a></li>
+                        <li><a href="index.html#get-started">Careers</a></li>
+                        <li><a href="index.html#locations">Dubai Centre</a></li>
+                        <li><a href="index.html#locations">Bangalore Centre</a></li>
+                        <li><a href="index.html#get-started">Online</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -608,7 +608,7 @@
                 </div>
             </div>
             <div class="footer-bottom-bar">
-                <p class="footer-copyright footer-copyright--wide">Licensed by the Dubai Health Authority (DHA Licence No. [XXXXXX]) · RCI Registered (No. [XXXXXX]) · &copy; 2026 Calmyra Mental Wellness. All rights reserved.</p>
+                <p class="footer-copyright footer-copyright--wide">Licensed by the Dubai Health Authority (DHA Licence No. [XXXXXX]) · RCI Registered (No. [XXXXXX]) · &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
             </div>
         </div>
     </footer>

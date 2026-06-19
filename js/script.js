@@ -541,3 +541,66 @@ function initSpecializedServicesFoldState() {
 }
 
 initSpecializedServicesFoldState();
+/* ============================================================
+   ─── Calmyra · Premium polish (v2) — additive only
+   • Scroll reveal (IntersectionObserver)
+   • Active-nav highlighting
+   • [data-year] stamp
+   ============================================================ */
+(function () {
+  'use strict';
+
+  // ---------- Auto-tag common section blocks as .reveal (without changing HTML) ----------
+  const AUTO_REVEAL_SELECTOR = [
+    '.team-hero-inner', '.team-stats', '.team-card',
+    '.assessment-hero-card', '.ass-q-card', '.ass-section',
+    '.relationship-hero', '.pf-row', '.pf-side', '.insight-card',
+    '.legal-section',
+    '.svc-row',
+    '.section-eyebrow', '.section-title',
+    '.new-service-card', '.coaching-card', '.testimonial-card',
+    '.hero-copy', '.hero-visual',
+    '.footer-col'
+  ].join(', ');
+  document.querySelectorAll(AUTO_REVEAL_SELECTOR).forEach(el => {
+    if (!el.classList.contains('reveal') && !el.classList.contains('reveal-stagger')) {
+      el.classList.add('reveal');
+    }
+  });
+
+  // ---------- IntersectionObserver-driven reveal ----------
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => el.classList.add('is-visible'));
+  }
+
+  // ---------- Active-nav link highlight ----------
+  const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const isHomePage = (here === 'index.html' || here === '');
+  const navLinks = document.querySelectorAll('.nav-menu-primary > a, .nav-menu-primary > .nav-mega-wrap > .nav-mega-btn, .nav-menu-primary > .nav-ns-wrap > .nav-ns-btn');
+  navLinks.forEach(a => {
+    const href = (a.getAttribute('href') || '').toLowerCase();
+    if (!href) return;
+    const [pathPart, hashPart] = href.split('#');
+    const target = (pathPart.split('/').pop() || 'index.html');
+    // Only mark "current" for page-level matches (anchors on home page shouldn't all light up)
+    if (hashPart) {
+      // anchor link — only highlight if we're on its page AND it's the canonical Home anchor (#hero)
+      if (target === here && hashPart === 'hero' && isHomePage) a.classList.add('is-current');
+    } else {
+      if (target === here) a.classList.add('is-current');
+    }
+  });
+
+  // ---------- Year stamp ----------
+  document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+})();
