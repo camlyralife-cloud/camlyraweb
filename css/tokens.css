@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Calmyra design tokens — gold architectural C + sage organic form */
+:root {
+  /* Typography */
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-label: 'Inter', system-ui, sans-serif;
+
+  /* Type scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.625rem;
+  --text-hero: clamp(2.75rem, 5vw, 4.25rem);
+
+  /* Ink */
+  --black: #0a0a0a;
+  --black-2: #111111;
+  --black-3: #161616;
+  --black-4: #1c1c1c;
+  --cream: #f0ebe0;
+  --ink: rgba(240, 235, 224, 0.88);
+  --ink-dark: #18160e;
+  --muted: rgba(240, 235, 224, 0.48);
+  --white: #faf8f4;
+
+  /* Gold — architectural C */
+  --gold: #c9a84c;
+  --gold-bright: #e4c878;
+  --gold-muted: #a88838;
+  --gold-deep: #8a6f2e;
+  --grad-gold: linear-gradient(135deg, var(--gold-muted) 0%, var(--gold) 45%, var(--gold-bright) 100%);
+  --grad-gold-h: linear-gradient(90deg, transparent, var(--gold), transparent);
+
+  /* Sage — organic element */
+  --sage: #7a9e96;
+  --sage-bright: #9bb8b0;
+  --sage-deep: #4a7068;
+  --grad-sage: linear-gradient(135deg, var(--sage-deep) 0%, var(--sage) 100%);
+
+  /* Shadows */
+  --shadow-gold: 0 4px 28px rgba(201, 168, 76, 0.28);
+  --shadow-sage: 0 4px 24px rgba(122, 158, 150, 0.22);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.55);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  /* Layout */
+  --container: 1120px;
+  --container-wide: 1280px;
+  --container-sm: 720px;
+  --section-x: clamp(1.25rem, 4vw, 2.5rem);
+  --section-y: clamp(4rem, 8vw, 7rem);
+
+  /* Spacing */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.25rem;
+  --sp-6: 1.5rem;
+  --sp-7: 2rem;
+  --sp-8: 2.5rem;
+  --sp-9: 3rem;
+  --sp-10: 4rem;
+  --sp-11: 5rem;
+
+  /* Radius */
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 18px;
+  --r-2xl: 24px;
+  --r-full: 9999px;
+
+  /* Motion */
+  --dur-fast: 0.18s;
+  --dur-mid: 0.32s;
+  --dur-slow: 0.5s;
+  --dur-languid: 0.75s;
+  --ease-flow: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Legacy aliases (existing styles.css references) */
+  --primary: var(--sage);
+  --secondary: var(--sage-bright);
+  --accent: var(--gold);
+  --background: var(--black);
+  --alt-background: var(--black-3);
+  --text-primary: var(--cream);
+  --text-secondary: var(--muted);
+  --border-radius: var(--r-lg);
+  --transition: var(--dur-mid) var(--ease-flow);
+}

@@ -70,6 +70,14 @@ body.team-page {
     color: #5a5f5e;
 }
 
+.team-credentials {
+    margin: 1rem 0 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #3d7a74;
+}
+
 /* —— Stats card —— */
 .team-stats {
     padding: 0 0 3.5rem;
@@ -382,10 +390,82 @@ body.team-page {
 }
 
 .founder-main h1 {
-    margin: 0 0 1.25rem;
+    margin: 0 0 0.35rem;
     font-size: clamp(1.75rem, 3.5vw, 2.25rem);
     font-weight: 700;
     color: #0a1128;
+}
+
+.founder-role {
+    margin: 0 0 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #3d7a74;
+    letter-spacing: 0.01em;
+}
+
+.founder-credentials-bar {
+    margin: 0 0 1.75rem;
+    padding: 0.85rem 1rem;
+    font-size: 0.78rem;
+    line-height: 1.65;
+    font-weight: 500;
+    color: #3d4a56;
+    background: linear-gradient(145deg, #e8f4f2 0%, #dceee9 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(95, 143, 139, 0.22);
+}
+
+.founder-quote {
+    margin: 2.25rem 0;
+    padding: 1.5rem 1.35rem 1.35rem;
+    background: #fff;
+    border-left: 4px solid #3d7a74;
+    border-radius: 0 14px 14px 0;
+    box-shadow: 0 10px 32px rgba(46, 58, 57, 0.06);
+}
+
+.founder-quote p {
+    margin: 0 0 0.75rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1.75 !important;
+    color: #2a2a2a !important;
+    font-style: italic;
+}
+
+.founder-quote cite {
+    display: block;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+    color: #3d7a74;
+}
+
+.founder-credentials-block {
+    margin-top: 2.5rem;
+    padding: 1.75rem 1.5rem;
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid rgba(46, 58, 57, 0.08);
+    box-shadow: 0 12px 36px rgba(46, 58, 57, 0.06);
+    display: grid;
+    gap: 1.35rem;
+}
+
+.founder-cred-group h3 {
+    margin: 0 0 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3d7a74;
+}
+
+.founder-cred-group p {
+    margin: 0 !important;
+    font-size: 0.94rem !important;
+    line-height: 1.65 !important;
+    color: #444 !important;
 }
 
 .founder-kicker.team-kicker {

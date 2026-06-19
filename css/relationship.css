@@ -16,7 +16,7 @@ body.relationship-service-page #section-overview h2 {
     letter-spacing: -0.02em;
 }
 
-body.relationship-service-page #section-overview p:first-of-type {
+body.relationship-service-page #section-overview p.couple-quote {
     background: #ffffff;
     border-left: 4px solid #88b8e6;
     border-radius: 10px;
@@ -24,6 +24,13 @@ body.relationship-service-page #section-overview p:first-of-type {
     margin-bottom: 0.9rem;
     color: #1f3550;
     font-style: italic;
+}
+
+body.relationship-service-page #section-overview .couple-approach-heading {
+    margin: 1.75rem 0 0.65rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #102c49;
 }
 
 body.relationship-service-page #section-overview p:nth-of-type(2) {
