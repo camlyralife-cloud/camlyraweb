@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Calmyra design tokens — pastel light green wellness palette */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
-/* Calmyra design tokens — gold architectural C + sage organic form */
 :root {
-  /* Typography */
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  /* ─── Typography ─── */
+  --font-body: 'Inter', 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
   --font-label: 'Inter', system-ui, sans-serif;
 
   /* Type scale */
@@ -15,46 +15,82 @@
   --text-lg: 1.25rem;
   --text-xl: 1.375rem;
   --text-2xl: 1.625rem;
-  --text-hero: clamp(2.75rem, 5vw, 4.25rem);
+  --text-hero: clamp(2.5rem, 5vw, 4rem);
 
-  /* Ink */
-  --black: #0a0a0a;
-  --black-2: #111111;
-  --black-3: #161616;
-  --black-4: #1c1c1c;
-  --cream: #f0ebe0;
-  --ink: rgba(240, 235, 224, 0.88);
-  --ink-dark: #18160e;
-  --muted: rgba(240, 235, 224, 0.48);
-  --white: #faf8f4;
+  /* ─── Pastel Light Green Wellness Palette ─── */
+  /* Greens (primary) */
+  --mint-50:  #f1f8f3;
+  --mint-100: #e3f1e6;
+  --mint-200: #cfe6d4;
+  --mint-300: #b4d9bd;
+  --mint-400: #8fc69d;
+  --mint-500: #6fb083;
+  --mint-600: #4f9669;
+  --mint-700: #3d7a54;
+  --mint-800: #2f5e41;
 
-  /* Gold — architectural C */
-  --gold: #c9a84c;
-  --gold-bright: #e4c878;
-  --gold-muted: #a88838;
-  --gold-deep: #8a6f2e;
-  --grad-gold: linear-gradient(135deg, var(--gold-muted) 0%, var(--gold) 45%, var(--gold-bright) 100%);
-  --grad-gold-h: linear-gradient(90deg, transparent, var(--gold), transparent);
+  /* Sage accents */
+  --sage:        #8fb39a;
+  --sage-bright: #b9d3c1;
+  --sage-deep:   #5a8268;
+  --sage-soft:   #d8e9dd;
 
-  /* Sage — organic element */
-  --sage: #7a9e96;
-  --sage-bright: #9bb8b0;
-  --sage-deep: #4a7068;
-  --grad-sage: linear-gradient(135deg, var(--sage-deep) 0%, var(--sage) 100%);
+  /* Cream / neutrals */
+  --cream:      #fdfbf7;
+  --cream-warm: #f8f4ec;
+  --beige:      #f0ead7;
+  --off-white:  #fbfaf7;
+  --white:      #ffffff;
 
-  /* Shadows */
-  --shadow-gold: 0 4px 28px rgba(201, 168, 76, 0.28);
-  --shadow-sage: 0 4px 24px rgba(122, 158, 150, 0.22);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45);
-  --shadow-xl: 0 24px 64px rgba(0, 0, 0, 0.55);
-  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  /* Complementary pastels */
+  --pastel-blush:    #f9e3d8;
+  --pastel-peach:    #fbe6d1;
+  --pastel-rose:     #f7d9d9;
+  --pastel-lavender: #e7e0f1;
+  --pastel-sky:      #dbeaf2;
+  --pastel-butter:   #fbf1cf;
+
+  /* Ink (text) */
+  --ink:        #1f2a25;     /* primary text — deep forest charcoal */
+  --ink-dark:   #14201b;
+  --ink-soft:   #455550;
+  --ink-mute:   #6b7a73;
+  --ink-faint:  #9aa8a1;
+  --line:       rgba(31, 42, 37, 0.10);
+  --line-soft:  rgba(31, 42, 37, 0.06);
+
+  /* Legacy aliases (mapped to new pastel palette) */
+  --black:    var(--ink-dark);
+  --black-2:  var(--cream-warm);
+  --black-3:  var(--mint-50);
+  --black-4:  var(--cream);
+  --muted:    var(--ink-mute);
+  --gold:        var(--mint-600);
+  --gold-bright: var(--mint-400);
+  --gold-muted:  var(--mint-500);
+  --gold-deep:   var(--mint-700);
+  --grad-gold:   linear-gradient(135deg, var(--mint-700) 0%, var(--mint-500) 55%, var(--mint-400) 100%);
+  --grad-gold-h: linear-gradient(90deg, transparent, var(--mint-500), transparent);
+  --grad-sage:   linear-gradient(135deg, var(--sage-deep) 0%, var(--sage) 100%);
+  --grad-page:   linear-gradient(180deg, var(--cream) 0%, var(--off-white) 100%);
+  --grad-mint:   linear-gradient(135deg, var(--mint-100) 0%, var(--mint-200) 100%);
+
+  /* Shadows — soft & airy */
+  --shadow-xs:   0 1px 2px rgba(31, 42, 37, 0.04);
+  --shadow-sm:   0 2px 8px rgba(31, 42, 37, 0.05);
+  --shadow-md:   0 8px 24px rgba(31, 42, 37, 0.06);
+  --shadow-lg:   0 16px 40px rgba(31, 42, 37, 0.08);
+  --shadow-xl:   0 24px 64px rgba(31, 42, 37, 0.10);
+  --shadow-gold: 0 8px 28px rgba(79, 150, 105, 0.18);
+  --shadow-sage: 0 6px 20px rgba(143, 179, 154, 0.20);
+  --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 
   /* Layout */
-  --container: 1120px;
-  --container-wide: 1280px;
+  --container: 1180px;
+  --container-wide: 1320px;
   --container-sm: 720px;
   --section-x: clamp(1.25rem, 4vw, 2.5rem);
-  --section-y: clamp(4rem, 8vw, 7rem);
+  --section-y: clamp(4rem, 8vw, 6.5rem);
 
   /* Spacing */
   --sp-1: 0.25rem;
@@ -70,10 +106,12 @@
   --sp-11: 5rem;
 
   /* Radius */
-  --r-md: 8px;
-  --r-lg: 12px;
-  --r-xl: 18px;
-  --r-2xl: 24px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-2xl: 28px;
+  --r-3xl: 36px;
   --r-full: 9999px;
 
   /* Motion */
@@ -84,14 +122,15 @@
   --ease-flow: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Legacy aliases (existing styles.css references) */
-  --primary: var(--sage);
-  --secondary: var(--sage-bright);
-  --accent: var(--gold);
-  --background: var(--black);
-  --alt-background: var(--black-3);
-  --text-primary: var(--cream);
-  --text-secondary: var(--muted);
-  --border-radius: var(--r-lg);
-  --transition: var(--dur-mid) var(--ease-flow);
+  /* Legacy semantic aliases */
+  --primary:        var(--mint-600);
+  --primary-soft:   var(--mint-200);
+  --secondary:      var(--sage);
+  --accent:         var(--mint-700);
+  --background:     var(--cream);
+  --alt-background: var(--mint-50);
+  --text-primary:   var(--ink);
+  --text-secondary: var(--ink-soft);
+  --border-radius:  var(--r-lg);
+  --transition:     var(--dur-mid) var(--ease-flow);
 }

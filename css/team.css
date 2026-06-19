@@ -60,7 +60,7 @@ body.team-page {
     font-weight: 700;
     line-height: 1.15;
     letter-spacing: -0.02em;
-    color: #0a1128;
+    color: #1c3127;
 }
 
 .team-lead {
@@ -165,7 +165,7 @@ body.team-page {
     margin: 0 0 0.65rem;
     font-size: clamp(1.35rem, 2.5vw, 1.6rem);
     font-weight: 700;
-    color: #0a1128;
+    color: #1c3127;
 }
 
 .team-pillar-body p {
@@ -188,7 +188,7 @@ body.team-page {
     margin: 0 0 1.75rem;
     font-size: clamp(1.35rem, 2.5vw, 1.65rem);
     font-weight: 700;
-    color: #0a1128;
+    color: #1c3127;
     text-align: center;
     letter-spacing: -0.02em;
 }
@@ -243,7 +243,7 @@ body.team-page {
     margin: 0 0 1rem;
     font-size: clamp(1.5rem, 3vw, 1.85rem);
     font-weight: 700;
-    color: #0a1128;
+    color: #1c3127;
     letter-spacing: -0.02em;
 }
 
@@ -325,7 +325,7 @@ body.team-page {
     margin: 0 0 0.75rem;
     font-size: clamp(1.5rem, 3vw, 1.85rem);
     font-weight: 700;
-    color: #0a1128;
+    color: #1c3127;
 }
 
 .team-founder-card-text p {
@@ -393,7 +393,7 @@ body.team-page {
     margin: 0 0 0.35rem;
     font-size: clamp(1.75rem, 3.5vw, 2.25rem);
     font-weight: 700;
-    color: #0a1128;
+    color: #1c3127;
 }
 
 .founder-role {

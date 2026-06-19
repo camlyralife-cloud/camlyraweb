@@ -48,7 +48,7 @@ body.assessment-page {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #1f6fb4;
+    background: #3d7a54;
     flex-shrink: 0;
 }
 
@@ -79,7 +79,7 @@ body.assessment-page {
     align-items: center;
     gap: 0;
     padding: 0.85rem 0.85rem 0.85rem 1.6rem;
-    background: #111;
+    background: #1c3127;
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -92,7 +92,7 @@ body.assessment-page {
 }
 
 .btn-assess-explore:hover {
-    background: #2a2a2a;
+    background: #264d3a;
     color: #fff;
 }
 
@@ -183,13 +183,13 @@ body.assessment-page {
 }
 
 .assess-process .assess-pill-dot {
-    background: #22c55e;
+    background: #4f9669;
 }
 
 .assess-process h2 {
     font-size: clamp(1.85rem, 3.2vw, 2.45rem);
     font-weight: 700;
-    color: #0a1128;
+    color: #1c3127;
     line-height: 1.2;
     margin: 0 0 1rem;
     letter-spacing: -0.02em;
@@ -208,7 +208,7 @@ body.assessment-page {
     margin: 0 0 2.5rem;
     padding: 0;
     text-align: left;
-    border-top: 1px solid #0a1128;
+    border-top: 1px solid #1c3127;
 }
 
 .assess-steps li {
@@ -216,7 +216,7 @@ body.assessment-page {
     align-items: flex-start;
     gap: 1rem;
     padding: 1.35rem 0;
-    border-bottom: 1px solid #0a1128;
+    border-bottom: 1px solid #1c3127;
 }
 
 .assess-step-content {
@@ -246,7 +246,7 @@ body.assessment-page {
     display: block;
     font-size: clamp(1.1rem, 2.3vw, 1.45rem);
     font-weight: 700;
-    color: #0a1128;
+    color: #1c3127;
     line-height: 1.25;
 }
 
@@ -258,7 +258,7 @@ body.assessment-page {
 }
 
 .assess-process-bottom-pill .assess-pill-dot {
-    background: #22c55e;
+    background: #4f9669;
 }
 
 /* —— Assessment tests header + cards —— */
@@ -465,7 +465,7 @@ body.assessment-page {
 .btn-assess-book {
     display: inline-block;
     padding: 0.85rem 1.85rem;
-    background: #1a1a2e;
+    background: #1c3127;
     color: #fff;
     border-radius: 12px;
     font-weight: 600;
@@ -475,7 +475,7 @@ body.assessment-page {
 }
 
 .btn-assess-book:hover {
-    background: #2d2d44;
+    background: #2f5e41;
     color: #fff;
 }
 
