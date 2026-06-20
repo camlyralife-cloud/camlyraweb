@@ -639,11 +639,14 @@ p, li, dd, dt, span, blockquote { color: var(--ink-soft); }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.35fr repeat(4, 1fr);
-  gap: 2.5rem 2rem;
+  grid-template-columns: 1.5fr repeat(5, 1fr);
+  gap: 2.5rem 1.5rem;
   padding-bottom: 2.5rem;
 }
 
+@media (max-width: 1200px) {
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
 @media (max-width: 1000px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -2122,3 +2125,291 @@ html { scroll-behavior: smooth; }
   .hero-credibility { flex-wrap: wrap; }
   .hero-cred-divider:nth-of-type(2) { display: none; }
 }
+
+/* =====================================================
+   MARKET SPLIT — Two-path section (India | Dubai)
+   ===================================================== */
+
+.section-market-paths {
+  padding: 80px 0 72px;
+  background: #F9F7F4;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.market-paths-intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 52px;
+}
+.market-paths-intro h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+.market-paths-intro p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555;
+}
+.market-paths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.market-path-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  background: #fff;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.market-path-card:hover {
+  box-shadow: 0 16px 48px -12px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+.market-path-card--india {
+  border-top: 4px solid #3D6B54;
+}
+.market-path-card--dubai {
+  border-top: 4px solid #C8965A;
+}
+.market-path-card-inner {
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+.market-path-location {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+}
+.market-path-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+.market-path-position {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+.market-path-card--india .market-path-name { color: #2B4F3B; }
+.market-path-card--dubai .market-path-name { color: #7A5230; }
+.market-path-services {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.market-path-services li {
+  font-size: 14px;
+  color: #444;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+.market-path-services li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #aaa;
+  font-size: 12px;
+}
+.market-path-card--india .market-path-services li::before { color: #3D6B54; }
+.market-path-card--dubai .market-path-services li::before { color: #C8965A; }
+.market-path-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-top: auto;
+}
+.market-path-card--india .market-path-badge {
+  background: #EAF2EC;
+  color: #2B5C3F;
+  border: 1px solid #B6D8C0;
+}
+.market-path-card--dubai .market-path-badge {
+  background: #FBF3EA;
+  color: #8A5C2A;
+  border: 1px solid #E8CEAA;
+}
+.market-path-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.market-path-card--india .market-path-cta {
+  background: #EAF2EC;
+  color: #2B5C3F;
+  border: 1px solid #B6D8C0;
+}
+.market-path-card--india .market-path-cta:hover {
+  background: #3D6B54;
+  color: #fff;
+  border-color: #3D6B54;
+}
+.market-path-card--dubai .market-path-cta {
+  background: #FBF3EA;
+  color: #7A5230;
+  border: 1px solid #E8CEAA;
+}
+.market-path-card--dubai .market-path-cta:hover {
+  background: #C8965A;
+  color: #fff;
+  border-color: #C8965A;
+}
+@media (max-width: 720px) {
+  .market-paths-grid { grid-template-columns: 1fr; }
+  .market-path-card-inner { padding: 28px 22px 24px; }
+}
+
+/* =====================================================
+   FOOTER — Dubai scope-of-service notice
+   Only shown on pages with body.coaching-page class
+   ===================================================== */
+
+.footer-scope-notice {
+  display: none;
+}
+.coaching-page .footer-scope-notice {
+  display: block;
+  background: #FBF3EA;
+  border: 1px solid #E8CEAA;
+  border-radius: 8px;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+}
+.coaching-page .footer-scope-notice p {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #6B4F2A;
+  margin: 0;
+}
+.coaching-page .footer-scope-notice strong {
+  font-weight: 600;
+  color: #5A3A1A;
+}
+
+/* =====================================================
+   NAV — Market context banners inside dropdowns
+   ===================================================== */
+
+.mega-market-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  margin-bottom: 8px;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.mega-market-banner--india {
+  background: #EAF2EC;
+}
+.mega-market-banner-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2B5C3F;
+}
+.mega-market-banner-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #4A7A5A;
+}
+.ns-market-header {
+  padding: 10px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.ns-market-header--dubai {
+  background: #FBF3EA;
+}
+.ns-market-name {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #7A5230;
+}
+.ns-market-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #9A6A40;
+}
+
+/* =====================================================
+   SERVICES — Market block groupings on homepage
+   ===================================================== */
+
+.service-market-block {
+  margin-bottom: 56px;
+}
+.service-market-heading {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(0,0,0,0.07);
+}
+.service-market-heading--india {
+  border-bottom-color: #3D6B54;
+}
+.service-market-heading--dubai {
+  border-bottom-color: #C8965A;
+}
+.service-market-label {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.service-market-heading--india .service-market-label { color: #3D6B54; }
+.service-market-heading--dubai .service-market-label { color: #C8965A; }
+.service-market-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+}
+.service-market-sub {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  max-width: 560px;
+}
+

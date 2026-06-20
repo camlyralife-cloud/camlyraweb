@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Calmyra - Mental Wellness</title>
+    <title>Executive Coaching | Premium Leadership Development | Calmyra</title>
+    <meta name="description" content="Professional one-on-one executive coaching for leaders, visionaries, and managers. Enhance execution skills, navigate decision fatigue, and optimize systemic performance.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pastel-overrides.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/design-system.css">
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/pastel-overrides.css">
+    <link rel="stylesheet" href="../../css/relationship.css">
+    <link rel="stylesheet" href="../../css/coaching.css">
 </head>
 
-<body>
+<body class="relationship-service-page coaching-page">
     <header class="page-header">
-                <nav id="navbar" data-testid="site-nav">
+        <nav id="navbar" data-testid="site-nav">
             <div class="nav-container">
                 <a href="../../index.html" class="nav-brand" aria-label="Calmyra home" data-testid="brand-logo">
                     <img src="../../assets/images/logo.png" alt="Calmyra — Where clarity meets calm" width="2000" height="2000" decoding="async" fetchpriority="high">
@@ -25,13 +31,17 @@
                     <div class="nav-mega-wrap">
                         <button type="button" class="nav-mega-btn" id="nav-mega-services-btn" aria-expanded="false"
                             aria-controls="mega-services-panel" aria-haspopup="true" data-testid="nav-services-btn">
-                            Services
+                            India &middot; Mental Health
                             <span class="nav-mega-chevron" aria-hidden="true"></span>
                         </button>
-                        <div class="mega-panel" id="mega-services-panel" role="navigation" aria-label="Services menu" hidden>
+                        <div class="mega-panel" id="mega-services-panel" role="navigation" aria-label="India mental health services" hidden>
+                            <div class="mega-market-banner mega-market-banner--india">
+                                <span class="mega-market-banner-name">Calmyra India</span>
+                                <span class="mega-market-banner-sub">Mental Health &amp; Wellness &middot; Bangalore</span>
+                            </div>
                             <div class="mega-panel-inner mega-layout-grouped">
                                 <div class="mega-group">
-                                    <p class="mega-group-title">Clinical Therapy</p>
+                                    <p class="mega-group-title">Therapy &amp; Counselling</p>
                                     <nav class="mega-group-nav" aria-label="Clinical therapy">
                                         <a class="mega-group-link" href="../../services/specific-disorders/Anxiety.html">Anxiety &amp; Stress</a>
                                         <a class="mega-group-link" href="../../services/specific-disorders/Mooddisorder.html">Depression &amp; Mood</a>
@@ -62,7 +72,7 @@
                                         <a class="mega-group-link" href="../../assessment.html">Psychological Assessments</a>
                                         <a class="mega-group-link" href="../../services/neuro-psychology.html">Neuro-Psychology</a>
                                         <a class="mega-group-link" href="../../services/Teen-and-childern/adolescent-anxiety.html">Child &amp; Adolescent Psychology</a>
-                                        <a class="mega-group-link mega-group-link--cta" href="../../index.html#new-services">View All Services</a>
+                                        <a class="mega-group-link mega-group-link--cta" href="../../index.html#india-services">All India Services</a>
                                     </nav>
                                 </div>
                             </div>
@@ -71,19 +81,23 @@
                     <div class="nav-ns-wrap nav-coaching-wrap">
                         <button type="button" class="nav-ns-btn" id="nav-coaching-btn" aria-expanded="false"
                             aria-controls="coaching-dropdown-panel" aria-haspopup="true" data-testid="nav-coaching-btn">
-                            Coaching
+                            Dubai &middot; Coaching
                             <span class="nav-ns-chevron" aria-hidden="true"></span>
                         </button>
-                        <div class="ns-dropdown ns-dropdown--wide" id="coaching-dropdown-panel" role="navigation" aria-label="Coaching menu" hidden>
+                        <div class="ns-dropdown ns-dropdown--wide" id="coaching-dropdown-panel" role="navigation" aria-label="Dubai coaching services" hidden>
+                            <div class="ns-market-header ns-market-header--dubai">
+                                <span class="ns-market-name">Calmyra Dubai</span>
+                                <span class="ns-market-sub">Coaching &amp; Growth &middot; UAE</span>
+                            </div>
                             <p class="ns-dropdown-heading">Personal Growth</p>
                             <a class="ns-dropdown-link" href="../../services/coaching/life-coaching.html">Life Coaching</a>
                             <a class="ns-dropdown-link" href="../../services/coaching/mindset-coaching.html">Mindset Coaching</a>
                             <a class="ns-dropdown-link" href="../../services/career/Burnout.html">Confidence &amp; Self-Worth Coaching</a>
                             <p class="ns-dropdown-heading">Professional Excellence</p>
                             <a class="ns-dropdown-link" href="../../services/coaching/executive-wellness.html">Executive Wellness Programme</a>
-                            <a class="ns-dropdown-link" href="../../services/career/Executivecoaching.html">Leadership Psychology</a>
+                            <a class="ns-dropdown-link" href="../../services/career/Executivecoaching.html">Leadership &amp; Development</a>
                             <a class="ns-dropdown-link" href="../../services/career/Productivity.html">High-Performance Coaching</a>
-                            <a class="ns-dropdown-link ns-dropdown-link--cta" href="../../index.html#coaching">Explore All Coaching</a>
+                            <a class="ns-dropdown-link ns-dropdown-link--cta" href="../../index.html#dubai-services">All Dubai Services</a>
                         </div>
                     </div>
                     <a href="../../assessment.html" data-testid="nav-assessment">Assessment</a>
@@ -101,180 +115,86 @@
             </div>
         </nav>
 
-      <section id="hero" class="hero-section couple-hero">
-    <div class="container hero-panel">
-        <div class="hero-copy">
-            <span class="hero-badge">Executive Coaching</span>
-            <h1>Executive Coaching</h1>
-            <p class="hero-text">Executive coaching is a professional development process where a coach works one-on-one with leaders to enhance performance and growth…<a href="#section-overview" class="hero-read-more">read more</a></p>
-            <div class="hero-metrics">
-                <div class="hero-metric">
-                    <span class="hero-metric-icon" aria-hidden="true">☺</span>
-                    <strong>600+</strong>
-                    <span>People Treated</span>
+        <section id="hero" class="hero-section couple-hero">
+            <div class="container hero-panel">
+                <div class="hero-copy">
+                    <span class="hero-badge">Executive Coaching</span>
+                    <h1>Executive Coaching</h1>
+                    <p class="hero-text">Executive coaching is a professional development process where a coach works one-on-one with leaders to enhance performance and growth.</p>
+                    <div class="hero-actions">
+                        <a href="../../index.html#get-started" class="btn btn-primary">Book Appointment</a>
+                    </div>
                 </div>
-                <div class="hero-metric">
-                    <span class="hero-metric-icon" aria-hidden="true">✦</span>
-                    <strong>99%</strong>
-                    <span>Satisfaction</span>
+                <div class="hero-visual">
+                    <div class="hero-line-art" aria-hidden="true"></div>
                 </div>
             </div>
-            <div class="hero-actions">
-                <a href="../../index.html#get-started" class="btn btn-primary">Book Appointment</a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="hero-line-art" aria-hidden="true"></div>
-        </div>
-    </div>
-</section>
-</header>
+        </section>
+    </header>
 
-<section class="section-blue couple-symptoms reveal-on-scroll">
-    <div class="container couple-symptoms-grid">
-        <div class="symptom-cards">
-            <p class="symptom-title">Common Focus Areas</p>
-            <div class="symptom-layout">
-                <article class="symptom-card symptom-card-lightblue">
-                    Executive coaching helps leaders develop critical skills such as decision-making
-                </article>
-                <article class="symptom-card symptom-card-black">
-                    Coaching encourages leaders to reflect on their strengths and weaknesses
-                </article>
-                <article class="symptom-card symptom-card-lilac">
-                    Setting clear goals and providing targeted feedback
-                </article>
-                <article class="symptom-card symptom-card-green">
-                    Better communication
-                </article>
-                <article class="symptom-card symptom-card-cream">
-                    Preparing leaders to navigate organizational changes with resilience
-                </article>
+    <main class="coaching-main">
+        <section class="coaching-section reveal-on-scroll" id="section-overview">
+            <div class="container coaching-section-inner">
+                <h2>Why leaders need dedicated care</h2>
+                <p class="coaching-prose">“A leader is one who knows the way, goes the way, and shows the way.” – John C. Maxwell</p>
+                <p class="coaching-prose">Executive coaching is a professional development process where a coach works one-on-one with an executive or leader to enhance their skills, performance, and personal growth.</p>
+                <p class="coaching-prose">It involves tailored guidance and feedback to help individuals achieve their professional goals and overcome challenges. Executive coaching provides the tools and insights necessary to navigate change and drive long-term success.</p>
             </div>
-        </div>
-        <div class="symptom-insight">
-            <h2>The global coaching industry was valued at over $2.8 billion in 2019.</h2>
-            <div class="insight-note">86% of companies reported at least a return on investment from coaching.</div>
-            <div class="insight-note">75% of people experience some degree of anxiety related to public speaking</div>
-            <div class="symptom-insight-action">
-                <a href="#section-overview" class="btn btn-primary">Know More</a>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<section class="section-services couple-journey reveal-on-scroll">
-    <div class="container">
-        <div class="journey-top-action"></div>
-        <h2>Your healing journey with H&amp;H</h2>
-        <p class="journey-intro">Our psychologists provide professional counseling that is efficient, cost-effective and customized to your needs.</p>
-        <div class="journey-timeline">
-            <div class="journey-item">
-                <h3>Today</h3>
-                <div class="journey-line"></div>
-                <p>Feeling overwhelmed, seeking support.</p>
-            </div>
-            <div class="journey-item">
-                <h3>2 week later</h3>
-                <div class="journey-line"></div>
-                <p>Embarked on a journey of coaching and self-development with H&amp;H.</p>
-            </div>
-            <div class="journey-item journey-item-last">
-                <h3>5 weeks later</h3>
-                <div class="journey-line"></div>
-                <p>Empowered to lead confidently and handle challenges independently.</p>
-            </div>
-        </div>
-        <p class="journey-disclaimer"><span>Disclaimer:</span> Sessions vary based on your goals and requirements.</p>
-    </div>
-</section>
-
-<section class="section-testimonials couple-faq reveal-on-scroll" id="qna">
-    <div class="container">
-        <h2>Frequently asked questions</h2>
-        <div class="couple-faq-list">
-            <article class="couple-faq-item is-open">
-                <button type="button" class="couple-faq-trigger" id="faq-couple-btn-1" aria-expanded="true" aria-controls="faq-couple-panel-1">
-                    <span class="couple-faq-icon" aria-hidden="true">⊖</span>
-                    <span>What is executive coaching, and how can it benefit me?</span>
-                </button>
-                <div class="couple-faq-panel" id="faq-couple-panel-1" role="region" aria-labelledby="faq-couple-btn-1">
-                    <p>Executive coaching helps improve leadership skills, decision-making, and overall performance through personalized guidance and support.</p>
+        <section class="coaching-section coaching-section--alt reveal-on-scroll">
+            <div class="container coaching-section-inner coaching-section-inner--wide">
+                <h2>Focus Areas &amp; Strategy Pillars</h2>
+                <div class="coaching-area-grid">
+                    <article class="coaching-area-card">
+                        <span class="coaching-area-title">Leadership Development</span>
+                        <p>Build strong leadership and strategic decision-making skills to confidently navigate organizational challenges.</p>
+                    </article>
+                    <article class="coaching-area-card">
+                        <span class="coaching-area-title">Active Listening &amp; Inquiry</span>
+                        <p>Improve critical communication protocols, ask foundational questions, and encourage proactive engagement within your teams.</p>
+                    </article>
+                    <article class="coaching-area-card">
+                        <span class="coaching-area-title">Feedback &amp; Performance</span>
+                        <p>Gain objective, constructive, and actionable behavioral insights to identify professional blind spots and expand key milestones.</p>
+                    </article>
+                    <article class="coaching-area-card">
+                        <span class="coaching-area-title">Conflict Resolution Architecture</span>
+                        <p>De-escalate internal workplace friction patterns effectively while preparing leadership roles to navigate complex systemic variations.</p>
+                    </article>
+                    <article class="coaching-area-card">
+                        <span class="coaching-area-title">Empathy &amp; Presence</span>
+                        <p>Harness non-verbal cues thoughtfully, master executive body language, and build collaborative trust across cross-functional spaces.</p>
+                    </article>
+                    <article class="coaching-area-card">
+                        <span class="coaching-area-title">Clarity &amp; Resilience</span>
+                        <p>Refine professional output parameters by learning clear, concise communication metrics under high-stress scenarios.</p>
+                    </article>
                 </div>
-            </article>
-            <article class="couple-faq-item">
-                <button type="button" class="couple-faq-trigger" id="faq-couple-btn-2" aria-expanded="false" aria-controls="faq-couple-panel-2">
-                    <span class="couple-faq-icon" aria-hidden="true">⊕</span>
-                    <span>How do I know if I need executive coaching?</span>
-                </button>
-                <div class="couple-faq-panel" id="faq-couple-panel-2" role="region" aria-labelledby="faq-couple-btn-2" hidden>
-                    <p>If you're facing leadership challenges, decision fatigue, or want to enhance your performance, executive coaching can be highly beneficial.</p>
-                </div>
-            </article>
-            <article class="couple-faq-item">
-                <button type="button" class="couple-faq-trigger" id="faq-couple-btn-3" aria-expanded="false" aria-controls="faq-couple-panel-3">
-                    <span class="couple-faq-icon" aria-hidden="true">⊕</span>
-                    <span>What can I expect during an executive coaching session?</span>
-                </button>
-                <div class="couple-faq-panel" id="faq-couple-panel-3" role="region" aria-labelledby="faq-couple-btn-3" hidden>
-                    <p>Sessions typically include goal setting, feedback, reflection, and actionable strategies tailored to your professional growth.</p>
-                </div>
-            </article>
-            <article class="couple-faq-item">
-                <button type="button" class="couple-faq-trigger" id="faq-couple-btn-4" aria-expanded="false" aria-controls="faq-couple-panel-4">
-                    <span class="couple-faq-icon" aria-hidden="true">⊕</span>
-                    <span>How long does executive coaching typically last?</span>
-                </button>
-                <div class="couple-faq-panel" id="faq-couple-panel-4" role="region" aria-labelledby="faq-couple-btn-4" hidden>
-                    <p>Duration varies, but most coaching programs run for a few weeks to several months depending on goals.</p>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section id="section-overview" class="section-intro reveal-on-scroll">
-    <div class="container">
-        <h2>Executive Coaching</h2>
-        <p>“A leader is one who knows the way, goes the way, and shows the way.” – John C. Maxwell</p>
-        <p>Executive coaching is a professional development process where a coach works one-on-one with an executive or leader to enhance their skills, performance, and personal growth.</p>
-        <p>It involves tailored guidance and feedback to help individuals achieve their professional goals and overcome challenges. Executive coaching provides the tools and insights necessary to navigate change and drive long-term success.</p>
-
-        <div class="couple-copy-grid">
-            <article class="couple-copy-card">
-                <h3>What It Is Provided For</h3>
-                <ul>
-                    <li><strong>Leadership Development:</strong> Build strong leadership and decision-making skills.</li>
-                    <li><strong>Active Listening:</strong> Improve communication and understanding within teams.</li>
-                    <li><strong>Feedback and Improvement:</strong> Gain constructive insights for growth.</li>
-                    <li><strong>Conflict Resolution:</strong> Handle workplace challenges effectively.</li>
-                    <li><strong>Empathy and Connection:</strong> Strengthen relationships and collaboration.</li>
-                </ul>
-            </article>
-            <article class="couple-copy-card">
-                <h3>Tips</h3>
-                <ul>
-                    <li><strong>Listen Actively:</strong> Pay full attention and respond thoughtfully.</li>
-                    <li><strong>Be Clear and Concise:</strong> Communicate ideas effectively.</li>
-                    <li><strong>Be Aware of Body Language:</strong> Use non-verbal cues wisely.</li>
-                    <li><strong>Ask Questions:</strong> Encourage clarity and engagement.</li>
-                    <li><strong>Empathize:</strong> Understand different perspectives.</li>
-                </ul>
-            </article>
-        </div>
-    </div>
-</section>
-    <section class="section-get-started reveal-on-scroll">
-        <div class="container">
-            <div class="activate-panel">
-                <h2>Ready to Strengthen Your Relationship?</h2>
-                <p>Take the first step towards a healthier, more fulfilling partnership. Our experienced couple counsellors are here to guide you.</p>
-                <a href="../../index.html#get-started" class="btn btn-primary btn-activate">Book Session</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-                <footer id="footer" class="site-footer" data-testid="site-footer">
+        <section class="coaching-section reveal-on-scroll">
+            <div class="container coaching-section-inner">
+                <h2>Industry Impact Parameters</h2>
+                <div class="coaching-discretion-block">
+                    <h3>Data Insights</h3>
+                    <p class="coaching-prose">The global coaching industry was valued at over $2.8 billion in 2019, emphasizing its growth as an essential metric for enterprise optimization. Furthermore, 86% of companies globally reported at least a highly clear return on investment (ROI) from executing tailored coaching plans.</p>
+                    <p class="coaching-prose">With up to 75% of professionals experiencing some degree of anxiety related specifically to public presentation or high-impact presence, targeting specialized growth routes offers definitive strategic values.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="coaching-cta-band reveal-on-scroll">
+            <div class="container coaching-cta-inner">
+                <h2>Ready to Strengthen Your Leadership Impact?</h2>
+                <a href="../../index.html#get-started" class="btn btn-primary">Book Consultation</a>
+                <p class="coaching-trust-micro">600+ Leaders Treatments · 99% Satisfaction Baseline · Premium Worldwide Execution</p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="site-footer" data-testid="site-footer">
         <div class="container footer-inner">
             <div class="footer-grid">
                 <div class="footer-col footer-brand" id="locations">
@@ -284,9 +204,8 @@
                     <p class="footer-tagline">Where clarity meets calm. Premium mental wellness — Dubai · Bangalore · Online Worldwide.</p>
                     <div class="footer-contact-block">
                         <span class="footer-address-label">Dubai</span>
-                        <p class="footer-address">[Suite/Floor, Building, Area, Dubai, UAE]</p>
+                        <p class="footer-address">By appointment &middot; Dubai, UAE</p>
                         <p class="footer-contact-links">
-                            <a href="tel:+971000000000">+971 [XX XXX XXXX]</a><br>
                             <a href="mailto:dubai@calmyra.com">dubai@calmyra.com</a>
                         </p>
                     </div>
@@ -302,22 +221,29 @@
                     </div>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-title">Services</h4>
+                    <h4 class="footer-col-title">India — Mental Health</h4>
                     <ul class="footer-col-list">
                         <li><a href="../../services/specific-disorders/Anxiety.html">Clinical Therapy</a></li>
-                        <li><a href="../../services/coaching/life-coaching.html">Life Coaching</a></li>
-                        <li><a href="../../services/coaching/mindset-coaching.html">Mindset Coaching</a></li>
-                        <li><a href="../../services/coaching/executive-wellness.html">Executive Wellness</a></li>
                         <li><a href="../../services/relationship/couple-counselling.html">Relationship Counselling</a></li>
                         <li><a href="../../assessment.html">Psychological Assessments</a></li>
                         <li><a href="../../services/neuro-psychology.html">Neuro-Psychology</a></li>
                         <li><a href="../../services/specific-disorders/Anxiety.html">Anxiety &amp; Stress</a></li>
                         <li><a href="../../services/specific-disorders/Mooddisorder.html">Depression &amp; Mood</a></li>
                         <li><a href="../../services/specific-disorders/PTSD.html">Trauma &amp; PTSD</a></li>
-                        <li><a href="../../services/specific-disorders/OCD.html">OCD</a></li>
-                        <li><a href="../../services/specific-disorders/Sleepingdisorder.html">Sleep</a></li>
-                        <li><a href="../../services/specific-disorders/Eatingdisorder.html">Eating Disorders</a></li>
-                        <li><a href="../../index.html#new-services" class="footer-link-cta">View All Services →</a></li>
+                        <li><a href="../../services/Teen-and-childern/adolescent-anxiety.html">Child &amp; Adolescent</a></li>
+                        <li><a href="../../index.html#india-services" class="footer-link-cta">All India Services →</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Dubai — Coaching</h4>
+                    <ul class="footer-col-list">
+                        <li><a href="../../services/coaching/life-coaching.html">Life Coaching</a></li>
+                        <li><a href="../../services/coaching/mindset-coaching.html">Mindset Coaching</a></li>
+                        <li><a href="../../services/coaching/executive-wellness.html">Executive Wellness</a></li>
+                        <li><a href="../../services/career/Executivecoaching.html">Leadership &amp; Development</a></li>
+                        <li><a href="../../services/career/Productivity.html">High-Performance Coaching</a></li>
+                        <li><a href="../../services/career/Burnout.html">Confidence &amp; Self-Worth</a></li>
+                        <li><a href="../../index.html#dubai-services" class="footer-link-cta">All Dubai Services →</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -353,8 +279,11 @@
                     </ul>
                 </div>
             </div>
+            <div class="footer-scope-notice" aria-label="Scope of service — Dubai coaching">
+                <p><strong>Scope of service (Calmyra Dubai):</strong> Coaching and consulting programmes are developmental and performance-focused. They are not clinical psychology, diagnosis, or mental-health treatment, and are provided independently of any DHA-licensed clinical service. Where a clinical need is identified, we refer you to an appropriately licensed professional.</p>
+            </div>
             <div class="footer-bottom-bar">
-                <p class="footer-copyright footer-copyright--wide">Licensed by the Dubai Health Authority (DHA Licence No. [XXXXXX]) · RCI Registered (No. [XXXXXX]) · &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
+                <p class="footer-copyright footer-copyright--wide">Calmyra India: RCI Registered Professionals &nbsp;&middot;&nbsp; Calmyra Dubai: Qualified Coaches &amp; Consultants &nbsp;&middot;&nbsp; &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -362,28 +291,6 @@
     <script src="../../js/script.js"></script>
     <script>
         (function () {
-            const faqItems = Array.from(document.querySelectorAll(".couple-faq-item"));
-            const faqButtons = Array.from(document.querySelectorAll(".couple-faq-trigger"));
-
-            function setFaqState(item, expanded) {
-                const button = item.querySelector(".couple-faq-trigger");
-                const panel = item.querySelector(".couple-faq-panel");
-                const icon = item.querySelector(".couple-faq-icon");
-                item.classList.toggle("is-open", expanded);
-                button.setAttribute("aria-expanded", expanded ? "true" : "false");
-                if (panel) panel.hidden = !expanded;
-                if (icon) icon.textContent = expanded ? "⊖" : "⊕";
-            }
-
-            faqButtons.forEach((button) => {
-                button.addEventListener("click", () => {
-                    const item = button.closest(".couple-faq-item");
-                    const shouldOpen = button.getAttribute("aria-expanded") !== "true";
-                    faqItems.forEach((entry) => setFaqState(entry, false));
-                    setFaqState(item, shouldOpen);
-                });
-            });
-
             const revealNodes = document.querySelectorAll(".reveal-on-scroll");
             const observer = new IntersectionObserver(
                 (entries) => {
@@ -402,6 +309,3 @@
 </body>
 
 </html>
-
-
-
