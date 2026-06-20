@@ -9,7 +9,7 @@
         content="Strengthen your relationship with expert couple counselling at Calmyra. Address communication issues, conflicts, and build a healthier partnership with our experienced therapists in Bangalore.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/design-system.css">
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../css/styles.css">
@@ -28,21 +28,53 @@
                     <div class="nav-menu-primary">
                     <a href="../../index.html" data-testid="nav-home">Home</a>
                     <a href="../../team.html" data-testid="nav-about">About</a>
+                    <div class="nav-ns-wrap nav-coaching-wrap">
+                        <button type="button" class="nav-ns-btn" id="nav-coaching-btn" aria-expanded="false"
+                            aria-controls="coaching-dropdown-panel" aria-haspopup="true" data-testid="nav-coaching-btn">
+                            Dubai &middot; Coaching
+                            <span class="nav-ns-chevron" aria-hidden="true"></span>
+                        </button>
+                        <div class="ns-dropdown ns-dropdown--personas" id="coaching-dropdown-panel" role="navigation" aria-label="Dubai coaching and consulting services" hidden>
+                            <div class="ns-market-header ns-market-header--dubai">
+                                <span class="ns-market-name">Calmyra Dubai</span>
+                                <span class="ns-market-sub">Coaching &amp; Consulting &middot; UAE</span>
+                            </div>
+                            <div class="ns-dropdown-cols">
+                                <div class="ns-dropdown-col">
+                                    <p class="ns-dropdown-heading">By Your Profile</p>
+                                    <a class="ns-dropdown-link" href="../../services/coaching/life-coaching.html">For Women</a>
+                                    <a class="ns-dropdown-link" href="../../services/coaching/life-coaching.html#families">For Parents &amp; Families</a>
+                                    <a class="ns-dropdown-link" href="../../services/career/Executivecoaching.html">For Executives &amp; Leaders</a>
+                                    <a class="ns-dropdown-link" href="../../services/coaching/executive-wellness.html">For HNWI &amp; Founders</a>
+                                    <a class="ns-dropdown-link" href="../../services/career/Leadership-Psychology.html">For CFO / CXO</a>
+                                </div>
+                                <div class="ns-dropdown-col">
+                                    <p class="ns-dropdown-heading">Programmes</p>
+                                    <a class="ns-dropdown-link" href="../../services/coaching/life-coaching.html">Life Coaching</a>
+                                    <a class="ns-dropdown-link" href="../../services/coaching/mindset-coaching.html">Mindset Coaching</a>
+                                    <a class="ns-dropdown-link" href="../../services/coaching/executive-wellness.html">Executive Wellness</a>
+                                    <a class="ns-dropdown-link" href="../../services/career/Executivecoaching.html">Leadership Development</a>
+                                    <a class="ns-dropdown-link" href="../../services/career/Productivity.html">High-Performance Coaching</a>
+                                    <a class="ns-dropdown-link ns-dropdown-link--cta" href="../../index.html#dubai-services">All Dubai Programmes &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="nav-mega-wrap">
                         <button type="button" class="nav-mega-btn" id="nav-mega-services-btn" aria-expanded="false"
                             aria-controls="mega-services-panel" aria-haspopup="true" data-testid="nav-services-btn">
-                            India &middot; Mental Health
+                            India &middot; Wellness
                             <span class="nav-mega-chevron" aria-hidden="true"></span>
                         </button>
-                        <div class="mega-panel" id="mega-services-panel" role="navigation" aria-label="India mental health services" hidden>
+                        <div class="mega-panel" id="mega-services-panel" role="navigation" aria-label="India mental health and wellness services" hidden>
                             <div class="mega-market-banner mega-market-banner--india">
                                 <span class="mega-market-banner-name">Calmyra India</span>
                                 <span class="mega-market-banner-sub">Mental Health &amp; Wellness &middot; Bangalore</span>
                             </div>
                             <div class="mega-panel-inner mega-layout-grouped">
                                 <div class="mega-group">
-                                    <p class="mega-group-title">Therapy &amp; Counselling</p>
-                                    <nav class="mega-group-nav" aria-label="Clinical therapy">
+                                    <p class="mega-group-title">Therapy</p>
+                                    <nav class="mega-group-nav" aria-label="Therapy and counselling">
                                         <a class="mega-group-link" href="../../services/specific-disorders/Anxiety.html">Anxiety &amp; Stress</a>
                                         <a class="mega-group-link" href="../../services/specific-disorders/Mooddisorder.html">Depression &amp; Mood</a>
                                         <a class="mega-group-link" href="../../services/specific-disorders/PTSD.html">Trauma &amp; PTSD</a>
@@ -69,42 +101,19 @@
                                 <div class="mega-group">
                                     <p class="mega-group-title">Specialist Care</p>
                                     <nav class="mega-group-nav" aria-label="Specialist care">
-                                        <a class="mega-group-link" href="../../assessment.html">Psychological Assessments</a>
+                                        <a class="mega-group-link" href="../../assessment.html">Assessments</a>
                                         <a class="mega-group-link" href="../../services/neuro-psychology.html">Neuro-Psychology</a>
-                                        <a class="mega-group-link" href="../../services/Teen-and-childern/adolescent-anxiety.html">Child &amp; Adolescent Psychology</a>
-                                        <a class="mega-group-link mega-group-link--cta" href="../../index.html#india-services">All India Services</a>
+                                        <a class="mega-group-link" href="../../services/Teen-and-childern/adolescent-anxiety.html">Child &amp; Adolescent</a>
+                                        <a class="mega-group-link mega-group-link--cta" href="../../index.html#india-services">All India Services &rarr;</a>
                                     </nav>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="nav-ns-wrap nav-coaching-wrap">
-                        <button type="button" class="nav-ns-btn" id="nav-coaching-btn" aria-expanded="false"
-                            aria-controls="coaching-dropdown-panel" aria-haspopup="true" data-testid="nav-coaching-btn">
-                            Dubai &middot; Coaching
-                            <span class="nav-ns-chevron" aria-hidden="true"></span>
-                        </button>
-                        <div class="ns-dropdown ns-dropdown--wide" id="coaching-dropdown-panel" role="navigation" aria-label="Dubai coaching services" hidden>
-                            <div class="ns-market-header ns-market-header--dubai">
-                                <span class="ns-market-name">Calmyra Dubai</span>
-                                <span class="ns-market-sub">Coaching &amp; Growth &middot; UAE</span>
-                            </div>
-                            <p class="ns-dropdown-heading">Personal Growth</p>
-                            <a class="ns-dropdown-link" href="../../services/coaching/life-coaching.html">Life Coaching</a>
-                            <a class="ns-dropdown-link" href="../../services/coaching/mindset-coaching.html">Mindset Coaching</a>
-                            <a class="ns-dropdown-link" href="../../services/career/Burnout.html">Confidence &amp; Self-Worth Coaching</a>
-                            <p class="ns-dropdown-heading">Professional Excellence</p>
-                            <a class="ns-dropdown-link" href="../../services/coaching/executive-wellness.html">Executive Wellness Programme</a>
-                            <a class="ns-dropdown-link" href="../../services/career/Executivecoaching.html">Leadership &amp; Development</a>
-                            <a class="ns-dropdown-link" href="../../services/career/Productivity.html">High-Performance Coaching</a>
-                            <a class="ns-dropdown-link ns-dropdown-link--cta" href="../../index.html#dubai-services">All Dubai Services</a>
-                        </div>
-                    </div>
-                    <a href="../../assessment.html" data-testid="nav-assessment">Assessment</a>
-                    <a href="../../index.html#locations" data-testid="nav-locations">Locations</a>
+                    <a href="../../dr-safina.html" data-testid="nav-dr-safina">Dr. Safina</a>
                     </div>
                     <div class="nav-actions">
-                        <a href="../../index.html#get-started" class="btn btn-primary btn-sm" data-testid="header-book-cta">Book a Consultation</a>
+                        <a href="../../index.html#get-started" class="btn btn-primary btn-sm" data-testid="header-cta">Request a Conversation</a>
                     </div>
                 </div>
                 <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu" data-testid="nav-toggle">
@@ -134,7 +143,7 @@
                 </div>
             </div>
             <div class="hero-actions">
-                <a href="../../index.html#get-started" class="btn btn-primary">Book Appointment</a>
+                <a href="../../index.html#get-started" class="btn btn-primary">Request a Private Conversation</a>
             </div>
         </div>
         <div class="hero-visual">
@@ -257,7 +266,7 @@
             <div class="activate-panel">
                 <h2>Ready to Strengthen Your Relationship?</h2>
                 <p>Take the first step towards a healthier, more fulfilling partnership. Our experienced couple counsellors are here to guide you.</p>
-                <a href="../../index.html#get-started" class="btn btn-primary btn-activate">Book Session</a>
+                <a href="../../index.html#get-started" class="btn btn-primary btn-activate">Request a Private Conversation</a>
             </div>
         </div>
     </section>
@@ -318,13 +327,13 @@
                     <h4 class="footer-col-title">Company</h4>
                     <ul class="footer-col-list">
                         <li><a href="../../team.html">About Us</a></li>
-                        <li><a href="../../team.html">Our Team</a></li>
                         <li><a href="../../dr-safina.html">Dr. Safina Naaz</a></li>
-                        <li><a href="../../assessment.html">Assessment</a></li>
-                        <li><a href="../../index.html#get-started">Careers</a></li>
+                        <li><a href="../../assessment.html">Psychological Assessments</a></li>
+                        <li><a href="../../privacy.html">Privacy Policy</a></li>
+                        <li><a href="../../index.html#get-started">Contact Us</a></li>
                         <li><a href="../../index.html#locations">Dubai Centre</a></li>
                         <li><a href="../../index.html#locations">Bangalore Centre</a></li>
-                        <li><a href="../../index.html#get-started">Online</a></li>
+                        <li><a href="../../index.html#get-started">Online Sessions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -333,7 +342,6 @@
                         <li><a href="../../privacy.html">Privacy Policy</a></li>
                         <li><a href="../../terms.html">Terms &amp; Conditions</a></li>
                         <li><a href="../../terms.html">Cancellation &amp; Refund Policy</a></li>
-                        <li><a href="../../privacy.html">Cookie Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
