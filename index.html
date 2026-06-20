@@ -103,24 +103,100 @@
             </div>
         </nav>
 
-        <section id="hero" class="hero-section">
-            <div class="container hero-panel">
-                <div class="hero-copy">
-                    <h1>Where clarity meets calm.</h1>
-                    <p class="hero-text">Dubai's premium mental wellness centre — bringing together world-class clinical therapy, evidence-based life coaching, and mindset transformation for those who carry the most.</p>
-                    <p class="hero-location-line">In-person in Dubai · South Asia centre in Bangalore · Online worldwide</p>
-                    <div class="hero-actions">
-                        <a href="#get-started" class="btn btn-primary">Book a Private Consultation</a>
-                        <a href="assessment.html" class="btn btn-secondary">Take the Wellness Assessment</a>
+        <section id="hero" class="hero-section hero-v2">
+            <div class="hero-bg-blob hero-bg-blob--1" aria-hidden="true"></div>
+            <div class="hero-bg-blob hero-bg-blob--2" aria-hidden="true"></div>
+            <div class="hero-bg-grain" aria-hidden="true"></div>
+
+            <div class="container hero-panel hero-panel-v2">
+                <div class="hero-copy hero-copy-v2">
+                    <div class="hero-tag" data-testid="hero-status">
+                        <span class="hero-tag-dot" aria-hidden="true"></span>
+                        Now accepting new clients · <em>Dubai &amp; Bangalore</em>
                     </div>
-                    <p class="hero-trust-micro">Confidential · Licensed professionals · First consultation complimentary · Dubai, Bangalore &amp; Online</p>
-                    <p class="hero-trust-strip">✦ DHA Licensed &nbsp;✦ RCI Registered &nbsp;✦ Fully Confidential &nbsp;✦ First Consultation Complimentary</p>
+
+                    <h1 class="hero-title-v2" data-testid="hero-headline">
+                        <span class="word-mask"><span class="word">Where</span></span>
+                        <span class="word-mask"><span class="word">clarity</span></span>
+                        <span class="word-mask"><span class="word">meets</span></span>
+                        <span class="hero-underline-wrap">
+                          <span class="word-mask"><span class="word"><em>calm.</em></span></span>
+                          <svg class="hero-underline" viewBox="0 0 320 22" fill="none" preserveAspectRatio="none" aria-hidden="true">
+                            <path d="M3 18 C 70 4, 160 4, 317 14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                    </h1>
+
+                    <p class="hero-text hero-text-v2">A senior, premium mental-wellness practice — bringing together evidence-based clinical therapy, life coaching, and quiet, unhurried care for the people who carry the most.</p>
+
+                    <div class="hero-actions hero-actions-v2">
+                        <a href="#get-started" class="btn btn-primary hero-cta-primary" data-testid="hero-cta-book">
+                            <span>Book a Private Consultation</span>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="assessment.html" class="btn btn-secondary hero-cta-secondary" data-testid="hero-cta-assessment">
+                            <span>Take the Wellness Assessment</span>
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="hero-credibility" aria-label="Why choose Calmyra">
+                        <div class="hero-cred-item">
+                            <strong>10,000+</strong>
+                            <span>Sessions delivered</span>
+                        </div>
+                        <div class="hero-cred-divider" aria-hidden="true"></div>
+                        <div class="hero-cred-item">
+                            <strong>40+</strong>
+                            <span>Nationalities served</span>
+                        </div>
+                        <div class="hero-cred-divider" aria-hidden="true"></div>
+                        <div class="hero-cred-item">
+                            <strong>97%</strong>
+                            <span>Feel heard, session one</span>
+                        </div>
+                    </div>
+
+                    <p class="hero-trust-strip hero-trust-strip-v2">✦ DHA Licensed &nbsp;✦ RCI Registered &nbsp;✦ Fully Confidential &nbsp;✦ First Consultation Complimentary</p>
                 </div>
-                <div class="hero-visual">
-                    <div class="hero-stage hero-stage--clean">
-                        <div class="hero-ring"></div>
-                        <div class="hero-ring hero-ring-2"></div>
-                        <img src="assets/images/homepage.webp" alt="Calmyra mental wellness" class="hero-image">
+
+                <div class="hero-visual hero-visual-v2">
+                    <figure class="hero-photo hero-photo--main">
+                        <img src="assets/images/Side view woman meditating in nature.webp" alt="A quiet moment of meditation in nature — emblem of evidence-based, unhurried care" loading="eager">
+                        <span class="hero-photo-tag">— A quiet practice</span>
+                    </figure>
+
+                    <figure class="hero-photo hero-photo--secondary">
+                        <img src="assets/images/image-1.webp" alt="A peaceful moment of reflection — small rituals of self-care" loading="lazy">
+                    </figure>
+
+                    <div class="hero-float-card hero-float-card--top" data-testid="hero-float-1">
+                        <span class="hero-float-icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                        </span>
+                        <div class="hero-float-text">
+                            <strong>97% feel heard</strong>
+                            <span>after session one</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-float-card hero-float-card--bottom" data-testid="hero-float-2">
+                        <div class="hero-avatar-stack" aria-hidden="true">
+                            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=80&q=70" alt="">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=80&q=70" alt="">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=80&q=70" alt="">
+                        </div>
+                        <div class="hero-float-text">
+                            <strong>9 senior therapists</strong>
+                            <span>hand-matched to you</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-loc-pill" data-testid="hero-loc-pill">
+                        <span class="hero-loc-globe" aria-hidden="true">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" stroke="currentColor" stroke-width="1.3"/></svg>
+                        </span>
+                        Dubai · Bangalore · Online
                     </div>
                 </div>
             </div>
