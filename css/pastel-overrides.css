@@ -4663,7 +4663,7 @@ html { scroll-behavior: smooth; }
 }
 .hp-assess-card:hover .hp-assess-icon {
   transform: scale(1.08) rotate(-4deg);
-  background: var(--warm-gold);
+  background: var(--warm-gold-dark);
   color: var(--white);
 }
 .hp-assess-card h3 {
