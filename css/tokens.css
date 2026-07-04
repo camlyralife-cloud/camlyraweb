@@ -125,7 +125,7 @@
   --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.5);
 
   /* ─── Layout ─── */
-  --container:      1180px;
+  --container:      1200px;
   --container-wide: 1320px;
   --container-sm:   720px;
   --section-x:      clamp(1.25rem, 4vw, 2.5rem);

@@ -10,17 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pastel-overrides.css?v=4">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                fontFamily: { serif: ['Playfair Display', 'Georgia', 'serif'] }
-            }
-        }
-    }
-    </script>
+    <link rel="stylesheet" href="css/pastel-overrides.css?v=6">
 </head>
 
 <body>
@@ -37,7 +27,7 @@
                     <div class="nav-ns-wrap nav-coaching-wrap">
                         <button type="button" class="nav-ns-btn" id="nav-coaching-btn" aria-expanded="false"
                             aria-controls="coaching-dropdown-panel" aria-haspopup="true" data-testid="nav-coaching-btn">
-                            Dubai &middot; Coaching
+                            Dubai
                             <span class="nav-ns-chevron" aria-hidden="true"></span>
                         </button>
                         <div class="ns-dropdown ns-dropdown--personas" id="coaching-dropdown-panel" role="navigation" aria-label="Dubai coaching and consulting services" hidden>
@@ -69,7 +59,7 @@
                     <div class="nav-mega-wrap">
                         <button type="button" class="nav-mega-btn" id="nav-mega-services-btn" aria-expanded="false"
                             aria-controls="mega-services-panel" aria-haspopup="true" data-testid="nav-services-btn">
-                            India &middot; Wellness
+                            Services
                             <span class="nav-mega-chevron" aria-hidden="true"></span>
                         </button>
                         <div class="mega-panel" id="mega-services-panel" role="navigation" aria-label="India mental health and wellness services" hidden>
@@ -119,7 +109,11 @@
                     <a href="dr-safina.html" data-testid="nav-dr-safina">Dr. Safina</a>
                     </div>
                     <div class="nav-actions">
-                        <a href="index.html#get-started" class="btn btn-primary btn-sm" data-testid="header-cta">Request a Conversation</a>
+                        <a href="index.html#get-started" class="btn btn-secondary btn-nav btn-nav--book" data-testid="header-cta-book">Book Appointment</a>
+                        <a href="assets/downloads/calmyra-workbook.pdf" class="btn btn-primary btn-nav btn-nav--workbook" download data-testid="header-cta-workbook">
+                            <svg class="btn-nav-icon" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M7.5 1.25v8.25M4.1 6.4l3.4 3.4 3.4-3.4M2.25 12.75h10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <span>Download Free Workbook</span>
+                        </a>
                     </div>
                 </div>
                 <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu" data-testid="nav-toggle">
@@ -250,85 +244,90 @@
         </div>
     </section>
 
-    <section id="market-paths" class="section-market-paths" aria-label="Choose your path">
-        <div class="container">
-            <div class="market-paths-intro">
-                <span class="market-paths-eyebrow">Two Practices</span>
-                <h2>Two practices. One standard of care.</h2>
-                <p>Calmyra operates two distinct services — registered psychological care and counselling in Bangalore, and coaching &amp; consulting in Dubai. Each practice is independent, purposefully designed, and held to the same uncompromising standard of professionalism.</p>
-                <div class="market-paths-intro-rule" aria-hidden="true"></div>
-            </div>
-            <div class="market-paths-grid">
-                <article class="market-path-card market-path-card--india">
-                    <div class="market-path-visual" aria-hidden="true">
-                        <img class="market-path-img" src="assets/jpeg/32444d723de3ef41c04a06878acd735b.jpg"
-                             alt="" loading="lazy"/>
-                        <span class="market-path-overlay-label">Bangalore · India</span>
-                    </div>
-                    <div class="market-path-card-inner">
-                        <div class="market-path-header">
-                            <div class="market-path-location-row">
-                                <img class="market-path-flag" src="assets/images/india.png" alt="India" width="26" height="17" loading="lazy"/>
-                                <span class="market-path-location">Bangalore, India</span>
-                            </div>
-                            <h3 class="market-path-name">Calmyra India</h3>
-                            <p class="market-path-position">Psychological Care &amp; Wellness</p>
-                        </div>
-                        <ul class="market-path-services">
-                            <li>Therapy &amp; Psychological Counselling</li>
-                            <li>Psychological Assessments</li>
-                            <li>Disorder-Specific Support</li>
-                            <li>Relationship Counselling</li>
-                            <li>Child &amp; Adolescent Psychology</li>
-                        </ul>
-                        <span class="market-path-badge">Registered Professionals with Postgraduate Clinical Qualifications</span>
-                        <div class="market-path-cta-group">
-                            <a href="#get-started" class="market-path-cta-primary">
-                                Book a Complimentary Consultation
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                            <a href="#india-services" class="market-path-cta-secondary">Explore all India services &rarr;</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="market-path-card market-path-card--dubai">
-                    <div class="market-path-visual" aria-hidden="true">
-                        <img class="market-path-img" src="assets/images/drSafinaNaaz.webp"
-                             alt="" loading="lazy"/>
-                        <span class="market-path-overlay-label">Dubai · UAE</span>
-                    </div>
-                    <div class="market-path-card-inner">
-                        <div class="market-path-header">
-                            <div class="market-path-location-row">
-                                <img class="market-path-flag" src="assets/images/dubai.jpg" alt="UAE" width="26" height="17" loading="lazy"/>
-                                <span class="market-path-location">Dubai, UAE</span>
-                            </div>
-                            <h3 class="market-path-name">Calmyra Dubai</h3>
-                            <p class="market-path-position">Coaching &amp; Consulting</p>
-                        </div>
-                        <ul class="market-path-services">
-                            <li>Life Coaching &amp; Personal Growth</li>
-                            <li>Mindset &amp; Performance Coaching</li>
-                            <li>Executive Wellness Programmes</li>
-                            <li>Leadership &amp; Career Development</li>
-                            <li>Women&#8217;s Clarity &amp; Transformation Coaching</li>
-                        </ul>
-                        <span class="market-path-badge">Qualified Coaches &amp; Consultants</span>
-                        <div class="market-path-cta-group">
-                            <a href="#get-started" class="market-path-cta-primary">
-                                Start a Private Conversation
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            </a>
-                            <a href="#dubai-services" class="market-path-cta-secondary">Explore all Dubai programmes &rarr;</a>
-                        </div>
-                    </div>
-                </article>
-                <div class="market-path-or-divider" aria-hidden="true">
-                    <div class="market-path-or-line"></div>
-                    <span class="market-path-or-text">or</span>
-                    <div class="market-path-or-line"></div>
+    <section id="market-paths" class="mp-section" aria-label="Choose your path">
+        <span class="mp-shape mp-shape--sage" aria-hidden="true"></span>
+        <span class="mp-shape mp-shape--gold" aria-hidden="true"></span>
+        <span class="mp-dotgrid" aria-hidden="true"></span>
+
+        <div class="container mp-intro reveal">
+            <span class="mp-eyebrow">Two Practices &middot; One Standard</span>
+            <h2 class="mp-heading">Choose the path that fits<br class="mp-heading-break"> where you are.</h2>
+            <p class="mp-sub">One practice for registered psychological care in Bangalore. One for coaching and consulting in Dubai. Independent, purposefully designed, and held to the same uncompromising standard.</p>
+        </div>
+
+        <div class="mp-split">
+            <article class="mp-panel mp-panel--india reveal">
+                <div class="mp-panel-media">
+                    <img src="assets/jpeg/32444d723de3ef41c04a06878acd735b.jpg" alt="A calm therapy session at Calmyra India" loading="lazy">
                 </div>
+                <div class="mp-panel-scrim" aria-hidden="true"></div>
+
+                <span class="mp-flag-chip">
+                    <img src="assets/images/india.png" alt="" width="20" height="13" loading="lazy">
+                    Bangalore, India
+                </span>
+
+                <div class="mp-panel-content">
+                    <p class="mp-panel-kicker">Psychological Care &amp; Wellness</p>
+                    <h3 class="mp-panel-title">Calmyra India</h3>
+                    <div class="mp-chip-row" aria-label="India services">
+                        <span class="mp-chip">Therapy &amp; Counselling</span>
+                        <span class="mp-chip">Assessments</span>
+                        <span class="mp-chip">Relationship Care</span>
+                        <span class="mp-chip">Child &amp; Adolescent</span>
+                    </div>
+                    <p class="mp-panel-badge">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Registered Professionals &middot; Postgraduate Clinical Qualifications
+                    </p>
+                    <div class="mp-panel-actions">
+                        <a href="#get-started" class="mp-cta-primary">
+                            Book a Complimentary Consultation
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#india-services" class="mp-cta-secondary">Explore all India services &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="mp-seam" aria-hidden="true">
+                <span class="mp-seam-line"></span>
+                <span class="mp-seam-badge">or</span>
             </div>
+
+            <article class="mp-panel mp-panel--dubai reveal">
+                <div class="mp-panel-media">
+                    <img src="assets/images/drSafinaNaaz.webp" alt="Calmyra Dubai coaching and consulting" loading="lazy">
+                </div>
+                <div class="mp-panel-scrim" aria-hidden="true"></div>
+
+                <span class="mp-flag-chip">
+                    <img src="assets/images/dubai.jpg" alt="" width="20" height="13" loading="lazy">
+                    Dubai, UAE
+                </span>
+
+                <div class="mp-panel-content">
+                    <p class="mp-panel-kicker">Coaching &amp; Consulting</p>
+                    <h3 class="mp-panel-title">Calmyra Dubai</h3>
+                    <div class="mp-chip-row" aria-label="Dubai programmes">
+                        <span class="mp-chip">Life Coaching</span>
+                        <span class="mp-chip">Mindset &amp; Performance</span>
+                        <span class="mp-chip">Executive Wellness</span>
+                        <span class="mp-chip">Leadership</span>
+                    </div>
+                    <p class="mp-panel-badge">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Qualified Coaches &amp; Consultants
+                    </p>
+                    <div class="mp-panel-actions">
+                        <a href="#get-started" class="mp-cta-primary mp-cta-primary--gold">
+                            Start a Private Conversation
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#dubai-services" class="mp-cta-secondary">Explore all Dubai programmes &rarr;</a>
+                    </div>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -386,55 +385,49 @@
         </div>
     </section>
 
-    <section id="new-services" class="section-services">
-        <div class="container service-intro">
-            <h2>Everything you need. Under one roof.</h2>
-            <p>Two specialist practices — registered psychological care in Bangalore and psychology-informed coaching in Dubai — each with the right expertise for where you are.</p>
-        </div>
-
-        <div id="india-services" class="container service-market-block">
-            <div class="service-market-heading service-market-heading--india">
-                <span class="service-market-label">CALMYRA INDIA &middot; BANGALORE</span>
-                <h3 class="service-market-title">Psychological Care &amp; Wellness</h3>
-                <p class="service-market-sub">Therapy, counselling, assessments and psychological support — delivered by registered professionals with postgraduate clinical qualifications.</p>
+    <section id="india-services" class="service-matrix-section">
+        <div class="container">
+            <div class="matrix-intro">
+                <span class="eyebrow">Calmyra India</span>
+                <h2>Psychological care designed for clarity, dignity, and results.</h2>
+                <p>Our Bangalore practice brings together registered psychologists, counsellors, and assessment specialists to support adults, young people, couples and families through serious emotional challenges and developmental transitions.</p>
             </div>
-            <div class="service-tiles-grid service-tiles-grid--india">
-                <article class="service-tile">
-                    <h3>Psychological Therapy &amp; Counselling</h3>
-                    <p>Evidence-based psychological support for anxiety, depression, trauma, OCD, and more — delivered by registered psychologists and counsellors holding postgraduate clinical qualifications.</p>
-                    <a href="services/specific-disorders/Anxiety.html">Explore Therapy Services &rarr;</a>
+
+            <div class="regional-divider">Bangalore · Psychology-led care · Registered professionals</div>
+
+            <div class="matrix-grid">
+                <article class="matrix-card">
+                    <strong>Clinical therapy & counselling</strong>
+                    <p>Evidence-based treatment for anxiety, depression, trauma, OCD, mood disorders, relationship distress and emotional overwhelm.</p>
                 </article>
-                <article class="service-tile">
-                    <h3>Relationship Counselling</h3>
-                    <p>Couple counselling, marriage therapy, pre-marital consultations, and divorce support — for partnerships at every stage, guided with skill and absolute discretion.</p>
-                    <a href="services/relationship/couple-counselling.html">View Relationship Services &rarr;</a>
+                <article class="matrix-card">
+                    <strong>Psychological assessment</strong>
+                    <p>Structured evaluation for cognition, personality, mood, ADHD, neurodiversity, and tailored care planning.</p>
                 </article>
-                <article class="service-tile">
-                    <h3>Psychological Assessments</h3>
-                    <p>Validated assessments for personality, cognition, mood, and behaviour — giving you and your practitioner a precise foundation to build your support plan from.</p>
-                    <a href="assessment.html">Book an Assessment →</a>
+                <article class="matrix-card">
+                    <strong>Child, adolescent & family support</strong>
+                    <p>Care for young people, school stress, behavioural challenges and parenting transitions with developmental expertise.</p>
                 </article>
-                <article class="service-tile">
-                    <h3>Neuro-Psychology</h3>
-                    <p>Specialist support at the intersection of psychology and brain science — memory, cognitive performance, adult ADHD assessment, and neurodiversity-affirming care.</p>
-                    <a href="services/neuro-psychology.html">Explore Neuro-Psychology →</a>
+                <article class="matrix-card">
+                    <strong>Relationship counselling</strong>
+                    <p>Confidential couple, marriage, pre-marital and separation support grounded in psychological insight and practical communication.</p>
                 </article>
-                <article class="service-tile">
-                    <h3>Child &amp; Adolescent</h3>
-                    <p>Specialist support for children, teens, and families — navigating development, school pressure, anxiety, behavioural concerns, and family transitions.</p>
-                    <a href="services/Teen-and-childern/adolescent-anxiety.html">Child Psychology Services →</a>
+                <article class="matrix-card">
+                    <strong>Neuro-psychology & brain health</strong>
+                    <p>Specialist neuro-psychological care for memory, executive functioning, adult ADHD, and brain-based wellbeing.</p>
                 </article>
-                <article class="service-tile">
-                    <h3>Executive Wellness</h3>
-                    <p>Confidential performance coaching and wellbeing programmes designed specifically for leaders, founders, and senior professionals. The pressure at the top requires care built for it.</p>
-                    <a href="services/coaching/executive-wellness.html">Executive Wellness Programme &rarr;</a>
+                <article class="matrix-card">
+                    <strong>Assessment-led case planning</strong>
+                    <p>Validated measurement, clinical formulation and clear pathways to healing, growth and sustainable recovery.</p>
                 </article>
             </div>
         </div>
+    </section>
 
-        <div id="dubai-services" class="container service-market-block">
+    <section id="dubai-services" class="service-market-block">
+        <div class="container">
             <div class="service-market-heading service-market-heading--dubai">
-                <span class="service-market-label">Calmyra Dubai &middot; UAE</span>
+                <span class="service-market-label">Calmyra Dubai · UAE</span>
                 <h3 class="service-market-title">Coaching &amp; Consulting</h3>
                 <p class="service-market-sub">Growth programmes, coaching and consulting for professionals — forward-focused, non-clinical, and results-driven. Not a substitute for medical or psychiatric care.</p>
             </div>
@@ -442,32 +435,32 @@
                 <article class="service-tile">
                     <h3>Life Coaching</h3>
                     <p>For the person functioning well but who knows they are capable of more. Psychology-informed coaching to design an intentional life aligned with your values and ambitions.</p>
-                    <a href="services/coaching/life-coaching.html">Discover Life Coaching →</a>
+                    <a href="https://capable-moonbeam-c97deb.netlify.app/services/coaching/life-coaching">Discover Life Coaching →</a>
                 </article>
                 <article class="service-tile">
                     <h3>Mindset Coaching</h3>
                     <p>Rooted in neuroscience and cognitive frameworks, our mindset coaching dismantles the beliefs and patterns holding you back and builds the mental architecture for lasting change.</p>
-                    <a href="services/coaching/mindset-coaching.html">Explore Mindset Coaching →</a>
+                    <a href="https://capable-moonbeam-c97deb.netlify.app/services/coaching/mindset-coaching">Explore Mindset Coaching →</a>
                 </article>
                 <article class="service-tile">
                     <h3>Executive Wellness</h3>
                     <p>Confidential performance coaching and wellbeing programmes designed specifically for leaders, founders, and senior professionals. The pressure at the top requires care built for it.</p>
-                    <a href="services/coaching/executive-wellness.html">Executive Wellness Programme →</a>
+                    <a href="https://capable-moonbeam-c97deb.netlify.app/services/coaching/executive-wellness">Executive Wellness Programme →</a>
                 </article>
                 <article class="service-tile">
                     <h3>Leadership &amp; Career Development</h3>
                     <p>Structured coaching for senior professionals, executives, and founders navigating career transitions, leadership challenges, and high-stakes decision making.</p>
-                    <a href="services/career/Executivecoaching.html">Explore Leadership Coaching &rarr;</a>
+                    <a href="https://capable-moonbeam-c97deb.netlify.app/services/career/executivecoaching">Explore Leadership Coaching →</a>
                 </article>
                 <article class="service-tile">
                     <h3>High-Performance Coaching</h3>
                     <p>For professionals who want to operate at a higher level — systematically improving focus, energy management, resilience, and sustainable output.</p>
-                    <a href="services/career/Productivity.html">Explore High-Performance &rarr;</a>
+                    <a href="https://capable-moonbeam-c97deb.netlify.app/services/career/productivity">Explore High-Performance →</a>
                 </article>
                 <article class="service-tile">
-                    <h3>Women&#8217;s Coaching</h3>
+                    <h3>Women’s Coaching</h3>
                     <p>Coaching for women navigating identity, ambition, confidence, and life design — at every stage of personal and professional growth.</p>
-                    <a href="services/coaching/life-coaching.html">Explore Women&#8217;s Coaching &rarr;</a>
+                    <a href="https://capable-moonbeam-c97deb.netlify.app/services/coaching/life-coaching">Explore Women’s Coaching →</a>
                 </article>
             </div>
         </div>
@@ -627,95 +620,87 @@
 
 
     <!-- ── TESTIMONIALS ─────────────────────────────────────── -->
-    <section id="testimonials" class="bg-[#F9F7F3] py-20 overflow-hidden">
+    <section id="testimonials" class="testimonials-section">
 
         <!-- Header -->
-        <div class="max-w-6xl mx-auto px-6 mb-10">
-            <p class="text-[0.68rem] font-bold tracking-[0.22em] uppercase text-amber-700/60 mb-3">Client Voices</p>
-            <div class="flex items-end justify-between gap-6 flex-wrap">
+        <div class="container testimonials-header">
+            <p class="testimonials-eyebrow">Client Voices</p>
+            <div class="testimonials-heading-row">
                 <div>
-                    <h2 class="font-serif text-4xl md:text-[2.75rem] text-stone-800 font-normal leading-[1.15]">What Our Clients Say</h2>
-                    <p class="mt-3 text-stone-400 text-sm leading-relaxed">Every story shared with permission. Every name withheld with care.</p>
+                    <h2 class="testimonials-title">What Our Clients Say</h2>
+                    <p class="testimonials-subtitle">Every story shared with permission. Every name withheld with care.</p>
                 </div>
                 <!-- Arrow nav -->
-                <div class="flex items-center gap-2 flex-shrink-0">
-                    <button id="tm-prev" aria-label="Previous"
-                        class="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-400 hover:border-stone-400 hover:text-stone-700 transition-all duration-200 text-sm">
-                        &#8592;
-                    </button>
-                    <button id="tm-next" aria-label="Next"
-                        class="w-10 h-10 rounded-full border border-stone-200 bg-white flex items-center justify-center text-stone-400 hover:border-stone-400 hover:text-stone-700 transition-all duration-200 text-sm">
-                        &#8594;
-                    </button>
+                <div class="testimonials-nav">
+                    <button id="tm-prev" aria-label="Previous" class="testimonials-nav-btn">&#8592;</button>
+                    <button id="tm-next" aria-label="Next" class="testimonials-nav-btn">&#8594;</button>
                 </div>
             </div>
             <!-- Progress bar -->
-            <div class="mt-8 w-full h-px bg-stone-200 relative">
-                <div id="tm-bar" class="absolute inset-y-0 left-0 bg-amber-600/50 transition-all duration-300 ease-out" style="width:25%"></div>
+            <div class="testimonials-progress">
+                <div id="tm-bar" class="testimonials-progress-bar" style="width:25%"></div>
             </div>
         </div>
 
         <!-- Scrollable track — breaks out of container to bleed right -->
-        <div id="tm-track"
-            class="flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6"
-            style="scrollbar-width:none; padding-left:max(1.5rem, calc((100vw - 72rem) / 2 + 1.5rem)); padding-right:2rem;">
+        <div id="tm-track" class="testimonials-track">
 
             <!-- Card 1 -->
-            <article class="snap-start flex-none w-[85vw] sm:w-[420px] lg:w-[450px] bg-white rounded-2xl border border-stone-100/80 p-8 flex flex-col">
-                <span class="font-serif text-[5.5rem] leading-[0.7] text-amber-500/[0.15] select-none mb-3">&ldquo;</span>
-                <blockquote class="font-serif text-stone-600 text-[1rem] leading-[1.85] italic flex-1">
+            <article class="testimonial-card">
+                <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                <blockquote class="testimonial-quote">
                     I have worked with therapists before, but Calmyra was the first place where the care was actually matched to the complexity of my life. As a director managing teams across three countries, I needed someone who understood that level of pressure. The work we have done here has changed how I lead &mdash; and how I live.
                 </blockquote>
-                <footer class="mt-7 pt-6 border-t border-stone-100 flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-teal-800 flex-shrink-0 flex items-center justify-center text-white text-[0.62rem] font-bold tracking-wide">SD</div>
+                <footer class="testimonial-footer">
+                    <div class="testimonial-avatar testimonial-avatar--sage">SD</div>
                     <div>
-                        <p class="text-stone-800 text-sm font-semibold leading-snug">Senior Director, Financial Services</p>
-                        <p class="text-stone-400 text-[0.68rem] tracking-[0.12em] uppercase mt-0.5">Dubai &middot; 2025</p>
+                        <p class="testimonial-name">Senior Director, Financial Services</p>
+                        <p class="testimonial-context">Dubai &middot; 2025</p>
                     </div>
                 </footer>
             </article>
 
             <!-- Card 2 -->
-            <article class="snap-start flex-none w-[85vw] sm:w-[420px] lg:w-[450px] bg-white rounded-2xl border border-stone-100/80 p-8 flex flex-col">
-                <span class="font-serif text-[5.5rem] leading-[0.7] text-amber-500/[0.15] select-none mb-3">&ldquo;</span>
-                <blockquote class="font-serif text-stone-600 text-[1rem] leading-[1.85] italic flex-1">
+            <article class="testimonial-card">
+                <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                <blockquote class="testimonial-quote">
                     We relocated to Dubai two years ago and the transition hit our relationship harder than either of us expected. The approach here felt completely safe and non-judgmental. We came in barely speaking and left with tools we still use every day. The discretion throughout made all the difference.
                 </blockquote>
-                <footer class="mt-7 pt-6 border-t border-stone-100 flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-teal-800 flex-shrink-0 flex items-center justify-center text-white text-[0.62rem] font-bold tracking-wide">RC</div>
+                <footer class="testimonial-footer">
+                    <div class="testimonial-avatar testimonial-avatar--sage">RC</div>
                     <div>
-                        <p class="text-stone-800 text-sm font-semibold leading-snug">Relocating Couple</p>
-                        <p class="text-stone-400 text-[0.68rem] tracking-[0.12em] uppercase mt-0.5">Dubai &middot; 2025</p>
+                        <p class="testimonial-name">Relocating Couple</p>
+                        <p class="testimonial-context">Dubai &middot; 2025</p>
                     </div>
                 </footer>
             </article>
 
             <!-- Card 3 -->
-            <article class="snap-start flex-none w-[85vw] sm:w-[420px] lg:w-[450px] bg-[#FDFCF8] rounded-2xl border border-stone-100/80 p-8 flex flex-col">
-                <span class="font-serif text-[5.5rem] leading-[0.7] text-amber-500/[0.15] select-none mb-3">&ldquo;</span>
-                <blockquote class="font-serif text-stone-600 text-[1rem] leading-[1.85] italic flex-1">
+            <article class="testimonial-card testimonial-card--tint">
+                <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                <blockquote class="testimonial-quote">
                     I was not in crisis &mdash; I was just stuck. My career looked successful from the outside but I had completely lost my sense of direction. The coaching programme helped me reconnect with what actually matters. Six months later, I have made decisions I never would have had the clarity to make before.
                 </blockquote>
-                <footer class="mt-7 pt-6 border-t border-stone-100 flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-teal-800 flex-shrink-0 flex items-center justify-center text-white text-[0.62rem] font-bold tracking-wide">FE</div>
+                <footer class="testimonial-footer">
+                    <div class="testimonial-avatar testimonial-avatar--sage">FE</div>
                     <div>
-                        <p class="text-stone-800 text-sm font-semibold leading-snug">Founder &amp; Entrepreneur</p>
-                        <p class="text-stone-400 text-[0.68rem] tracking-[0.12em] uppercase mt-0.5">Online &middot; 2025</p>
+                        <p class="testimonial-name">Founder &amp; Entrepreneur</p>
+                        <p class="testimonial-context">Online &middot; 2025</p>
                     </div>
                 </footer>
             </article>
 
             <!-- Card 4 -->
-            <article class="snap-start flex-none w-[85vw] sm:w-[420px] lg:w-[450px] bg-white rounded-2xl border border-stone-100/80 p-8 flex flex-col">
-                <span class="font-serif text-[5.5rem] leading-[0.7] text-amber-500/[0.15] select-none mb-3">&ldquo;</span>
-                <blockquote class="font-serif text-stone-600 text-[1rem] leading-[1.85] italic flex-1">
+            <article class="testimonial-card">
+                <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+                <blockquote class="testimonial-quote">
                     What I found at Calmyra was nothing like what I expected &mdash; structured, professional, and genuinely rigorous. Working with a registered psychologist who understood the pressures of a demanding technical environment made every session feel directly relevant. Something real shifted.
                 </blockquote>
-                <footer class="mt-7 pt-6 border-t border-stone-100 flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-amber-800 flex-shrink-0 flex items-center justify-center text-white text-[0.62rem] font-bold tracking-wide">SP</div>
+                <footer class="testimonial-footer">
+                    <div class="testimonial-avatar testimonial-avatar--gold">SP</div>
                     <div>
-                        <p class="text-stone-800 text-sm font-semibold leading-snug">Software Professional</p>
-                        <p class="text-stone-400 text-[0.68rem] tracking-[0.12em] uppercase mt-0.5">Bangalore &middot; 2025</p>
+                        <p class="testimonial-name">Software Professional</p>
+                        <p class="testimonial-context">Bangalore &middot; 2025</p>
                     </div>
                 </footer>
             </article>
@@ -723,7 +708,7 @@
         </div>
 
         <!-- Privacy note -->
-        <p class="text-center text-stone-300 text-[0.68rem] tracking-widest mt-6 px-6">All testimonials are shared anonymously to protect client privacy.</p>
+        <p class="testimonials-privacy-note">All testimonials are shared anonymously to protect client privacy.</p>
 
         <script>
         (function () {
@@ -920,9 +905,8 @@
                     <p class="footer-tagline">Where clarity meets calm. Premium mental wellness — Dubai · Bangalore · Online Worldwide.</p>
                     <div class="footer-contact-block">
                         <span class="footer-address-label">Dubai</span>
-                        <p class="footer-address">Calmyra<br>No. 16F-A-04<br>Empire Heights A, Business Bay<br>Dubai &mdash; UAE</p>
+                        <p class="footer-address">By appointment &middot; Dubai, UAE</p>
                         <p class="footer-contact-links">
-                            <a href="tel:+971524522812">+971 52 452 2812</a><br>
                             <a href="mailto:dubai@calmyra.com">dubai@calmyra.com</a>
                         </p>
                     </div>
@@ -959,7 +943,7 @@
                         <li><a href="services/coaching/executive-wellness.html">Executive Wellness</a></li>
                         <li><a href="services/career/Executivecoaching.html">Leadership &amp; Development</a></li>
                         <li><a href="services/career/Productivity.html">High-Performance Coaching</a></li>
-                        <li><a href="services/coaching/life-coaching.html">Women&#8217;s Coaching</a></li>
+                        <li><a href="services/career/Burnout.html">Confidence &amp; Self-Worth</a></li>
                         <li><a href="index.html#dubai-services" class="footer-link-cta">All Dubai Services →</a></li>
                     </ul>
                 </div>
@@ -971,8 +955,8 @@
                         <li><a href="assessment.html">Psychological Assessments</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="index.html#get-started">Contact Us</a></li>
-                        <li><a href="index.html#get-started">Dubai Centre</a></li>
-                        <li><a href="index.html#get-started">Bangalore Centre</a></li>
+                        <li><a href="index.html#locations">Dubai Centre</a></li>
+                        <li><a href="index.html#locations">Bangalore Centre</a></li>
                         <li><a href="index.html#get-started">Online Sessions</a></li>
                     </ul>
                 </div>
@@ -988,18 +972,18 @@
                     <h4 class="footer-col-title">Emergency Helplines</h4>
                     <ul class="footer-helpline-list">
                         <li>UAE: Aman — 800 4673 (free, 24/7)</li>
+                        <li>UAE: MOHAP Mental Health — 800 4673</li>
                         <li>India: iCall — +91 9152987821</li>
                         <li>India: Tele MANAS — 14416</li>
                         <li>India: NIMHANS — 080 4611 0007</li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-scope-notice" aria-label="Compliance and scope of service">
-                <p><strong>Scope of service &#8212; Calmyra Dubai:</strong> Coaching and consulting programmes offered by Calmyra Dubai are developmental and performance-focused in nature. They are not clinical services and do not constitute psychological therapy, psychiatric care, or medical treatment. Calmyra Dubai coaches are not licensed medical or mental health practitioners. If you are experiencing a mental health emergency, please contact UAE Aman: 800 4673 (free, 24/7).</p>
-                <p><strong>Calmyra India:</strong> Psychological counselling and assessment services are delivered by professionals holding postgraduate clinical qualifications, in accordance with the Mental Healthcare Act, 2017.</p>
+            <div class="footer-scope-notice" aria-label="Scope of service — Dubai coaching">
+                <p><strong>Scope of service (Calmyra Dubai):</strong> Coaching and consulting programmes are developmental and performance-focused. They are not clinical psychology, diagnosis, or mental-health treatment, and are provided independently of any DHA-licensed clinical service. Where a clinical need is identified, we refer you to an appropriately licensed professional.</p>
             </div>
             <div class="footer-bottom-bar">
-                <p class="footer-copyright footer-copyright--wide">Calmyra India: Registered Professionals with Postgraduate Clinical Qualifications &nbsp;&middot;&nbsp; Calmyra Dubai: Qualified Coaches &amp; Consultants &nbsp;&middot;&nbsp; &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
+                <p class="footer-copyright footer-copyright--wide">Calmyra India: RCI Registered Professionals &nbsp;&middot;&nbsp; Calmyra Dubai: Qualified Coaches &amp; Consultants &nbsp;&middot;&nbsp; &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -558,13 +558,29 @@ initSpecializedServicesFoldState();
     '.legal-section',
     '.svc-row',
     '.section-eyebrow', '.section-title',
-    '.new-service-card', '.coaching-card', '.testimonial-card',
+    '.new-service-card', '.coaching-card',
     '.hero-copy', '.hero-visual',
-    '.footer-col'
+    '.footer-col',
+    '.wellness-collage', '.intro-copy-wellness',
+    '.matrix-intro', '.service-market-heading', '.sp-header',
+    '.get-started-copy', '.get-started-form-wrap',
+    '.testimonials-header'
   ].join(', ');
   document.querySelectorAll(AUTO_REVEAL_SELECTOR).forEach(el => {
     if (!el.classList.contains('reveal') && !el.classList.contains('reveal-stagger')) {
       el.classList.add('reveal');
+    }
+  });
+
+  // ---------- Auto-tag card grids as .reveal-stagger (children fade up in sequence) ----------
+  const AUTO_STAGGER_SELECTOR = [
+    '.trust-bar-grid', '.matrix-grid',
+    '.feature-grid', '.service-tiles-grid--dubai', '.who-we-are-creds',
+    '.faq-list', '.testimonials-track', '.mp-chip-row'
+  ].join(', ');
+  document.querySelectorAll(AUTO_STAGGER_SELECTOR).forEach(el => {
+    if (!el.classList.contains('reveal') && !el.classList.contains('reveal-stagger')) {
+      el.classList.add('reveal-stagger');
     }
   });
 
