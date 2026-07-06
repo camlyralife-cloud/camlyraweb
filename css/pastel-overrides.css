@@ -4945,6 +4945,69 @@ html { scroll-behavior: smooth; }
   margin: 0 auto;
 }
 @media (max-width: 820px) { .breathing-grid { grid-template-columns: 1fr; } }
+.breathing-grid--single {
+  grid-template-columns: 1fr;
+  max-width: 460px;
+}
+
+/* ── Deep Breathing: floating hero element, not a card ── */
+.breathing-hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 460px;
+  margin: 0 auto 56px;
+  padding: 12px 0 0;
+}
+.breathing-hero-glow {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(94, 134, 118, 0.32), transparent 68%);
+  filter: blur(6px);
+  pointer-events: none;
+  z-index: -1;
+}
+.breath-circle.breath-circle--hero {
+  width: 208px;
+  height: 208px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 0 22px rgba(94, 134, 118, 0.08), 0 30px 64px rgba(94, 134, 118, 0.32);
+  animation: heroFloat 4.5s ease-in-out infinite;
+}
+.breath-circle--hero .breath-circle-label { font-size: 1rem; }
+.breath-circle.breath-circle--hero.is-running { animation: breathPulse 11s ease-in-out infinite; }
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.breathing-hero-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: var(--ink-dark);
+  margin: 0 0 4px;
+}
+.breathing-hero-sub {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+}
+.breathing-toggle.breathing-toggle--hero {
+  padding: 1rem 2rem;
+  font-size: 0.92rem;
+}
+@media (max-width: 480px) {
+  .breathing-hero { margin-bottom: 44px; }
+  .breath-circle--hero { width: 172px; height: 172px; }
+  .breathing-hero-glow { width: 280px; height: 280px; top: -28px; }
+}
 
 .breathing-card {
   background: var(--white);
@@ -5285,5 +5348,180 @@ html { scroll-behavior: smooth; }
 @media (max-width: 480px) {
   .trust-section { padding: 52px 0 56px; }
   .trust-founder-card { padding: 20px; }
+}
+
+/* ============================================================
+   FLOATING BREATHING WIDGETS
+   Persistent, always-visible attraction points — small pulsing
+   FABs stacked in the corner that each expand into a breathing
+   exercise. Fixed, so they stay put through scroll.
+   ============================================================ */
+.breathe-widgets {
+  position: fixed;
+  right: clamp(16px, 3vw, 28px);
+  bottom: clamp(16px, 3vw, 28px);
+  z-index: 260;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+.breathe-widget { position: relative; }
+
+/* ── The floating action button ── */
+.breathe-widget-fab {
+  position: relative;
+  width: 60px; height: 60px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--sage-teal-dark) 0%, var(--sage-teal-deep) 100%);
+  box-shadow: 0 14px 32px -6px rgba(31, 42, 37, 0.4);
+  transition: transform var(--dur-mid) var(--ease-silk), box-shadow var(--dur-mid) var(--ease-silk);
+}
+.breathe-widget-fab:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 18px 38px -6px rgba(31, 42, 37, 0.48); }
+.breathe-widget-fab svg { position: relative; z-index: 1; }
+.breathe-widget-fab--gold {
+  background: linear-gradient(135deg, #8A5C2A 0%, #6E4820 100%);
+}
+.breathe-widget-fab--gold .breathe-widget-fab-pulse { background: var(--warm-gold); }
+.breathe-widget-fab-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--sage-teal);
+  animation: breatheFabPulse 2.6s ease-out infinite;
+}
+@keyframes breatheFabPulse {
+  0% { transform: scale(1); opacity: 0.55; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+.breathe-widget.is-open .breathe-widget-fab-pulse { animation-play-state: paused; opacity: 0; }
+
+/* ── Hover tooltip (desktop) ── */
+.breathe-widget-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background: var(--ink-dark);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(31, 42, 37, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+.breathe-widget-fab:hover + .breathe-widget-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(-4px);
+}
+.breathe-widget.is-open .breathe-widget-tooltip { display: none; }
+
+/* ── The expandable panel ── */
+.breathe-widget-panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 16px);
+  width: 270px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  box-shadow: 0 30px 70px rgba(31, 42, 37, 0.22);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.breathe-widget-panel[hidden] { display: none; }
+.breathe-widget-panel:not([hidden]) {
+  display: flex;
+  animation: widgetPanelIn 0.3s var(--ease-silk);
+}
+@keyframes widgetPanelIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.breathe-widget-close {
+  position: absolute;
+  top: 14px; right: 14px;
+  width: 26px; height: 26px;
+  border: none;
+  border-radius: 50%;
+  background: var(--mint-50, #DFE9E3);
+  color: var(--ink-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-silk), color var(--dur-fast) var(--ease-silk);
+}
+.breathe-widget-close:hover { background: var(--sage-teal-dark); color: var(--white); }
+.breathe-widget-badge {
+  align-self: flex-start;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--warm-gold-dark);
+  background: var(--champagne);
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+.breathe-widget-glow {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px; height: 190px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(94, 134, 118, 0.28), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+.breath-circle.breath-circle--widget {
+  position: relative;
+  z-index: 1;
+  width: 128px;
+  height: 128px;
+  margin-bottom: 1.1rem;
+}
+.breath-circle--widget .breath-circle-label { font-size: 0.78rem; }
+.breathe-widget-title {
+  position: relative; z-index: 1;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--ink-dark);
+  margin: 0 0 4px;
+}
+.breathe-widget-sub {
+  position: relative; z-index: 1;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+}
+.breathe-widget-panel .breathing-toggle {
+  position: relative; z-index: 1;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.85rem;
+}
+.breathe-widget-panel .breathing-note {
+  position: relative; z-index: 1;
+  font-size: 0.74rem;
+  margin-top: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .breathe-widget-panel { width: calc(100vw - 40px); max-width: 300px; }
+  .breathe-widget-fab { width: 54px; height: 54px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-widget-fab-pulse { display: none; }
 }
 

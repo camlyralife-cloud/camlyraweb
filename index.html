@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pastel-overrides.css?v=10">
+    <link rel="stylesheet" href="css/pastel-overrides.css?v=14">
 </head>
 
 <body>
@@ -371,7 +371,7 @@
                 <span class="breathing-free-badge">100% Free &middot; No Sign-Up</span>
                 <span class="breathing-eyebrow">A Moment For You</span>
                 <h2 id="breathing-heading">Feel calmer in the next 60 seconds.</h2>
-                <p>The same grounding techniques our registered psychologists and coaches use in real sessions &mdash; free, right now, no appointment needed. Press start and try one.</p>
+                <p>The same grounding techniques our registered psychologists and coaches use in real sessions &mdash; free, right now, no appointment needed. Look for the two floating buttons in the corner of your screen any time you need a moment.</p>
 
                 <div class="breathing-trust-row">
                     <span class="breathing-trust-item">
@@ -389,64 +389,6 @@
                 </div>
             </div>
 
-            <div class="breathing-grid">
-                <!-- Deep Breathing -->
-                <article class="breathing-card breathing-card--deep reveal">
-                    <div class="breathing-card-head">
-                        <span class="breathing-card-icon" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13c2-3 4-4 8-4s6 1 8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 17c2-2.4 4-3.2 8-3.2s6 .8 8 3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg>
-                        </span>
-                        <div>
-                            <h3>Deep Breathing</h3>
-                            <p>A simple guided rhythm to slow your body down.</p>
-                        </div>
-                    </div>
-                    <div class="breath-circle-wrap">
-                        <div class="breath-circle" id="deep-breath-circle">
-                            <span class="breath-circle-label" id="deep-breath-label">Press start</span>
-                        </div>
-                    </div>
-                    <button type="button" class="breathing-toggle" id="deep-breath-toggle" data-testid="deep-breath-toggle" aria-pressed="false">
-                        <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
-                        <span>Start Deep Breathing</span>
-                    </button>
-                    <p class="breathing-note">Inhale 5s &middot; Exhale 6s &middot; repeat gently for 6&ndash;8 rounds.</p>
-                </article>
-
-                <!-- Box Breathing -->
-                <article class="breathing-card breathing-card--box reveal">
-                    <div class="breathing-card-head">
-                        <span class="breathing-card-icon" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.2" opacity=".5"/></svg>
-                        </span>
-                        <div>
-                            <h3>Box Breathing</h3>
-                            <p>4 seconds each &mdash; inhale, hold, exhale, hold.</p>
-                        </div>
-                    </div>
-                    <div class="box-breath-wrap">
-                        <svg class="box-breath-svg" viewBox="0 0 200 200" aria-hidden="true">
-                            <rect class="box-breath-track" x="20" y="20" width="160" height="160" rx="18"/>
-                            <rect class="box-breath-progress" id="box-breath-progress" x="20" y="20" width="160" height="160" rx="18"/>
-                        </svg>
-                        <div class="box-breath-center">
-                            <span class="box-breath-phase" id="box-breath-phase">Ready</span>
-                            <span class="box-breath-count" id="box-breath-count">4</span>
-                        </div>
-                    </div>
-                    <button type="button" class="breathing-toggle" id="box-breath-toggle" data-testid="box-breath-toggle" aria-pressed="false">
-                        <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
-                        <span>Start Box Breathing</span>
-                    </button>
-                    <div class="box-breath-steps">
-                        <span>Inhale &middot; 4s</span>
-                        <span>Hold &middot; 4s</span>
-                        <span>Exhale &middot; 4s</span>
-                        <span>Hold &middot; 4s</span>
-                    </div>
-                </article>
-            </div>
-
             <div class="breathing-cta reveal" id="breathing-cta">
                 <div class="breathing-cta-copy">
                     <h3 class="breathing-cta-heading" id="breathing-cta-heading">Liked how that felt?</h3>
@@ -458,121 +400,6 @@
                 </div>
             </div>
         </div>
-
-        <script>
-        (function () {
-            var breathingCtaNotified = false;
-            function notifyBreathingCycleComplete() {
-                if (breathingCtaNotified) return;
-                breathingCtaNotified = true;
-                var cta = document.getElementById('breathing-cta');
-                var heading = document.getElementById('breathing-cta-heading');
-                var note = document.getElementById('breathing-cta-note');
-                if (!cta) return;
-                cta.classList.add('is-highlighted');
-                if (heading) heading.textContent = 'Feeling a little calmer already?';
-                if (note) note.textContent = 'That’s just one technique. Our psychologists and coaches are ready to build a plan around exactly what you need — and your first conversation is complimentary.';
-                cta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
-
-            function setupDeepBreathing() {
-                var toggle = document.getElementById('deep-breath-toggle');
-                var circle = document.getElementById('deep-breath-circle');
-                var label = document.getElementById('deep-breath-label');
-                if (!toggle || !circle || !label) return;
-
-                var INHALE_MS = 5000, EXHALE_MS = 6000, CYCLE_MS = INHALE_MS + EXHALE_MS;
-                var running = false, startTime = 0, rafId = null, notifiedThisRun = false;
-
-                function tick(now) {
-                    if (!running) return;
-                    var totalElapsed = now - startTime;
-                    var elapsed = totalElapsed % CYCLE_MS;
-                    if (elapsed < INHALE_MS) {
-                        label.textContent = 'Breathe in…';
-                    } else {
-                        label.textContent = 'Breathe out…';
-                    }
-                    if (!notifiedThisRun && totalElapsed >= CYCLE_MS) {
-                        notifiedThisRun = true;
-                        notifyBreathingCycleComplete();
-                    }
-                    rafId = requestAnimationFrame(tick);
-                }
-
-                toggle.addEventListener('click', function () {
-                    running = !running;
-                    toggle.setAttribute('aria-pressed', String(running));
-                    var span = toggle.querySelector('span');
-                    if (running) {
-                        circle.classList.add('is-running');
-                        if (span) span.textContent = 'Pause';
-                        startTime = performance.now();
-                        rafId = requestAnimationFrame(tick);
-                    } else {
-                        circle.classList.remove('is-running');
-                        if (span) span.textContent = 'Start Deep Breathing';
-                        label.textContent = 'Press start';
-                        if (rafId) cancelAnimationFrame(rafId);
-                    }
-                });
-            }
-
-            function setupBoxBreathing() {
-                var toggle = document.getElementById('box-breath-toggle');
-                var progress = document.getElementById('box-breath-progress');
-                var phaseEl = document.getElementById('box-breath-phase');
-                var countEl = document.getElementById('box-breath-count');
-                var wrap = document.querySelector('.box-breath-wrap');
-                if (!toggle || !progress || !phaseEl || !countEl || !wrap) return;
-
-                var PHASE_MS = 4000, CYCLE_MS = PHASE_MS * 4;
-                var PHASES = ['Inhale', 'Hold', 'Exhale', 'Hold'];
-                var running = false, startTime = 0, rafId = null, lastCount = null, notifiedThisRun = false;
-
-                function tick(now) {
-                    if (!running) return;
-                    var totalElapsed = now - startTime;
-                    var elapsed = totalElapsed % CYCLE_MS;
-                    var phaseIndex = Math.floor(elapsed / PHASE_MS);
-                    var msIntoPhase = elapsed - phaseIndex * PHASE_MS;
-                    var countdown = Math.max(1, 4 - Math.floor(msIntoPhase / 1000));
-                    if (countdown !== lastCount || phaseEl.textContent !== PHASES[phaseIndex]) {
-                        phaseEl.textContent = PHASES[phaseIndex];
-                        countEl.textContent = String(countdown);
-                        lastCount = countdown;
-                    }
-                    if (!notifiedThisRun && totalElapsed >= CYCLE_MS) {
-                        notifiedThisRun = true;
-                        notifyBreathingCycleComplete();
-                    }
-                    rafId = requestAnimationFrame(tick);
-                }
-
-                toggle.addEventListener('click', function () {
-                    running = !running;
-                    toggle.setAttribute('aria-pressed', String(running));
-                    var span = toggle.querySelector('span');
-                    if (running) {
-                        wrap.classList.add('is-running');
-                        if (span) span.textContent = 'Pause';
-                        startTime = performance.now();
-                        lastCount = null;
-                        rafId = requestAnimationFrame(tick);
-                    } else {
-                        wrap.classList.remove('is-running');
-                        if (span) span.textContent = 'Start Box Breathing';
-                        phaseEl.textContent = 'Ready';
-                        countEl.textContent = '4';
-                        if (rafId) cancelAnimationFrame(rafId);
-                    }
-                });
-            }
-
-            setupDeepBreathing();
-            setupBoxBreathing();
-        }());
-        </script>
     </section>
     <!-- ── /BREATHING EXERCISES ─────────────────────────────── -->
 
@@ -1450,6 +1277,243 @@
             </div>
         </div>
     </footer>
+
+    <!-- ── FLOATING BREATHING WIDGETS — persistent attraction points ───── -->
+    <div class="breathe-widgets" id="breathe-widgets">
+
+        <!-- Box Breathing widget -->
+        <div class="breathe-widget" id="breathe-widget-box" data-widget="box">
+            <div class="breathe-widget-panel" id="breathe-widget-panel-box" hidden>
+                <button type="button" class="breathe-widget-close" data-close aria-label="Close breathing exercise">
+                    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </button>
+                <span class="breathe-widget-badge breathe-widget-badge--gold">100% Free</span>
+                <div class="box-breath-wrap">
+                    <svg class="box-breath-svg" viewBox="0 0 200 200" aria-hidden="true">
+                        <rect class="box-breath-track" x="20" y="20" width="160" height="160" rx="18"/>
+                        <rect class="box-breath-progress" id="box-breath-progress" x="20" y="20" width="160" height="160" rx="18"/>
+                    </svg>
+                    <div class="box-breath-center">
+                        <span class="box-breath-phase" id="box-breath-phase">Ready</span>
+                        <span class="box-breath-count" id="box-breath-count">4</span>
+                    </div>
+                </div>
+                <h3 class="breathe-widget-title">Box Breathing</h3>
+                <p class="breathe-widget-sub">4 seconds each &mdash; inhale, hold, exhale, hold.</p>
+                <button type="button" class="breathing-toggle" id="box-breath-toggle" data-testid="box-breath-toggle" aria-pressed="false">
+                    <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
+                    <span>Start Box Breathing</span>
+                </button>
+                <div class="box-breath-steps">
+                    <span>Inhale &middot; 4s</span>
+                    <span>Hold &middot; 4s</span>
+                    <span>Exhale &middot; 4s</span>
+                    <span>Hold &middot; 4s</span>
+                </div>
+            </div>
+
+            <button type="button" class="breathe-widget-fab breathe-widget-fab--gold" data-fab aria-expanded="false" aria-controls="breathe-widget-panel-box" aria-label="Try a free box breathing exercise">
+                <span class="breathe-widget-fab-pulse" aria-hidden="true"></span>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.3" opacity=".55"/></svg>
+            </button>
+            <span class="breathe-widget-tooltip">Box breathing &mdash; free</span>
+        </div>
+
+        <!-- Deep Breathing widget -->
+        <div class="breathe-widget" id="breathe-widget-deep" data-widget="deep">
+            <div class="breathe-widget-panel" id="breathe-widget-panel-deep" hidden>
+                <button type="button" class="breathe-widget-close" data-close aria-label="Close breathing exercise">
+                    <svg width="13" height="13" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 2l10 10M12 2L2 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </button>
+                <span class="breathe-widget-badge">100% Free</span>
+                <div class="breathe-widget-glow" aria-hidden="true"></div>
+                <div class="breath-circle breath-circle--widget" id="deep-breath-circle">
+                    <span class="breath-circle-label" id="deep-breath-label">Press start</span>
+                </div>
+                <h3 class="breathe-widget-title">Deep Breathing</h3>
+                <p class="breathe-widget-sub">A simple guided rhythm to slow your body down.</p>
+                <button type="button" class="breathing-toggle" id="deep-breath-toggle" data-testid="deep-breath-toggle" aria-pressed="false">
+                    <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
+                    <span>Start Deep Breathing</span>
+                </button>
+                <p class="breathing-note">Inhale 5s &middot; Exhale 6s &middot; repeat gently for 6&ndash;8 rounds.</p>
+            </div>
+
+            <button type="button" class="breathe-widget-fab" data-fab aria-expanded="false" aria-controls="breathe-widget-panel-deep" aria-label="Try a free deep breathing exercise">
+                <span class="breathe-widget-fab-pulse" aria-hidden="true"></span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13c2-3 4-4 8-4s6 1 8 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 17c2-2.4 4-3.2 8-3.2s6 .8 8 3.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".55"/></svg>
+            </button>
+            <span class="breathe-widget-tooltip">Deep breathing &mdash; free</span>
+        </div>
+
+    </div>
+
+    <script>
+    (function () {
+        var breathingCtaNotified = false;
+        function notifyBreathingCycleComplete() {
+            if (breathingCtaNotified) return;
+            breathingCtaNotified = true;
+            var cta = document.getElementById('breathing-cta');
+            var heading = document.getElementById('breathing-cta-heading');
+            var note = document.getElementById('breathing-cta-note');
+            if (!cta) return;
+            cta.classList.add('is-highlighted');
+            if (heading) heading.textContent = 'Feeling a little calmer already?';
+            if (note) note.textContent = 'That’s just one technique. Our psychologists and coaches are ready to build a plan around exactly what you need — and your first conversation is complimentary.';
+        }
+
+        function setupDeepBreathing() {
+            var toggle = document.getElementById('deep-breath-toggle');
+            var circle = document.getElementById('deep-breath-circle');
+            var label = document.getElementById('deep-breath-label');
+            if (!toggle || !circle || !label) return;
+
+            var INHALE_MS = 5000, EXHALE_MS = 6000, CYCLE_MS = INHALE_MS + EXHALE_MS;
+            var running = false, startTime = 0, rafId = null, notifiedThisRun = false;
+
+            function tick(now) {
+                if (!running) return;
+                var totalElapsed = now - startTime;
+                var elapsed = totalElapsed % CYCLE_MS;
+                if (elapsed < INHALE_MS) {
+                    label.textContent = 'Breathe in…';
+                } else {
+                    label.textContent = 'Breathe out…';
+                }
+                if (!notifiedThisRun && totalElapsed >= CYCLE_MS) {
+                    notifiedThisRun = true;
+                    notifyBreathingCycleComplete();
+                }
+                rafId = requestAnimationFrame(tick);
+            }
+
+            toggle.addEventListener('click', function () {
+                running = !running;
+                toggle.setAttribute('aria-pressed', String(running));
+                var span = toggle.querySelector('span');
+                if (running) {
+                    circle.classList.add('is-running');
+                    if (span) span.textContent = 'Pause';
+                    startTime = performance.now();
+                    rafId = requestAnimationFrame(tick);
+                } else {
+                    circle.classList.remove('is-running');
+                    if (span) span.textContent = 'Start Deep Breathing';
+                    label.textContent = 'Press start';
+                    if (rafId) cancelAnimationFrame(rafId);
+                }
+            });
+        }
+
+        function setupBoxBreathing() {
+            var toggle = document.getElementById('box-breath-toggle');
+            var progress = document.getElementById('box-breath-progress');
+            var phaseEl = document.getElementById('box-breath-phase');
+            var countEl = document.getElementById('box-breath-count');
+            var wrap = document.querySelector('.box-breath-wrap');
+            if (!toggle || !progress || !phaseEl || !countEl || !wrap) return;
+
+            var PHASE_MS = 4000, CYCLE_MS = PHASE_MS * 4;
+            var PHASES = ['Inhale', 'Hold', 'Exhale', 'Hold'];
+            var running = false, startTime = 0, rafId = null, lastCount = null, notifiedThisRun = false;
+
+            function tick(now) {
+                if (!running) return;
+                var totalElapsed = now - startTime;
+                var elapsed = totalElapsed % CYCLE_MS;
+                var phaseIndex = Math.floor(elapsed / PHASE_MS);
+                var msIntoPhase = elapsed - phaseIndex * PHASE_MS;
+                var countdown = Math.max(1, 4 - Math.floor(msIntoPhase / 1000));
+                if (countdown !== lastCount || phaseEl.textContent !== PHASES[phaseIndex]) {
+                    phaseEl.textContent = PHASES[phaseIndex];
+                    countEl.textContent = String(countdown);
+                    lastCount = countdown;
+                }
+                if (!notifiedThisRun && totalElapsed >= CYCLE_MS) {
+                    notifiedThisRun = true;
+                    notifyBreathingCycleComplete();
+                }
+                rafId = requestAnimationFrame(tick);
+            }
+
+            toggle.addEventListener('click', function () {
+                running = !running;
+                toggle.setAttribute('aria-pressed', String(running));
+                var span = toggle.querySelector('span');
+                if (running) {
+                    wrap.classList.add('is-running');
+                    if (span) span.textContent = 'Pause';
+                    startTime = performance.now();
+                    lastCount = null;
+                    rafId = requestAnimationFrame(tick);
+                } else {
+                    wrap.classList.remove('is-running');
+                    if (span) span.textContent = 'Start Box Breathing';
+                    phaseEl.textContent = 'Ready';
+                    countEl.textContent = '4';
+                    if (rafId) cancelAnimationFrame(rafId);
+                }
+            });
+        }
+
+        function setupBreatheWidgets() {
+            var widgets = Array.prototype.slice.call(document.querySelectorAll('.breathe-widget'));
+            if (!widgets.length) return;
+
+            var entries = widgets.map(function (widget) {
+                return {
+                    widget: widget,
+                    fab: widget.querySelector('[data-fab]'),
+                    panel: widget.querySelector('.breathe-widget-panel'),
+                    closeBtn: widget.querySelector('[data-close]')
+                };
+            }).filter(function (e) { return e.fab && e.panel && e.closeBtn; });
+
+            function closeEntry(entry) {
+                entry.panel.hidden = true;
+                entry.widget.classList.remove('is-open');
+                entry.fab.setAttribute('aria-expanded', 'false');
+            }
+            function closeAll(except) {
+                entries.forEach(function (entry) {
+                    if (entry !== except) closeEntry(entry);
+                });
+            }
+            function openEntry(entry) {
+                closeAll(entry);
+                entry.panel.hidden = false;
+                entry.widget.classList.add('is-open');
+                entry.fab.setAttribute('aria-expanded', 'true');
+            }
+
+            entries.forEach(function (entry) {
+                entry.fab.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    if (entry.panel.hidden) { openEntry(entry); } else { closeEntry(entry); }
+                });
+                entry.closeBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    closeEntry(entry);
+                });
+                entry.panel.addEventListener('click', function (e) { e.stopPropagation(); });
+            });
+
+            document.addEventListener('click', function (e) {
+                entries.forEach(function (entry) {
+                    if (!entry.panel.hidden && !entry.widget.contains(e.target)) closeEntry(entry);
+                });
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeAll(null);
+            });
+        }
+
+        setupDeepBreathing();
+        setupBoxBreathing();
+        setupBreatheWidgets();
+    }());
+    </script>
 
     <script src="js/script.js"></script>
     <script>
