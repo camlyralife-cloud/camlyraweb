@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pastel-overrides.css?v=6">
+    <link rel="stylesheet" href="css/pastel-overrides.css?v=10">
 </head>
 
 <body>
@@ -362,6 +362,219 @@
             </article>
         </div>
     </section>
+
+    <!-- ── BREATHING EXERCISES ───────────────────────────────── -->
+    <section id="breathing" class="breathing-section" aria-labelledby="breathing-heading">
+        <span class="breathing-shape" aria-hidden="true"></span>
+        <div class="container">
+            <div class="breathing-intro reveal">
+                <span class="breathing-free-badge">100% Free &middot; No Sign-Up</span>
+                <span class="breathing-eyebrow">A Moment For You</span>
+                <h2 id="breathing-heading">Feel calmer in the next 60 seconds.</h2>
+                <p>The same grounding techniques our registered psychologists and coaches use in real sessions &mdash; free, right now, no appointment needed. Press start and try one.</p>
+
+                <div class="breathing-trust-row">
+                    <span class="breathing-trust-item">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 3v5.2c0 4.6-3 8.3-7 9.8-4-1.5-7-5.2-7-9.8V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Designed by our clinical team
+                    </span>
+                    <span class="breathing-trust-item">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-6-4.6-6-10.2A6 6 0 0 1 12 4a6 6 0 0 1 6 6.8C18 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="10.5" r="2.1" stroke="currentColor" stroke-width="1.5"/></svg>
+                        Used in real Calmyra sessions
+                    </span>
+                    <span class="breathing-trust-item">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Takes less than a minute
+                    </span>
+                </div>
+            </div>
+
+            <div class="breathing-grid">
+                <!-- Deep Breathing -->
+                <article class="breathing-card breathing-card--deep reveal">
+                    <div class="breathing-card-head">
+                        <span class="breathing-card-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13c2-3 4-4 8-4s6 1 8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 17c2-2.4 4-3.2 8-3.2s6 .8 8 3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg>
+                        </span>
+                        <div>
+                            <h3>Deep Breathing</h3>
+                            <p>A simple guided rhythm to slow your body down.</p>
+                        </div>
+                    </div>
+                    <div class="breath-circle-wrap">
+                        <div class="breath-circle" id="deep-breath-circle">
+                            <span class="breath-circle-label" id="deep-breath-label">Press start</span>
+                        </div>
+                    </div>
+                    <button type="button" class="breathing-toggle" id="deep-breath-toggle" data-testid="deep-breath-toggle" aria-pressed="false">
+                        <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
+                        <span>Start Deep Breathing</span>
+                    </button>
+                    <p class="breathing-note">Inhale 5s &middot; Exhale 6s &middot; repeat gently for 6&ndash;8 rounds.</p>
+                </article>
+
+                <!-- Box Breathing -->
+                <article class="breathing-card breathing-card--box reveal">
+                    <div class="breathing-card-head">
+                        <span class="breathing-card-icon" aria-hidden="true">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.2" opacity=".5"/></svg>
+                        </span>
+                        <div>
+                            <h3>Box Breathing</h3>
+                            <p>4 seconds each &mdash; inhale, hold, exhale, hold.</p>
+                        </div>
+                    </div>
+                    <div class="box-breath-wrap">
+                        <svg class="box-breath-svg" viewBox="0 0 200 200" aria-hidden="true">
+                            <rect class="box-breath-track" x="20" y="20" width="160" height="160" rx="18"/>
+                            <rect class="box-breath-progress" id="box-breath-progress" x="20" y="20" width="160" height="160" rx="18"/>
+                        </svg>
+                        <div class="box-breath-center">
+                            <span class="box-breath-phase" id="box-breath-phase">Ready</span>
+                            <span class="box-breath-count" id="box-breath-count">4</span>
+                        </div>
+                    </div>
+                    <button type="button" class="breathing-toggle" id="box-breath-toggle" data-testid="box-breath-toggle" aria-pressed="false">
+                        <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
+                        <span>Start Box Breathing</span>
+                    </button>
+                    <div class="box-breath-steps">
+                        <span>Inhale &middot; 4s</span>
+                        <span>Hold &middot; 4s</span>
+                        <span>Exhale &middot; 4s</span>
+                        <span>Hold &middot; 4s</span>
+                    </div>
+                </article>
+            </div>
+
+            <div class="breathing-cta reveal" id="breathing-cta">
+                <div class="breathing-cta-copy">
+                    <h3 class="breathing-cta-heading" id="breathing-cta-heading">Liked how that felt?</h3>
+                    <p class="breathing-cta-note" id="breathing-cta-note">That&#8217;s a glimpse of what a session feels like. Our psychologists and coaches teach dozens more techniques &mdash; tailored to exactly what you&#8217;re navigating.</p>
+                </div>
+                <div class="breathing-cta-actions">
+                    <a href="index.html#get-started" class="btn btn-primary">Book an Appointment</a>
+                    <a href="assets/downloads/calmyra-workbook.pdf" class="breathing-cta-secondary" download>Get the free workbook &rarr;</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        (function () {
+            var breathingCtaNotified = false;
+            function notifyBreathingCycleComplete() {
+                if (breathingCtaNotified) return;
+                breathingCtaNotified = true;
+                var cta = document.getElementById('breathing-cta');
+                var heading = document.getElementById('breathing-cta-heading');
+                var note = document.getElementById('breathing-cta-note');
+                if (!cta) return;
+                cta.classList.add('is-highlighted');
+                if (heading) heading.textContent = 'Feeling a little calmer already?';
+                if (note) note.textContent = 'That’s just one technique. Our psychologists and coaches are ready to build a plan around exactly what you need — and your first conversation is complimentary.';
+                cta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            function setupDeepBreathing() {
+                var toggle = document.getElementById('deep-breath-toggle');
+                var circle = document.getElementById('deep-breath-circle');
+                var label = document.getElementById('deep-breath-label');
+                if (!toggle || !circle || !label) return;
+
+                var INHALE_MS = 5000, EXHALE_MS = 6000, CYCLE_MS = INHALE_MS + EXHALE_MS;
+                var running = false, startTime = 0, rafId = null, notifiedThisRun = false;
+
+                function tick(now) {
+                    if (!running) return;
+                    var totalElapsed = now - startTime;
+                    var elapsed = totalElapsed % CYCLE_MS;
+                    if (elapsed < INHALE_MS) {
+                        label.textContent = 'Breathe in…';
+                    } else {
+                        label.textContent = 'Breathe out…';
+                    }
+                    if (!notifiedThisRun && totalElapsed >= CYCLE_MS) {
+                        notifiedThisRun = true;
+                        notifyBreathingCycleComplete();
+                    }
+                    rafId = requestAnimationFrame(tick);
+                }
+
+                toggle.addEventListener('click', function () {
+                    running = !running;
+                    toggle.setAttribute('aria-pressed', String(running));
+                    var span = toggle.querySelector('span');
+                    if (running) {
+                        circle.classList.add('is-running');
+                        if (span) span.textContent = 'Pause';
+                        startTime = performance.now();
+                        rafId = requestAnimationFrame(tick);
+                    } else {
+                        circle.classList.remove('is-running');
+                        if (span) span.textContent = 'Start Deep Breathing';
+                        label.textContent = 'Press start';
+                        if (rafId) cancelAnimationFrame(rafId);
+                    }
+                });
+            }
+
+            function setupBoxBreathing() {
+                var toggle = document.getElementById('box-breath-toggle');
+                var progress = document.getElementById('box-breath-progress');
+                var phaseEl = document.getElementById('box-breath-phase');
+                var countEl = document.getElementById('box-breath-count');
+                var wrap = document.querySelector('.box-breath-wrap');
+                if (!toggle || !progress || !phaseEl || !countEl || !wrap) return;
+
+                var PHASE_MS = 4000, CYCLE_MS = PHASE_MS * 4;
+                var PHASES = ['Inhale', 'Hold', 'Exhale', 'Hold'];
+                var running = false, startTime = 0, rafId = null, lastCount = null, notifiedThisRun = false;
+
+                function tick(now) {
+                    if (!running) return;
+                    var totalElapsed = now - startTime;
+                    var elapsed = totalElapsed % CYCLE_MS;
+                    var phaseIndex = Math.floor(elapsed / PHASE_MS);
+                    var msIntoPhase = elapsed - phaseIndex * PHASE_MS;
+                    var countdown = Math.max(1, 4 - Math.floor(msIntoPhase / 1000));
+                    if (countdown !== lastCount || phaseEl.textContent !== PHASES[phaseIndex]) {
+                        phaseEl.textContent = PHASES[phaseIndex];
+                        countEl.textContent = String(countdown);
+                        lastCount = countdown;
+                    }
+                    if (!notifiedThisRun && totalElapsed >= CYCLE_MS) {
+                        notifiedThisRun = true;
+                        notifyBreathingCycleComplete();
+                    }
+                    rafId = requestAnimationFrame(tick);
+                }
+
+                toggle.addEventListener('click', function () {
+                    running = !running;
+                    toggle.setAttribute('aria-pressed', String(running));
+                    var span = toggle.querySelector('span');
+                    if (running) {
+                        wrap.classList.add('is-running');
+                        if (span) span.textContent = 'Pause';
+                        startTime = performance.now();
+                        lastCount = null;
+                        rafId = requestAnimationFrame(tick);
+                    } else {
+                        wrap.classList.remove('is-running');
+                        if (span) span.textContent = 'Start Box Breathing';
+                        phaseEl.textContent = 'Ready';
+                        countEl.textContent = '4';
+                        if (rafId) cancelAnimationFrame(rafId);
+                    }
+                });
+            }
+
+            setupDeepBreathing();
+            setupBoxBreathing();
+        }());
+        </script>
+    </section>
+    <!-- ── /BREATHING EXERCISES ─────────────────────────────── -->
 
     <section id="about" class="section-intro section-wellness-intro light-section">
         <div class="container intro-grid intro-grid-wellness">
@@ -999,173 +1212,6 @@
     </section>
     <!-- ── /TESTIMONIALS ──────────────────────────────────── -->
 
-    <!-- ── BREATHING EXERCISES ───────────────────────────────── -->
-    <section id="breathing" class="breathing-section" aria-labelledby="breathing-heading">
-        <span class="breathing-shape" aria-hidden="true"></span>
-        <div class="container">
-            <div class="breathing-intro reveal">
-                <span class="breathing-eyebrow">A Moment For You</span>
-                <h2 id="breathing-heading">Two ways to find calm, right now.</h2>
-                <p>Free, guided breathing techniques our psychologists and coaches use in session &mdash; no appointment needed to start.</p>
-            </div>
-
-            <div class="breathing-grid">
-                <!-- Deep Breathing -->
-                <article class="breathing-card breathing-card--deep reveal">
-                    <div class="breathing-card-head">
-                        <span class="breathing-card-icon" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13c2-3 4-4 8-4s6 1 8 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M4 17c2-2.4 4-3.2 8-3.2s6 .8 8 3.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg>
-                        </span>
-                        <div>
-                            <h3>Deep Breathing</h3>
-                            <p>A simple guided rhythm to slow your body down.</p>
-                        </div>
-                    </div>
-                    <div class="breath-circle-wrap">
-                        <div class="breath-circle" id="deep-breath-circle">
-                            <span class="breath-circle-label" id="deep-breath-label">Press start</span>
-                        </div>
-                    </div>
-                    <button type="button" class="breathing-toggle" id="deep-breath-toggle" data-testid="deep-breath-toggle" aria-pressed="false">
-                        <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
-                        <span>Start Deep Breathing</span>
-                    </button>
-                    <p class="breathing-note">Inhale 5s &middot; Exhale 6s &middot; repeat gently for 6&ndash;8 rounds.</p>
-                </article>
-
-                <!-- Box Breathing -->
-                <article class="breathing-card breathing-card--box reveal">
-                    <div class="breathing-card-head">
-                        <span class="breathing-card-icon" aria-hidden="true">
-                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="1.2" opacity=".5"/></svg>
-                        </span>
-                        <div>
-                            <h3>Box Breathing</h3>
-                            <p>4 seconds each &mdash; inhale, hold, exhale, hold.</p>
-                        </div>
-                    </div>
-                    <div class="box-breath-wrap">
-                        <svg class="box-breath-svg" viewBox="0 0 200 200" aria-hidden="true">
-                            <rect class="box-breath-track" x="20" y="20" width="160" height="160" rx="18"/>
-                            <rect class="box-breath-progress" id="box-breath-progress" x="20" y="20" width="160" height="160" rx="18"/>
-                        </svg>
-                        <div class="box-breath-center">
-                            <span class="box-breath-phase" id="box-breath-phase">Ready</span>
-                            <span class="box-breath-count" id="box-breath-count">4</span>
-                        </div>
-                    </div>
-                    <button type="button" class="breathing-toggle" id="box-breath-toggle" data-testid="box-breath-toggle" aria-pressed="false">
-                        <svg class="breathing-toggle-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 2.5v9l8-4.5-8-4.5z" fill="currentColor"/></svg>
-                        <span>Start Box Breathing</span>
-                    </button>
-                    <div class="box-breath-steps">
-                        <span>Inhale &middot; 4s</span>
-                        <span>Hold &middot; 4s</span>
-                        <span>Exhale &middot; 4s</span>
-                        <span>Hold &middot; 4s</span>
-                    </div>
-                </article>
-            </div>
-
-            <div class="breathing-cta reveal">
-                <a href="index.html#get-started" class="btn btn-primary">Book an Appointment</a>
-                <span class="breathing-cta-note">Want more tools like this, tailored to you? Our team can teach you dozens more.</span>
-            </div>
-        </div>
-
-        <script>
-        (function () {
-            function setupDeepBreathing() {
-                var toggle = document.getElementById('deep-breath-toggle');
-                var circle = document.getElementById('deep-breath-circle');
-                var label = document.getElementById('deep-breath-label');
-                if (!toggle || !circle || !label) return;
-
-                var INHALE_MS = 5000, EXHALE_MS = 6000, CYCLE_MS = INHALE_MS + EXHALE_MS;
-                var running = false, startTime = 0, rafId = null;
-
-                function tick(now) {
-                    if (!running) return;
-                    var elapsed = (now - startTime) % CYCLE_MS;
-                    if (elapsed < INHALE_MS) {
-                        label.textContent = 'Breathe in…';
-                    } else {
-                        label.textContent = 'Breathe out…';
-                    }
-                    rafId = requestAnimationFrame(tick);
-                }
-
-                toggle.addEventListener('click', function () {
-                    running = !running;
-                    toggle.setAttribute('aria-pressed', String(running));
-                    var span = toggle.querySelector('span');
-                    if (running) {
-                        circle.classList.add('is-running');
-                        if (span) span.textContent = 'Pause';
-                        startTime = performance.now();
-                        rafId = requestAnimationFrame(tick);
-                    } else {
-                        circle.classList.remove('is-running');
-                        if (span) span.textContent = 'Start Deep Breathing';
-                        label.textContent = 'Press start';
-                        if (rafId) cancelAnimationFrame(rafId);
-                    }
-                });
-            }
-
-            function setupBoxBreathing() {
-                var toggle = document.getElementById('box-breath-toggle');
-                var progress = document.getElementById('box-breath-progress');
-                var phaseEl = document.getElementById('box-breath-phase');
-                var countEl = document.getElementById('box-breath-count');
-                var wrap = document.querySelector('.box-breath-wrap');
-                if (!toggle || !progress || !phaseEl || !countEl || !wrap) return;
-
-                var PHASE_MS = 4000, CYCLE_MS = PHASE_MS * 4;
-                var PHASES = ['Inhale', 'Hold', 'Exhale', 'Hold'];
-                var running = false, startTime = 0, rafId = null, lastCount = null;
-
-                function tick(now) {
-                    if (!running) return;
-                    var elapsed = (now - startTime) % CYCLE_MS;
-                    var phaseIndex = Math.floor(elapsed / PHASE_MS);
-                    var msIntoPhase = elapsed - phaseIndex * PHASE_MS;
-                    var countdown = Math.max(1, 4 - Math.floor(msIntoPhase / 1000));
-                    if (countdown !== lastCount || phaseEl.textContent !== PHASES[phaseIndex]) {
-                        phaseEl.textContent = PHASES[phaseIndex];
-                        countEl.textContent = String(countdown);
-                        lastCount = countdown;
-                    }
-                    rafId = requestAnimationFrame(tick);
-                }
-
-                toggle.addEventListener('click', function () {
-                    running = !running;
-                    toggle.setAttribute('aria-pressed', String(running));
-                    var span = toggle.querySelector('span');
-                    if (running) {
-                        wrap.classList.add('is-running');
-                        if (span) span.textContent = 'Pause';
-                        startTime = performance.now();
-                        lastCount = null;
-                        rafId = requestAnimationFrame(tick);
-                    } else {
-                        wrap.classList.remove('is-running');
-                        if (span) span.textContent = 'Start Box Breathing';
-                        phaseEl.textContent = 'Ready';
-                        countEl.textContent = '4';
-                        if (rafId) cancelAnimationFrame(rafId);
-                    }
-                });
-            }
-
-            setupDeepBreathing();
-            setupBoxBreathing();
-        }());
-        </script>
-    </section>
-    <!-- ── /BREATHING EXERCISES ─────────────────────────────── -->
-
     <section id="get-started" class="section-get-started" aria-labelledby="get-started-heading">
         <div class="container get-started-grid">
             <div class="get-started-copy">
@@ -1324,40 +1370,21 @@
         <footer id="footer" class="site-footer" data-testid="site-footer">
         <div class="container footer-inner">
             <div class="footer-grid">
-                <div class="footer-col footer-brand" id="locations">
+                <div class="footer-col footer-brand">
                     <a href="index.html" class="footer-logo-link" aria-label="Calmyra home">
                         <img src="assets/images/logo.png" alt="Calmyra — Where clarity meets calm" width="2000" height="2000" decoding="async">
                     </a>
-                    <p class="footer-tagline">Where clarity meets calm. Premium mental wellness — Dubai · Bangalore · Online Worldwide.</p>
+                    <p class="footer-tagline">Where clarity meets calm.<br>Premium mental wellness — Dubai &middot; Bangalore &middot; Online.</p>
                     <a href="index.html#get-started" class="btn btn-primary footer-cta">Book an Appointment</a>
-                    <div class="footer-contact-block">
-                        <span class="footer-address-label">Dubai Clinic</span>
-                        <p class="footer-address">By appointment &middot; Dubai, UAE</p>
-                        <p class="footer-contact-links">
-                            <a href="mailto:dubai@calmyra.com"><svg class="footer-contact-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>dubai@calmyra.com</a>
-                        </p>
-                    </div>
-                    <div class="footer-contact-block">
-                        <span class="footer-address-label">Bangalore Clinic</span>
-                        <p class="footer-address">R H Plaza, 1st Floor, No. 3<br>
-                            Near Marks &amp; Spencer, 100 Feet Road<br>
-                            Ejipura, Koramangala, Bengaluru — 560047</p>
-                        <p class="footer-contact-links">
-                            <a href="tel:+917092099209"><svg class="footer-contact-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3l1.5 4L7 9.5a12 12 0 0 0 7.5 7.5l1.5-2.5 4 1.5v3a2 2 0 0 1-2.2 2C10.5 20.5 3.5 13.5 3 6.2A2 2 0 0 1 5 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>+91 70920 99209</a><br>
-                            <a href="mailto:bangalore@calmyra.com"><svg class="footer-contact-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>bangalore@calmyra.com</a>
-                        </p>
-                    </div>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-col-title">India — Mental Health</h4>
                     <ul class="footer-col-list">
-                        <li><a href="services/specific-disorders/Anxiety.html">Clinical Therapy</a></li>
-                        <li><a href="services/relationship/couple-counselling.html">Relationship Counselling</a></li>
-                        <li><a href="assessment.html">Psychological Assessments</a></li>
-                        <li><a href="services/neuro-psychology.html">Neuro-Psychology</a></li>
                         <li><a href="services/specific-disorders/Anxiety.html">Anxiety &amp; Stress</a></li>
                         <li><a href="services/specific-disorders/Mooddisorder.html">Depression &amp; Mood</a></li>
                         <li><a href="services/specific-disorders/PTSD.html">Trauma &amp; PTSD</a></li>
+                        <li><a href="services/relationship/couple-counselling.html">Relationship Counselling</a></li>
+                        <li><a href="assessment.html">Psychological Assessments</a></li>
                         <li><a href="services/Teen-and-childern/adolescent-anxiety.html">Child &amp; Adolescent</a></li>
                         <li><a href="index.html#india-services" class="footer-link-cta">All India Services →</a></li>
                     </ul>
@@ -1370,8 +1397,7 @@
                         <li><a href="services/coaching/executive-wellness.html">Executive Wellness</a></li>
                         <li><a href="services/career/Executivecoaching.html">Leadership &amp; Development</a></li>
                         <li><a href="services/career/Productivity.html">High-Performance Coaching</a></li>
-                        <li><a href="services/career/Burnout.html">Confidence &amp; Self-Worth</a></li>
-                        <li><a href="index.html#dubai-services" class="footer-link-cta">All Dubai Services →</a></li>
+                        <li><a href="index.html#dubai-services" class="footer-link-cta">All Dubai Programmes →</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1379,33 +1405,46 @@
                     <ul class="footer-col-list">
                         <li><a href="team.html">About Us</a></li>
                         <li><a href="dr-safina.html">Dr. Safina Naaz</a></li>
-                        <li><a href="assessment.html">Psychological Assessments</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="index.html#get-started">Contact Us</a></li>
-                        <li><a href="index.html#locations">Dubai Centre</a></li>
-                        <li><a href="index.html#locations">Bangalore Centre</a></li>
-                        <li><a href="index.html#get-started">Online Sessions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-col-title">Legal</h4>
-                    <ul class="footer-col-list">
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms &amp; Conditions</a></li>
                         <li><a href="terms.html">Cancellation &amp; Refund Policy</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4 class="footer-col-title">Emergency Helplines</h4>
-                    <ul class="footer-helpline-list">
-                        <li>UAE: Aman — 800 4673 (free, 24/7)</li>
-                        <li>UAE: MOHAP Mental Health — 800 4673</li>
-                        <li>India: iCall — +91 9152987821</li>
-                        <li>India: Tele MANAS — 14416</li>
-                        <li>India: NIMHANS — 080 4611 0007</li>
-                    </ul>
+            </div>
+
+            <div class="footer-visit" id="locations" aria-label="Clinic locations">
+                <div class="footer-visit-card">
+                    <span class="footer-address-label">Dubai Clinic</span>
+                    <p class="footer-address">By appointment &middot; Dubai, UAE</p>
+                    <p class="footer-contact-links">
+                        <a href="mailto:dubai@calmyra.com"><svg class="footer-contact-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>dubai@calmyra.com</a>
+                    </p>
+                </div>
+                <div class="footer-visit-card">
+                    <span class="footer-address-label">Bangalore Clinic</span>
+                    <p class="footer-address">R H Plaza, 1st Floor, No. 3, Near Marks &amp; Spencer, 100 Feet Road, Ejipura, Koramangala, Bengaluru — 560047</p>
+                    <p class="footer-contact-links">
+                        <a href="tel:+917092099209"><svg class="footer-contact-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3l1.5 4L7 9.5a12 12 0 0 0 7.5 7.5l1.5-2.5 4 1.5v3a2 2 0 0 1-2.2 2C10.5 20.5 3.5 13.5 3 6.2A2 2 0 0 1 5 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>+91 70920 99209</a>
+                        <a href="mailto:bangalore@calmyra.com"><svg class="footer-contact-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4V6z" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg>bangalore@calmyra.com</a>
+                    </p>
                 </div>
             </div>
+
+            <div class="footer-helplines" aria-label="Emergency mental health helplines">
+                <span class="footer-helplines-label">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-6.5-4.35-9.2-8.76C1.1 9.2 2.4 5.6 5.6 4.7c2-.56 3.9.2 5 1.9C11.7 5 13.6 4.14 15.6 4.7c3.2.9 4.5 4.5 2.8 7.54C15.7 16.65 12 21 12 21z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    In crisis? Reach out now
+                </span>
+                <ul class="footer-helpline-list">
+                    <li>UAE Aman <span>800 4673</span></li>
+                    <li>UAE MOHAP <span>800 4673</span></li>
+                    <li>India iCall <span>+91 9152987821</span></li>
+                    <li>India Tele MANAS <span>14416</span></li>
+                    <li>India NIMHANS <span>080 4611 0007</span></li>
+                </ul>
+            </div>
+
             <div class="footer-bottom-bar">
                 <p class="footer-copyright footer-copyright--wide">Calmyra India: Registered Professionals &nbsp;&middot;&nbsp; Calmyra Dubai: Qualified Coaches &amp; Consultants &nbsp;&middot;&nbsp; &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
             </div>
