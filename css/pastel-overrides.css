@@ -4403,6 +4403,14 @@ html { scroll-behavior: smooth; }
   color: var(--sage-teal-dark);
   margin-bottom: 16px;
 }
+.mp-eyebrow-strong {
+  font-size: 1.05em;
+  font-weight: 800;
+  color: var(--warm-gold-dark);
+  letter-spacing: 0.26em;
+  border-bottom: 2px solid var(--warm-gold);
+  padding-bottom: 2px;
+}
 .mp-heading {
   font-family: var(--font-display);
   font-weight: 400;
@@ -5368,10 +5376,42 @@ html { scroll-behavior: smooth; }
 }
 .breathe-widget { position: relative; }
 
+/* ── Launcher row: always-visible label + FAB, side by side ── */
+.breathe-widget-launcher {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.breathe-widget-label {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--ink-dark);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  padding: 10px 18px;
+  border-radius: 999px;
+  box-shadow: 0 10px 26px rgba(31, 42, 37, 0.14);
+  white-space: nowrap;
+  transition: transform var(--dur-mid) var(--ease-silk), box-shadow var(--dur-mid) var(--ease-silk), background var(--dur-mid) var(--ease-silk);
+}
+.breathe-widget-label--gold { color: #6E4820; }
+.breathe-widget-launcher:hover .breathe-widget-label,
+.breathe-widget-launcher:focus-within .breathe-widget-label {
+  transform: translateX(-2px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 32px rgba(31, 42, 37, 0.2);
+}
+.breathe-widget.is-open .breathe-widget-label { opacity: 0; pointer-events: none; transform: translateX(6px); }
+
 /* ── The floating action button ── */
 .breathe-widget-fab {
   position: relative;
-  width: 60px; height: 60px;
+  width: 68px; height: 68px;
+  flex-shrink: 0;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -5382,6 +5422,10 @@ html { scroll-behavior: smooth; }
   transition: transform var(--dur-mid) var(--ease-silk), box-shadow var(--dur-mid) var(--ease-silk);
 }
 .breathe-widget-fab:hover { transform: translateY(-2px) scale(1.05); box-shadow: 0 18px 38px -6px rgba(31, 42, 37, 0.48); }
+.breathe-widget-fab:focus-visible {
+  outline: 3px solid var(--warm-gold);
+  outline-offset: 3px;
+}
 .breathe-widget-fab svg { position: relative; z-index: 1; }
 .breathe-widget-fab--gold {
   background: linear-gradient(135deg, #8A5C2A 0%, #6E4820 100%);
@@ -5399,30 +5443,6 @@ html { scroll-behavior: smooth; }
   100% { transform: scale(1.9); opacity: 0; }
 }
 .breathe-widget.is-open .breathe-widget-fab-pulse { animation-play-state: paused; opacity: 0; }
-
-/* ── Hover tooltip (desktop) ── */
-.breathe-widget-tooltip {
-  position: absolute;
-  right: calc(100% + 12px);
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  background: var(--ink-dark);
-  color: var(--white);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(31, 42, 37, 0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
-}
-.breathe-widget-fab:hover + .breathe-widget-tooltip {
-  opacity: 1;
-  transform: translateY(-50%) translateX(-4px);
-}
-.breathe-widget.is-open .breathe-widget-tooltip { display: none; }
 
 /* ── The expandable panel ── */
 .breathe-widget-panel {
@@ -5519,9 +5539,568 @@ html { scroll-behavior: smooth; }
 
 @media (max-width: 480px) {
   .breathe-widget-panel { width: calc(100vw - 40px); max-width: 300px; }
-  .breathe-widget-fab { width: 54px; height: 54px; }
+  .breathe-widget-fab { width: 58px; height: 58px; }
+  .breathe-widgets { right: 12px; bottom: 12px; gap: 10px; }
+  .breathe-widget-launcher { gap: 7px; }
+  .breathe-widget-label { font-size: 0.74rem; padding: 8px 13px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .breathe-widget-fab-pulse { display: none; }
+}
+
+/* ============================================================
+   LOGO — final authoritative size (supersedes every earlier
+   .nav-brand img rule above; several passes added conflicting
+   sizes over time and this is the one that should win).
+   ============================================================ */
+.nav-brand img {
+  height: 72px !important;
+  max-height: 72px !important;
+  width: auto !important;
+}
+.nav-container { padding-top: 12px !important; padding-bottom: 12px !important; }
+@media (max-width: 1100px) {
+  .nav-brand img { height: 60px !important; max-height: 60px !important; }
+}
+@media (max-width: 768px) {
+  .nav-brand img { height: 52px !important; max-height: 52px !important; }
+}
+@media (max-width: 420px) {
+  .nav-brand img { height: 44px !important; max-height: 44px !important; }
+}
+.site-footer .footer-logo-link img {
+  height: 60px !important;
+  max-height: 60px !important;
+  width: auto !important;
+}
+
+/* ─── Trust bar: gentle floating numbers ─── */
+.trust-stat--float .trust-stat-num {
+  display: inline-block;
+  animation: trustStatFloat 3.6s ease-in-out infinite;
+}
+.trust-stat--float:nth-child(1) .trust-stat-num { animation-delay: 0s; }
+.trust-stat--float:nth-child(2) .trust-stat-num { animation-delay: 0.5s; }
+.trust-stat--float:nth-child(3) .trust-stat-num { animation-delay: 1s; }
+@keyframes trustStatFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-stat--float .trust-stat-num { animation: none; }
+}
+
+/* ============================================================
+   PAGE BACKGROUND — final authoritative wash (supersedes the
+   plainer cream background set near the top of this file).
+   A soft, extremely light sage/mint tint throughout, with a
+   gentle warm gold accent low on the page for balance.
+   ============================================================ */
+html, body { background: #F2F8F4 !important; }
+body {
+  background-image:
+    radial-gradient(circle at 6% 4%, rgba(94, 134, 118, 0.17) 0%, transparent 42%),
+    radial-gradient(circle at 97% 14%, rgba(94, 134, 118, 0.11) 0%, transparent 40%),
+    radial-gradient(circle at 92% 92%, rgba(189, 154, 85, 0.09) 0%, transparent 45%),
+    linear-gradient(180deg, #F2F8F4 0%, #EDF5EF 45%, #F6F1E6 100%) !important;
+  background-attachment: fixed !important;
+}
+@media (max-width: 900px) {
+  /* fixed backgrounds can jank on mobile scroll; use normal attachment there */
+  body { background-attachment: scroll !important; }
+}
+
+/* ============================================================
+   WELCOME BREATHING POPUP — shown once per session, ~5s in
+   ============================================================ */
+.breathe-popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(20, 30, 25, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-silk);
+}
+.breathe-popup-overlay[hidden] { display: none; }
+.breathe-popup-overlay:not([hidden]) { display: flex; }
+.breathe-popup-overlay.is-open { opacity: 1; }
+
+.breathe-popup {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 28px;
+  padding: 3rem 2.25rem 2.25rem;
+  box-shadow: 0 40px 100px rgba(20, 30, 25, 0.35);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(18px) scale(0.97);
+  opacity: 0;
+  transition: transform 0.4s var(--ease-silk), opacity 0.4s var(--ease-silk);
+}
+.breathe-popup-overlay.is-open .breathe-popup {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.breathe-popup-close {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 30px; height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: var(--mint-50, #DFE9E3);
+  color: var(--ink-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-silk), color var(--dur-fast) var(--ease-silk);
+}
+.breathe-popup-close:hover { background: var(--sage-teal-dark); color: var(--white); }
+
+.breathe-popup-glow {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(94, 134, 118, 0.28), transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.breathe-popup-circle {
+  position: relative;
+  z-index: 1;
+  width: 92px; height: 92px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle at 35% 30%, var(--sage-light), var(--sage-teal) 85%);
+  box-shadow: 0 0 0 14px rgba(94, 134, 118, 0.10), 0 20px 44px rgba(94, 134, 118, 0.3);
+  animation: breathePopupPulse 6s ease-in-out infinite;
+}
+.breathe-popup-circle-core {
+  width: 30%; height: 30%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+}
+@keyframes breathePopupPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.22); }
+}
+
+.breathe-popup-eyebrow {
+  position: relative; z-index: 1;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-teal-dark);
+  margin-bottom: 0.6rem;
+}
+.breathe-popup h2 {
+  position: relative; z-index: 1;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.9rem;
+  color: var(--ink-dark);
+  margin: 0 0 0.75rem;
+}
+.breathe-popup-quote {
+  position: relative; z-index: 1;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--sage-teal-deep);
+  margin: 0 0 1.1rem;
+  padding: 0 0.25rem;
+  max-width: 32ch;
+}
+.breathe-popup p {
+  position: relative; z-index: 1;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+  max-width: 34ch;
+}
+.breathe-popup-start {
+  position: relative; z-index: 1;
+  padding: 1rem 2rem !important;
+  font-size: 0.95rem !important;
+  width: 100%;
+  justify-content: center;
+}
+.breathe-popup-skip {
+  position: relative; z-index: 1;
+  margin-top: 1rem;
+  border: none;
+  background: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink-mute);
+  cursor: pointer;
+  transition: color var(--dur-fast) var(--ease-silk);
+}
+.breathe-popup-skip:hover { color: var(--ink-dark); text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .breathe-popup { padding: 2.5rem 1.5rem 1.75rem; border-radius: 22px; }
+  .breathe-popup h2 { font-size: 1.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .breathe-popup-circle { animation: none; }
+}
+
+/* ============================================================
+   TRUST BAR — full-width floating statistics banner
+   (final authoritative rules; supersedes the boxed pill-grid
+   version set earlier in this file)
+   ============================================================ */
+.trust-bar.trust-bar--full {
+  width: 100%;
+  max-width: none;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem) !important;
+  background: linear-gradient(120deg, #E3F0E8 0%, #EFF8F2 45%, #E9F3EC 100%) !important;
+}
+.trust-bar-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+.trust-bar-glow--a { top: -60px; left: 6%; width: 260px; height: 260px; background: rgba(94, 134, 118, 0.22); }
+.trust-bar-glow--b { bottom: -70px; right: 8%; width: 300px; height: 300px; background: rgba(189, 154, 85, 0.16); }
+
+.trust-bar-track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  animation: trustBarDrift 12s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.trust-bar.trust-bar--full:hover .trust-bar-track,
+.trust-bar.trust-bar--full:focus-within .trust-bar-track {
+  animation-play-state: paused;
+}
+@keyframes trustBarDrift {
+  0%   { transform: translateX(-28px); }
+  100% { transform: translateX(28px); }
+}
+
+.trust-bar.trust-bar--full .trust-bar-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  max-width: 1100px;
+  margin: 0 auto;
+  width: auto;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.trust-bar.trust-bar--full .trust-stat {
+  flex: 1 1 220px;
+  max-width: 280px;
+  padding: clamp(1.5rem, 3vw, 2.25rem) 1.5rem;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(31, 42, 37, 0.08);
+  transition: transform var(--dur-mid) var(--ease-silk), box-shadow var(--dur-mid) var(--ease-silk), background var(--dur-mid) var(--ease-silk);
+}
+.trust-bar.trust-bar--full .trust-stat:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 26px 56px rgba(31, 42, 37, 0.14), 0 0 0 4px rgba(94, 134, 118, 0.10);
+}
+.trust-bar.trust-bar--full .trust-stat + .trust-stat::before { display: none; }
+
+.trust-bar.trust-bar--full .trust-stat-num {
+  display: block;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--sage-teal-deep) !important;
+  margin-bottom: 0.4rem;
+}
+.trust-bar.trust-bar--full .trust-stat-label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-soft) !important;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .trust-bar.trust-bar--full .trust-stat { flex: 1 1 100%; max-width: 320px; }
+  @keyframes trustBarDrift {
+    0%   { transform: translateX(-12px); }
+    100% { transform: translateX(12px); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-bar-track { animation: none; }
+}
+
+/* ============================================================
+   STATISTICS BAND — bold editorial rebuild
+   Full-width, no cards: hero-scale serif numbers in a single
+   row, separated by thin low-opacity dividers, on a soft
+   sage/cream textured field. Replaces the floating-card
+   .trust-bar--full version entirely.
+   ============================================================ */
+.stats-band {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 5vw, 3rem);
+  background:
+    linear-gradient(135deg, #EAF3EC 0%, #F6F2E7 100%);
+}
+.stats-band-texture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(58, 85, 73, 0.06) 0px, rgba(58, 85, 73, 0.06) 1px, transparent 1px, transparent 64px),
+    repeating-linear-gradient(0deg, rgba(58, 85, 73, 0.06) 0px, rgba(58, 85, 73, 0.06) 1px, transparent 1px, transparent 64px);
+  -webkit-mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, #000 45%, transparent 92%);
+  mask-image: radial-gradient(ellipse 85% 90% at 50% 50%, #000 45%, transparent 92%);
+}
+
+/* ── Continuous left-to-right marquee ──
+   Two identical rows placed back to back inside a track twice
+   as wide; the track glides from -50% to 0% so the seam between
+   the real row and its duplicate is invisible, giving a
+   seamless, infinite left-to-right drift. ── */
+.stats-band-marquee {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+}
+.stats-band-track {
+  display: flex;
+  width: max-content;
+  animation: statsBandMarquee 30s linear infinite;
+}
+.stats-band-marquee:hover .stats-band-track,
+.stats-band-marquee:focus-within .stats-band-track {
+  animation-play-state: paused;
+}
+@keyframes statsBandMarquee {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0%); }
+}
+
+.stats-band-row {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+.stats-band-item {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 clamp(0.75rem, 2.5vw, 1.75rem);
+  transition: transform var(--dur-mid) var(--ease-silk), opacity 0.8s cubic-bezier(.2, .7, .2, 1);
+}
+.stats-band-item:hover { transform: scale(1.035); }
+.stats-band-item + .stats-band-item {
+  border-left: 1px solid rgba(58, 85, 73, 0.16);
+}
+
+.stats-band-num {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--sage-teal-deep);
+  margin-bottom: clamp(0.5rem, 1vw, 0.85rem);
+}
+.stats-band-label {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.1vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .stats-band-num { font-size: clamp(2rem, 6vw, 3rem); }
+  .stats-band-item { padding: 0 0.85rem; }
+}
+
+@media (max-width: 640px) {
+  /* Marquee reads as broken once items stack vertically — freeze the
+     track and show only the real (first) row as a plain static stack. */
+  .stats-band-track { animation: none !important; transform: none !important; display: block; width: 100%; }
+  .stats-band-row[aria-hidden] { display: none; }
+  .stats-band-row { flex-direction: column; align-items: center; gap: clamp(1.5rem, 5vw, 2rem); }
+  .stats-band-item { width: 100%; max-width: 320px; padding: 0; }
+  .stats-band-item + .stats-band-item {
+    border-left: none;
+    border-top: 1px solid rgba(58, 85, 73, 0.16);
+    padding-top: clamp(1.5rem, 5vw, 2rem);
+  }
+  .stats-band-num { font-size: clamp(2.25rem, 10vw, 3rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-band-item { transition: none; }
+  .stats-band-track { animation: none; transform: translateX(0); }
+}
+
+/* ============================================================
+   HERO IMAGES — soften so the copy stays the primary focus
+   (final authoritative rules; supersedes earlier hero image
+   filters/overlays set elsewhere in this file)
+   ============================================================ */
+.hero-img-main img {
+  filter: brightness(0.93) saturate(0.94) blur(0.4px);
+}
+.hero-img-main::after {
+  background:
+    linear-gradient(180deg, rgba(94, 134, 118, 0.05) 0%, transparent 38%, rgba(31, 42, 37, 0.26) 100%) !important;
+}
+.hero-img-bubble img {
+  filter: brightness(0.9) saturate(0.92) blur(0.3px);
+}
+.hero-img-bubble {
+  position: relative;
+}
+.hero-img-bubble::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 30%, transparent 35%, rgba(31, 42, 37, 0.2) 100%);
+  pointer-events: none;
+}
+
+/* ============================================================
+   TYPOGRAPHY UNIFICATION — section eyebrow/kicker labels
+   These were scattered across many components with different
+   sizes (11px–12.8px), weights (600–700) and letter-spacing
+   (0.1em–0.24em). One consistent scale now (final authoritative
+   rules; supersedes every earlier eyebrow-style rule above).
+   Colour is left untouched per component — the sage/gold
+   market colour-coding is intentional and stays.
+   ============================================================ */
+.wellness-eyebrow,
+.eyebrow,
+.mp-eyebrow,
+.hp-assess-eyebrow,
+.sp-eyebrow,
+.testimonials-eyebrow,
+.service-market-label,
+#dubai-services .service-market-label {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1.25rem !important;
+}
+
+/* CALMYRA INDIA — a stronger focal point than the general eyebrow scale */
+#india-services .matrix-intro .eyebrow {
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.22em !important;
+  margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 640px) {
+  .wellness-eyebrow,
+  .eyebrow,
+  .mp-eyebrow,
+  .hp-assess-eyebrow,
+  .sp-eyebrow,
+  .testimonials-eyebrow,
+  .service-market-label {
+    font-size: 0.85rem !important;
+    letter-spacing: 0.16em !important;
+  }
+  #india-services .matrix-intro .eyebrow {
+    font-size: 1rem !important;
+  }
+}
+
+/* ============================================================
+   "WHO WE ARE" (#about) — compact rebuild
+   Final authoritative rules: cuts the section padding decisively,
+   flips the column ratio so the text side (not the photo collage)
+   is the wider one, tightens the grid gap, and pulls the internal
+   rhythm (eyebrow → heading → paragraph → cards → actions) in
+   tight so nothing reads as dead space.
+   ============================================================ */
+#about.section-wellness-intro {
+  padding: 40px 0 48px !important;
+}
+
+.intro-grid-wellness {
+  grid-template-columns: 0.82fr 1fr !important;
+  gap: 2.25rem !important;
+  align-items: center !important;
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .intro-grid-wellness { grid-template-columns: 0.9fr 1fr !important; gap: 1.75rem !important; }
+}
+@media (max-width: 640px) {
+  .intro-grid-wellness { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+}
+
+/* Let the (now narrower) collage column fill its space instead of
+   floating a fixed-width composition inside extra margin. */
+.wellness-collage-inner { max-width: 100%; }
+.wellness-collage { min-height: 400px; }
+
+#about .wellness-eyebrow { margin-bottom: 0.6rem !important; }
+#about .intro-right h2 { margin-bottom: 0.75rem !important; }
+#about .intro-copy-wellness p,
+#about .intro-copy-wellness p:last-of-type {
+  margin-bottom: 1.1rem !important;
+}
+#about .sbc-grid { margin: 1.1rem 0 !important; }
+#about .conf-row { margin: 0 0 1.1rem !important; }
+
+@media (max-width: 640px) {
+  #about.section-wellness-intro { padding: 32px 0 40px !important; }
 }
 

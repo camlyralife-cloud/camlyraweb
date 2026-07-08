@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(perl -e ' *)"
+      "Bash(perl -e ' *)",
+      "Bash(grep -n \"900px.*{$\\\\|stats-band-num.*clamp\" css/pastel-overrides.css)",
+      "Bash(grep -v \"^\\\\./index.html$\")"
     ]
   }
 }

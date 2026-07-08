@@ -619,4 +619,34 @@ initSpecializedServicesFoldState();
 
   // ---------- Year stamp ----------
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
+
+  // ---------- Animated stat counters (trust bar) ----------
+  const countEls = document.querySelectorAll('[data-count-to]');
+  if (countEls.length) {
+    const animateCount = (el) => {
+      const target = parseInt(el.getAttribute('data-count-to'), 10) || 0;
+      const suffix = el.getAttribute('data-count-suffix') || '';
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 3); // ease-out-cubic
+        const value = Math.round(target * eased);
+        el.textContent = value.toLocaleString('en-US') + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    };
+    if ('IntersectionObserver' in window) {
+      const countIO = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            animateCount(e.target);
+            countIO.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      countEls.forEach(el => countIO.observe(el));
+    }
+  }
 })();
