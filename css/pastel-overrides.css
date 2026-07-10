@@ -45,7 +45,7 @@ p, li, dd, dt, span, blockquote { color: var(--ink-soft); }
   border-bottom-color: rgba(94, 134, 118, 0.24) !important;
 }
 
-.nav-container { height: 88px; max-width: var(--container-wide); }
+.nav-container { height: 88px; max-width: 1200px; }
 .nav-brand img { height: clamp(40px, 6vw, 48px) !important; max-height: 48px !important; }
 
 .nav-menu a,
@@ -5872,6 +5872,20 @@ body {
   background:
     linear-gradient(135deg, #EAF3EC 0%, #F6F2E7 100%);
 }
+
+/* Ensure form fields in the get-started section are legible on light backgrounds */
+#get-started .get-started-form-wrap .gs-input,
+#get-started .get-started-form-wrap .gs-select {
+  color: #1a1a1a !important;
+  background: #ffffff !important;
+  border-color: #e3ded6 !important;
+}
+#get-started .get-started-form-wrap .gs-input::placeholder {
+  color: #9a9a9a !important;
+}
+#get-started .get-started-form-wrap .gs-select option[disabled] {
+  color: #9a9a9a !important;
+}
 .stats-band-texture {
   position: absolute;
   inset: 0;
@@ -5895,19 +5909,25 @@ body {
   z-index: 1;
   overflow: hidden;
   width: 100%;
+  /* Clip overflowing items at the container edge so no statistic is
+     ever partially visible when entering/leaving the viewport. The
+     previous soft-fade caused the appearance of cropped numbers. */
+  -webkit-mask-image: none;
+  mask-image: none;
 }
 .stats-band-track {
   display: flex;
   width: max-content;
   animation: statsBandMarquee 30s linear infinite;
+  will-change: transform;
 }
 .stats-band-marquee:hover .stats-band-track,
 .stats-band-marquee:focus-within .stats-band-track {
   animation-play-state: paused;
 }
 @keyframes statsBandMarquee {
-  from { transform: translateX(0%); }
-  to   { transform: translateX(-50%); }
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-1 * var(--marquee-distance, 50%))); }
 }
 
 .stats-band-row {
@@ -5916,10 +5936,11 @@ body {
   display: flex;
   align-items: stretch;
   flex-shrink: 0;
+  width: max-content; /* ensure each duplicated row has the exact intrinsic width */
 }
 
 .stats-band-item {
-  flex: 1 1 0;
+  flex: 0 0 auto; /* size to content so duplicate row widths match exactly */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -5958,18 +5979,14 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* Marquee reads as broken once items stack vertically — freeze the
-     track and show only the real (first) row as a plain static stack. */
-  .stats-band-track { animation: none !important; transform: none !important; display: block; width: 100%; }
-  .stats-band-row[aria-hidden] { display: none; }
-  .stats-band-row { flex-direction: column; align-items: center; gap: clamp(1.5rem, 5vw, 2rem); }
-  .stats-band-item { width: 100%; max-width: 320px; padding: 0; }
-  .stats-band-item + .stats-band-item {
-    border-left: none;
-    border-top: 1px solid rgba(58, 85, 73, 0.16);
-    padding-top: clamp(1.5rem, 5vw, 2rem);
-  }
-  .stats-band-num { font-size: clamp(2.25rem, 10vw, 3rem); }
+  /* Keep the marquee running (rather than freezing/stacking it) —
+     just tighten padding/size so three items comfortably fit the
+     scrolling row on narrow screens. */
+  .stats-band-track { animation-duration: 20s; }
+  .stats-band-item { padding: 0 0.6rem; }
+  .stats-band-item + .stats-band-item { border-left-color: rgba(58, 85, 73, 0.14); }
+  .stats-band-num { font-size: clamp(1.6rem, 8vw, 2.25rem); }
+  .stats-band-label { font-size: 0.68rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6230,12 +6247,12 @@ body {
      a light tan at its far end, and on a wide button like this one the
      white label text spans into that light zone and loses contrast. */
   background: linear-gradient(135deg, var(--olive-gold) 0%, var(--olive-gold-dark) 100%) !important;
-  color: var(--white) !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
+  color: #FFFFFF !important;
   border: none !important;
   box-shadow: 0 8px 22px -8px rgba(189, 154, 85, 0.55) !important;
 }
-.btn-nav--book.btn-primary svg { color: var(--white) !important; }
+.btn-nav--book.btn-primary svg,
+.btn-nav--book.btn-primary span { color: #FFFFFF !important; }
 .btn-nav--book.btn-primary:hover {
   background: linear-gradient(135deg, var(--mint-600) 0%, var(--mint-400) 55%, var(--mint-500) 100%) !important;
   box-shadow: 0 14px 30px -10px rgba(189, 154, 85, 0.6) !important;
@@ -6552,18 +6569,6 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .hero-wtag--6 { display: none; }
 }
 
-/* Mobile — only the 3 most important, kept clear of the face/copy */
-@media (max-width: 640px) {
-  .hero-wtag { font-size: 0.7rem; padding: 7px 12px 7px 10px; gap: 5px; }
-  .hero-wtag-icon svg { width: 13px; height: 13px; }
-  .hero-wtag--1 { top: 1%; left: -3%; }
-  .hero-wtag--2 { top: -3%; right: 2%; }
-  .hero-wtag--3 { bottom: 6%; left: -2%; }
-  .hero-wtag--4,
-  .hero-wtag--5,
-  .hero-wtag--6 { display: none; }
-}
-
 /* ============================================================
    HERO — MOBILE REDESIGN (≤767px)
    Purpose-built mobile layout, not a scaled desktop grid.
@@ -6633,19 +6638,40 @@ html, body { overflow-x: hidden; max-width: 100%; }
   }
 
   /* ── Copy block: tagline → heading → description → CTAs ── */
+  .hero-v2 .hero-panel-v2 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
   .hero-v2 .hero-copy-v2 {
     order: 2 !important;
     align-items: center !important;
     text-align: center !important;
     gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-  .hero-tag { align-self: center !important; font-size: 12px; padding: 7px 14px; }
+  .hero-tag {
+    align-self: center !important;
+    font-size: 12px;
+    padding: 7px 14px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal !important;
+    flex-wrap: wrap;
+    text-align: center;
+    row-gap: 4px;
+  }
 
   .hero-title-v2 {
     font-size: clamp(2rem, 6vw, 2.8rem) !important;
     text-align: center !important;
     text-wrap: balance;
+    max-width: 100% !important;
   }
+  .hero-title-v2 .word-mask { white-space: normal; }
   .hero-text-v2 {
     max-width: 95% !important;
     margin: 0 auto !important;
@@ -6672,6 +6698,13 @@ html, body { overflow-x: hidden; max-width: 100%; }
   .breathe-widgets { right: 16px !important; bottom: 16px !important; gap: 8px !important; }
   .breathe-widget-fab { width: 50px !important; height: 50px !important; }
   .breathe-widget-label { font-size: 0.68rem !important; padding: 6px 10px !important; }
+
+  /* Background blobs were sized for a wide desktop hero — at mobile
+     width they dominate the whole section instead of sitting behind
+     the content, so shrink and dim them substantially. */
+  .hero-v2 .hero-bg-blob--1 { width: 220px !important; height: 220px !important; opacity: 0.5; top: -80px !important; right: -60px !important; }
+  .hero-v2 .hero-bg-blob--2 { width: 180px !important; height: 180px !important; opacity: 0.4; bottom: -60px !important; left: -60px !important; }
+  .hero-v2 .hero-bg-blob--3 { display: none !important; }
 }
 
 /* ── Who We Are — calm music banner (wave art + circular play button) ── */
@@ -7188,4 +7221,102 @@ html, body { overflow-x: hidden; max-width: 100%; }
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
+}
+
+/* ============================================================
+   WHO WE ARE — single left-alignment guide (final authority)
+   One flex column, one shared left edge for eyebrow, heading,
+   paragraph, and everything below. No per-element margin-left
+   or padding-left, no font-size/colour changes.
+   ============================================================ */
+#about .intro-copy-wellness {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+#about .intro-copy-wellness > * {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  text-align: left !important;
+  align-self: stretch;
+}
+#about .intro-copy-wellness .wellness-eyebrow {
+  align-self: flex-start;
+  margin: 0 0 16px !important;
+}
+#about .intro-copy-wellness h2 {
+  margin: 0 0 24px !important;
+}
+#about .intro-copy-wellness > p {
+  margin: 0 0 24px !important;
+  line-height: 1.7 !important;
+  max-width: 62ch;
+}
+
+/* ── "Who We Are" dark card — two balanced lines instead of an
+   awkward 3-line wrap. Each practice + location stays on its own
+   line, vertically centered, consistent spacing between them. ── */
+.wellness-card-dark {
+  display: flex;
+  align-items: center;
+  min-height: 84px;
+}
+.wellness-card-dark p {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.wellness-card-line {
+  display: block;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+/* Back link used on founder/team pages */
+.back-to-team {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  color: var(--sage-teal-deep);
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255,255,255,0.0);
+}
+.back-to-team:hover { text-decoration: underline; }
+
+/* Ensure the two-line wellness card copy is always white for legibility */
+#about .wellness-card-line,
+.wellness-collage .wellness-card-line {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+
+
+/* ── Header alignment fix — nav-container must match .container's
+   own max-width (1200px) and horizontal padding (2rem) exactly, so
+   the logo/nav/CTAs line up perfectly with the page content below
+   on every page. Previously used a wider 1320px container. ── */
+.nav-container {
+  max-width: 1200px !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+@media (max-width: 640px) {
+  .nav-container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+}
+
+/* ── Fix: "Book an Appointment" text was compressing/clipping in the
+   header — the button was allowed to shrink below its content's
+   natural width once the call-icon button was added alongside it. ── */
+.nav-actions .btn-nav,
+.nav-actions .btn-nav-call {
+  flex-shrink: 0;
+}
+.btn-nav--book {
+  padding: 0.62rem 1.05rem !important;
+}
+@media (max-width: 1300px) and (min-width: 1061px) {
+  .nav-actions { gap: 0.45rem; }
+  .btn-nav { padding: 0.58rem 0.95rem !important; font-size: 0.82rem !important; }
 }

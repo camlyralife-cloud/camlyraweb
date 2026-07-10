@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pastel-overrides.css?v=60">
+    <link rel="stylesheet" href="css/pastel-overrides.css?v=66">
     <!-- ACTION REQUIRED: GA4 not yet installed — no Measurement ID provided.
          Once you have one (G-XXXXXXXXXX), add the gtag.js snippet here and
          a conversion event on #get-started-form submit. -->
@@ -329,7 +329,7 @@
         <span class="stats-band-texture" aria-hidden="true"></span>
         <div class="stats-band-marquee" id="stats-band-marquee">
             <div class="stats-band-track">
-                <div class="stats-band-row reveal-stagger">
+                <div class="stats-band-row">
                     <div class="stats-band-item">
                         <strong class="stats-band-num">7,000+</strong>
                         <span class="stats-band-label">Lives<br>Transformed</span>
@@ -477,7 +477,10 @@
             <div class="wellness-collage">
                 <div class="wellness-collage-inner">
                     <div class="wellness-card-dark">
-                        <p>Registered care · Bangalore &nbsp;&middot;&nbsp; Coaching &amp; Consulting · Dubai</p>
+                        <p>
+                            <span class="wellness-card-line">Registered Psychological Care &middot; Bangalore</span>
+                            <span class="wellness-card-line">Coaching &amp; Consulting &middot; Dubai</span>
+                        </p>
                     </div>
                     <figure class="wellness-photo wellness-photo-primary wellness-photo-solo">
                         <div class="wellness-photo-badge">
@@ -1749,6 +1752,66 @@
             });
         });
     })();
+    </script>
+    <script>
+    // Ensure the stats marquee translates by exactly one row width
+    (function () {
+        var marquee = document.getElementById('stats-band-marquee');
+        if (!marquee) return;
+        var track = marquee.querySelector('.stats-band-track');
+        var row = track.querySelector('.stats-band-row');
+
+        function update() {
+            if (!row || !track) return;
+            var w = Math.ceil(row.getBoundingClientRect().width);
+            // set CSS var used by the keyframes
+            track.style.setProperty('--marquee-distance', w + 'px');
+            // ensure the track width is exactly double the row so -distance moves one full row
+            // Ensure there are enough row copies to cover the visible marquee width
+            // so no blank gap appears at the right edge. Start with existing rows
+            // then clone the first row until the track is wider than marquee + one row.
+            var marqueeW = Math.ceil(marquee.getBoundingClientRect().width);
+            // remove any previously appended clones beyond the initial two rows
+            // keep the first two rows as baseline (they may be original markup)
+            var rows = Array.prototype.slice.call(track.querySelectorAll('.stats-band-row'));
+            var firstRow = rows[0];
+            // remove any extra rows beyond the first two to recalc cleanly
+            for (var i = rows.length - 1; i >= 2; i--) { rows[i].parentNode.removeChild(rows[i]); }
+            // now ensure track width >= marqueeW + w
+            var limit = 12; // safety cap on clones
+            while (track.getBoundingClientRect().width < marqueeW + w && limit-- > 0) {
+                var clone = firstRow.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+            }
+            // now explicitly size track to its intrinsic width
+            track.style.width = Math.ceil(track.getBoundingClientRect().width) + 'px';
+
+            // Ensure track starts at zero transform (fully aligned at left)
+            track.style.transform = 'translateX(0px)';
+
+            // restart animation to avoid jumpy starts when resizing — apply explicit shorthand
+            track.style.animation = 'none';
+            // force reflow
+            void track.offsetWidth;
+            track.style.animation = 'statsBandMarquee 30s linear infinite';
+        }
+
+        // initial set after fonts and load (prevents measuring before webfonts load)
+        function scheduleInitialUpdate() {
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(function () { setTimeout(update, 60); });
+            } else {
+                window.addEventListener('load', function () { setTimeout(update, 60); });
+            }
+        }
+        scheduleInitialUpdate();
+        var to;
+        window.addEventListener('resize', function () {
+            clearTimeout(to);
+            to = setTimeout(update, 120);
+        });
+    }());
     </script>
 </body>
 
