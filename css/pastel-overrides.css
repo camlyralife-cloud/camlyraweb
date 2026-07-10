@@ -7276,7 +7276,7 @@ html, body { overflow-x: hidden; max-width: 100%; }
 /* Back link used on founder/team pages */
 .back-to-team {
   display: inline-block;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
   color: var(--sage-teal-deep);
   font-weight: 600;
   text-decoration: none;

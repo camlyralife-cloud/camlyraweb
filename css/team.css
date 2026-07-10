@@ -17,7 +17,7 @@ body.team-page {
     box-shadow: 0 1px 0 rgba(46, 58, 57, 0.06);
 }
 
-.team-page #navbar.scrolled,
+..team-page #navbar.scrolled,
 .founder-page #navbar.scrolled {
     background: rgba(253, 251, 247, 0.97);
 }
@@ -31,7 +31,7 @@ body.team-page {
 
 .team-main,
 .founder-main {
-    padding-top: 5.5rem;
+    padding-top: 6rem;
 }
 
 /* —— Team hero —— */
