@@ -1587,7 +1587,7 @@ a.nav-brand {
     line-height: 1.7;
 }
 
-.feature-card strong {
+.feature-card h3 {
     display: block;
     margin-bottom: 0.55rem;
     font-size: 1.05rem;
@@ -4515,7 +4515,7 @@ section.section-faq,
   background: var(--black-2);
 }
 
-.feature-card strong {
+.feature-card h3 {
   display: block;
   font-family: var(--font-display);
   font-size: var(--text-2xl);

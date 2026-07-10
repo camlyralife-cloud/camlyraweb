@@ -1,11 +1,11 @@
-/* Calmyra design tokens — Premium Forest, Sage & Gold palette */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+/* Calmyra design tokens — Olive-Gold, Sage & Ivory palette */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@300;400;500;600&display=swap');
 
 :root {
   /* ─── Typography ─── */
-  --font-body:    'DM Sans', system-ui, -apple-system, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-label:   'DM Sans', system-ui, sans-serif;
+  --font-body:    'Public Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-label:   'Public Sans', system-ui, sans-serif;
 
   /* Type scale */
   --text-xs:   0.75rem;    /* 12px — eyebrow / small */
@@ -20,22 +20,27 @@
   /* ─── Premium Palette ─── */
 
   /* Forest Ink — primary text, dark sections, grounding elements */
-  --forest-ink:      #2C3531;
-  --forest-ink-deep: #1E2620;
+  --forest-ink:      #3A3820;
+  --forest-ink-deep: #2B2B26;
 
   /* Sage Teal — primary brand color, secondary buttons, highlights */
-  --sage-teal:       #5E8676;
-  --sage-teal-dark:  #4A6D5F;
-  --sage-teal-deep:  #3A5549;
+  --sage-teal:       #94AC9E;
+  --sage-teal-dark:  #64726A;
+  --sage-teal-deep:  #6B7B73;
 
   /* Sage Light — cards, soft backgrounds (20% palette) */
-  --sage-light:      #DFE9E3;
-  --sage-mid:        #CCDAD4;
+  --sage-light:      #E4E9E1;
+  --sage-mid:        #D3DCCF;
 
   /* Warm Gold — signature accent, CTAs, ✦ symbols (10% — use sparingly) */
-  --warm-gold:       #BD9A55;
-  --warm-gold-dark:  #A6864A;
-  --warm-gold-light: #D4B06E;
+  --warm-gold:       #AD9164;
+  --warm-gold-dark:  #7A613C;
+  --warm-gold-light: #C4A97D;
+
+  /* Olive Gold — primary button fill, headline accent */
+  --olive-gold:      #68602C;
+  --olive-gold-dark: #524B22;
+  --olive-gold-light:#847A3E;
 
   /* Champagne — warm secondary backgrounds */
   --champagne:       #EFE7DA;
@@ -45,20 +50,37 @@
   --dusty-rose:      #C9A0A0;
 
   /* Cream — main page background (70% palette) */
-  --cream:           #FAF7F1;
-  --cream-warm:      #F5EFE4;
+  --cream:           #F2F0E9;
+  --cream-warm:      #EFEBE0;
   --off-white:       #F7F4EF;
   --white:           #ffffff;
 
   /* ─── Text hierarchy ─── */
-  --ink:       #2C3531;
-  --ink-dark:  #1E2620;
-  --ink-soft:  #445048;
-  --ink-mute:  #6B7870;
-  --ink-faint: #9AA49F;
-  --line:      rgba(44, 53, 49, 0.10);
-  --line-soft: rgba(44, 53, 49, 0.06);
-  --line-gold: rgba(189, 154, 85, 0.25);
+  --ink:       #2B2B26;
+  --ink-dark:  #3A3820;
+  --ink-soft:  #6B6B63;
+  --ink-mute:  #6B6B63;
+  --ink-faint: #9A9A8F;
+  --line:      rgba(58, 56, 32, 0.10);
+  --line-soft: rgba(58, 56, 32, 0.06);
+  --line-gold: rgba(173, 145, 100, 0.25);
+
+  /* ─── Explicit brand tokens (per design spec) ─── */
+  --color-bg-ivory:           var(--cream);
+  --color-bg-white:           var(--white);
+  --color-bg-sage-tint:       var(--sage-light);
+  --color-olive-gold:         var(--olive-gold);
+  --color-sage:               var(--sage-teal);
+  --color-sage-shadow:        var(--sage-teal-dark);
+  --color-warm-gold:          var(--warm-gold);
+  --color-text-heading:       var(--ink-dark);
+  --color-text-body:          var(--ink);
+  --color-text-muted:         var(--ink-soft);
+  --color-btn-primary-bg:     var(--color-olive-gold);
+  --color-btn-primary-text:   #FFFFFF;
+  --color-btn-secondary-bg:   transparent;
+  --color-btn-secondary-text: var(--color-olive-gold);
+  --color-btn-secondary-border: var(--color-olive-gold);
 
   /* ─── Mint aliases (legacy compat — remapped to sage teal) ─── */
   --mint-50:  var(--sage-light);
@@ -129,13 +151,23 @@
   --container-wide: 1320px;
   --container-sm:   720px;
   --section-x:      clamp(1.25rem, 4vw, 2.5rem);
-  --section-y:      clamp(5rem, 9vw, 8rem);
+  --section-y:      clamp(var(--space-5), 9vw, var(--space-7));
 
   /* ─── Spacing ─── */
   --sp-1: 0.25rem;  --sp-2: 0.5rem;   --sp-3: 0.75rem;
   --sp-4: 1rem;     --sp-5: 1.25rem;  --sp-6: 1.5rem;
   --sp-7: 2rem;     --sp-8: 2.5rem;   --sp-9: 3rem;
   --sp-10: 4rem;    --sp-11: 5rem;
+
+  /* ─── 8px spacing scale (per design spec) ─── */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
 
   /* ─── Radius ─── */
   --r-sm: 4px;  --r-md: 8px;   --r-lg: 12px;

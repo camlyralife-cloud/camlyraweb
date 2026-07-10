@@ -71,7 +71,7 @@ p, li, dd, dt, span, blockquote { color: var(--ink-soft); }
 
 .nav-menu a[aria-current="page"],
 .nav-menu .nav-link[aria-current="page"] {
-  color: var(--warm-gold) !important;
+  color: var(--warm-gold-dark) !important;
   background: rgba(189, 154, 85, 0.08);
 }
 
@@ -182,7 +182,7 @@ p, li, dd, dt, span, blockquote { color: var(--ink-soft); }
 
 .mega-group-link--cta,
 .ns-dropdown-link--cta {
-  color: var(--warm-gold) !important;
+  color: var(--warm-gold-dark) !important;
   font-weight: 600;
 }
 
@@ -266,21 +266,6 @@ p, li, dd, dt, span, blockquote { color: var(--ink-soft); }
   margin-bottom: 40px; /* increased spacing */
   font-size: 1.075rem;
 }
-
-/* Right visual — keep existing hero imagery but present it as a premium card */
-.hero-section .hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-section .hero-img-main {
-  width: 100%;
-  max-width: 480px;
-  border-radius: 20px;
-  box-shadow: 0 24px 60px rgba(44,53,49,0.10);
-  overflow: hidden;
-}
-.hero-section .hero-img-main img { display:block; width:100%; height:auto; }
 
 /* subtle entrance animation for hero content */
 .hero-section .hero-copy,
@@ -433,7 +418,7 @@ p, li, dd, dt, span, blockquote { color: var(--ink-soft); }
 }
 
 .service-tile h3,
-.feature-card strong {
+.feature-card h3 {
   color: var(--ink-dark) !important;
   font-family: var(--font-display);
   font-weight: 500;
@@ -967,7 +952,7 @@ a:hover { color: var(--mint-800); }
   background: var(--cream) !important;
   border: 1px solid var(--mint-200) !important;
   color: var(--ink-dark) !important;
-  font-size: 0.95rem !important;
+  font-size: 16px !important;
 }
 .gs-input::placeholder { color: var(--ink-mute) !important; }
 .gs-input:focus,
@@ -1041,10 +1026,10 @@ a:hover { color: var(--mint-800); }
 .btn-activate,
 .btn-know-more,
 .specialized-cta {
-  background: var(--grad-gold) !important;
-  color: var(--white) !important;
+  background: var(--color-btn-primary-bg) !important;
+  color: var(--color-btn-primary-text) !important;
   border: none !important;
-  box-shadow: var(--shadow-gold) !important;
+  box-shadow: 0 8px 22px -8px rgba(104, 96, 44, 0.45) !important;
   font-weight: 600 !important;
   letter-spacing: 0.02em !important;
 }
@@ -1053,22 +1038,22 @@ a:hover { color: var(--mint-800); }
 .btn-activate:hover,
 .btn-know-more:hover,
 .specialized-cta:hover {
-  background: linear-gradient(135deg, var(--mint-600) 0%, var(--mint-400) 55%, var(--mint-500) 100%) !important;
-  box-shadow: 0 12px 36px rgba(189, 154, 85, 0.28) !important;
+  background: var(--olive-gold-dark) !important;
+  box-shadow: 0 12px 32px -10px rgba(104, 96, 44, 0.55) !important;
   transform: translateY(-2px);
-  color: var(--white) !important;
+  color: var(--color-btn-primary-text) !important;
 }
 
 .btn-secondary {
-  background: var(--white) !important;
-  color: var(--ink-dark) !important;
-  border: 1px solid var(--mint-300) !important;
-  box-shadow: var(--shadow-xs) !important;
+  background: var(--color-btn-secondary-bg) !important;
+  color: var(--color-btn-secondary-text) !important;
+  border: 1.5px solid var(--color-btn-secondary-border) !important;
+  box-shadow: none !important;
 }
 .btn-secondary:hover {
-  border-color: var(--mint-500) !important;
-  color: var(--mint-800) !important;
-  background: var(--mint-50) !important;
+  border-color: var(--olive-gold-dark) !important;
+  color: var(--olive-gold-dark) !important;
+  background: var(--color-bg-sage-tint) !important;
 }
 
 /* Specialized reference labels (visible) */
@@ -1517,13 +1502,13 @@ html { scroll-behavior: smooth; }
   display: flex; flex-direction: column; align-items: center; gap: 18px;
 }
 .ss-eyebrow {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 12px; font-weight: 500;
   letter-spacing: .26em; text-transform: uppercase;
   color: var(--mint-700, #4A6D5F);
 }
 .section-specialized-services .specialized-services-header h2 {
-  font-family: 'Playfair Display', Georgia, serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 400 !important;
   font-size: clamp(2.2rem, 4.8vw, 4rem) !important;
   line-height: 1.06 !important;
@@ -1537,7 +1522,7 @@ html { scroll-behavior: smooth; }
   font-weight: 400;
 }
 .ss-lede {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: clamp(1rem, 1.18vw, 1.12rem);
   color: var(--ink-soft, #4a5650);
   line-height: 1.6; max-width: 62ch; margin: 0;
@@ -1574,7 +1559,7 @@ html { scroll-behavior: smooth; }
   background: #FFFFFF !important;
   border: 1px solid rgba(31, 42, 37, 0.08) !important;
   border-radius: 18px !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 15px !important;
   font-weight: 500 !important;
   color: var(--ink, #1F2A26) !important;
@@ -1594,7 +1579,7 @@ html { scroll-behavior: smooth; }
   box-shadow: 0 18px 36px -22px rgba(31, 42, 37, 0.22);
 }
 .ss-label-num {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 22px;
   color: var(--mint-700, #4A6D5F);
@@ -1633,7 +1618,7 @@ html { scroll-behavior: smooth; }
   background: rgba(94, 134, 118, 0.25);
   border: 1px dashed rgba(94, 134, 118, 0.3);
   border-radius: 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 13px; line-height: 1.5;
   color: var(--mint-800, #3A5549);
 }
@@ -1701,7 +1686,7 @@ html { scroll-behavior: smooth; }
 }
 .ss-card-num {
   position: absolute; top: 22px; left: 28px; z-index: 2;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-style: italic; font-size: 28px;
   color: #FFF; opacity: .9;
   text-shadow: 0 2px 14px rgba(31,42,37,0.45);
@@ -1713,13 +1698,13 @@ html { scroll-behavior: smooth; }
   display: flex; flex-direction: column; gap: 16px;
 }
 .ss-card-kicker {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 11px; font-weight: 500;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--mint-700, #4A6D5F);
 }
 .section-specialized-services .specialized-ref-card h3 {
-  font-family: 'Playfair Display', serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 500 !important;
   font-size: clamp(1.7rem, 2.4vw, 2.4rem) !important;
   line-height: 1.1 !important;
@@ -1728,21 +1713,21 @@ html { scroll-behavior: smooth; }
   margin: 0 !important;
 }
 .section-specialized-services .specialized-ref-card .specialized-tagline {
-  font-family: 'Playfair Display', serif !important;
+  font-family: var(--font-display) !important;
   font-style: italic !important;
   font-size: clamp(1.1rem, 1.4vw, 1.3rem) !important;
   color: var(--mint-700, #4A6D5F) !important;
   margin: 0 !important;
 }
 .section-specialized-services .specialized-ref-card p {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 15.5px !important;
   line-height: 1.65 !important;
   color: var(--ink, #1F2A26) !important;
   margin: 0 !important;
 }
 .section-specialized-services .specialized-ref-card .specialized-subtitle {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 12px !important;
   letter-spacing: 0.18em !important;
   text-transform: uppercase !important;
@@ -1759,7 +1744,7 @@ html { scroll-behavior: smooth; }
   margin: 0 !important;
 }
 .section-specialized-services .specialized-chip-row span {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 12.5px !important;
   font-weight: 500 !important;
   color: var(--mint-800, #3A5549) !important;
@@ -1788,7 +1773,7 @@ html { scroll-behavior: smooth; }
 .section-specialized-services .specialized-list li {
   position: relative;
   padding-left: 30px !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 14.5px !important;
   line-height: 1.55 !important;
   color: var(--ink, #1F2A26) !important;
@@ -1815,7 +1800,7 @@ html { scroll-behavior: smooth; }
   margin-top: 12px !important;
   background: var(--mint-700, #4A6D5F) !important;
   color: #FFFFFF !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 14.5px !important;
   font-weight: 500 !important;
   letter-spacing: 0.01em;
@@ -1934,8 +1919,10 @@ html { scroll-behavior: smooth; }
   position: absolute; border-radius: 50%; pointer-events: none; filter: blur(80px);
   z-index: 0;
 }
-.hero-v2 .hero-bg-blob--1 { width: 460px; height: 460px; background: rgba(94, 134, 118, 0.5); top: -160px; right: 12%; }
+.hero-v2 .hero-bg-blob--1 { width: 460px; height: 460px; background: rgba(94, 134, 118, 0.58); top: -160px; right: 12%; }
 .hero-v2 .hero-bg-blob--2 { width: 380px; height: 380px; background: rgba(201, 160, 160, 0.32); bottom: -120px; left: -120px; }
+.hero-v2 .hero-bg-blob--3 { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(90px); z-index: 0; width: 420px; height: 420px; background: rgba(189, 154, 85, 0.4); top: 30%; right: -80px; }
+
 .hero-v2 .hero-bg-grain { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .035;
   background-image: radial-gradient(rgba(31,42,37,.6) 0.6px, transparent 0.7px); background-size: 4px 4px; }
 
@@ -1967,7 +1954,7 @@ html { scroll-behavior: smooth; }
   backdrop-filter: blur(10px);
   border: 1px solid rgba(94, 134, 118, 0.22);
   border-radius: 999px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
   color: var(--mint-800, #3A5549);
@@ -1991,7 +1978,7 @@ html { scroll-behavior: smooth; }
 }
 
 .hero-title-v2 {
-  font-family: 'Playfair Display', Georgia, serif !important;
+  font-family: var(--font-display) !important;
   font-weight: 400 !important;
   font-size: clamp(3rem, 7.2vw, 6rem) !important;
   line-height: 1.02 !important;
@@ -2037,7 +2024,7 @@ html { scroll-behavior: smooth; }
 }
 
 .hero-text-v2 {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: clamp(1rem, 1.25vw, 1.18rem) !important;
   line-height: 1.6 !important;
   color: var(--ink-soft, #4a5650) !important;
@@ -2051,7 +2038,7 @@ html { scroll-behavior: smooth; }
   align-items: center !important;
   gap: 10px !important;
   padding: 16px 26px !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 15px !important;
   font-weight: 500 !important;
   border-radius: 999px !important;
@@ -2096,7 +2083,7 @@ html { scroll-behavior: smooth; }
 }
 .hero-cred-item { display: flex; flex-direction: column; gap: 4px; }
 .hero-cred-item strong {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(1.4rem, 1.9vw, 1.8rem);
   color: var(--mint-800, #3A5549);
@@ -2104,7 +2091,7 @@ html { scroll-behavior: smooth; }
   line-height: 1;
 }
 .hero-cred-item span {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 12px;
   letter-spacing: 0.06em;
   color: var(--ink-soft, #4a5650);
@@ -2113,7 +2100,7 @@ html { scroll-behavior: smooth; }
 .hero-cred-divider { width: 1px; height: 36px; background: rgba(31, 42, 37, 0.12); }
 
 .hero-trust-strip-v2 {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-body) !important;
   font-size: 12px !important;
   letter-spacing: 0.1em !important;
   color: var(--mint-700, #4A6D5F) !important;
@@ -2153,7 +2140,7 @@ html { scroll-behavior: smooth; }
 }
 .hero-photo-tag {
   position: absolute; bottom: 22px; left: 24px; z-index: 2;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 16px;
   color: #FFFFFF;
@@ -2196,12 +2183,12 @@ html { scroll-behavior: smooth; }
 }
 .hero-float-text { display: flex; flex-direction: column; line-height: 1.25; }
 .hero-float-text strong {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600; font-size: 13.5px;
   color: var(--mint-800, #3A5549);
 }
 .hero-float-text span {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 11.5px;
   color: var(--ink-soft, #4a5650);
 }
@@ -2224,7 +2211,7 @@ html { scroll-behavior: smooth; }
   color: #FFFFFF;
   padding: 11px 22px;
   border-radius: 999px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -2310,7 +2297,7 @@ html { scroll-behavior: smooth; }
 }
 .market-paths-eyebrow {
   display: inline-flex;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.25em;
@@ -2319,7 +2306,7 @@ html { scroll-behavior: smooth; }
   margin-bottom: 18px;
 }
 .market-paths-intro h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: clamp(2.75rem, 4vw, 3.8rem);
   font-weight: 400;
   color: #1a1a1a;
@@ -2420,7 +2407,7 @@ html { scroll-behavior: smooth; }
 
 /* Hierarchy updates */
 .market-path-location {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -2428,7 +2415,7 @@ html { scroll-behavior: smooth; }
   margin-bottom: 0;
 }
 .market-path-name {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: clamp(2.05rem, 2.7vw, 2.6rem);
   font-weight: 400;
   line-height: 1.05;
@@ -2436,7 +2423,7 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 .market-path-position {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.94rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2444,13 +2431,13 @@ html { scroll-behavior: smooth; }
   margin: 0;
 }
 .market-path-card--india .market-path-name { color: #2B4F3B; }
-.market-path-card--dubai .market-path-name { color: #8A5C2A; }
+.market-path-card--dubai .market-path-name { color: #68602C; }
 .market-path-services {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 16px;
+  gap: var(--space-2);
 }
 .market-path-services li {
   position: relative;
@@ -2476,7 +2463,7 @@ html { scroll-behavior: smooth; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -2498,7 +2485,7 @@ html { scroll-behavior: smooth; }
   gap: 10px;
   padding: 16px 24px;
   border-radius: 14px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -2514,7 +2501,7 @@ html { scroll-behavior: smooth; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -2576,7 +2563,7 @@ html { scroll-behavior: smooth; }
   gap: 6px;
   padding: 5px 12px;
   border-radius: 999px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 10.5px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -2647,7 +2634,7 @@ html { scroll-behavior: smooth; }
   background: #EAF2EC;
 }
 .mega-market-banner-name {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -2655,7 +2642,7 @@ html { scroll-behavior: smooth; }
   color: #2B5C3F;
 }
 .mega-market-banner-sub {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 11px;
   color: #3D6B54;
 }
@@ -2667,7 +2654,7 @@ html { scroll-behavior: smooth; }
 }
 .ns-market-header--dubai {
   /* Deeper than the brand gold so white text clears WCAG AA (4.5:1) */
-  background: linear-gradient(135deg, #6E4820 0%, #8A5C2A 100%);
+  background: linear-gradient(135deg, #524B22 0%, #68602C 100%);
 }
 .ns-market-name {
   display: block;
@@ -2710,7 +2697,7 @@ html { scroll-behavior: smooth; }
 }
 .service-market-label {
   display: inline-block;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -2720,7 +2707,7 @@ html { scroll-behavior: smooth; }
 .service-market-heading--india .service-market-label { color: #3D6B54; }
 .service-market-heading--dubai .service-market-label { color: #C8965A; }
 .service-market-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.5vw, 1.9rem);
   font-weight: 400;
   color: #1a1a1a;
@@ -2797,8 +2784,9 @@ html { scroll-behavior: smooth; }
   border: 1px solid rgba(119, 112, 103, 0.12);
   box-shadow: 0 28px 66px rgba(22, 35, 55, 0.08);
 }
-.service-matrix-section .matrix-card strong {
+.service-matrix-section .matrix-card h3 {
   display: block;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   margin-bottom: 18px;
   color: #171717;
@@ -3126,11 +3114,11 @@ html { scroll-behavior: smooth; }
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--warm-gold);
+  color: var(--warm-gold-dark);
   margin-bottom: 14px;
 }
 .sp-header h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: clamp(1.75rem, 3.2vw, 2.4rem);
   font-weight: 400;
   color: var(--forest-ink);
@@ -3162,7 +3150,7 @@ html { scroll-behavior: smooth; }
   border-bottom: 2px solid transparent;
   margin-bottom: -2px;
   padding: 14px 30px;
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
   color: #888;
@@ -3202,7 +3190,7 @@ html { scroll-behavior: smooth; }
   margin-bottom: 12px;
 }
 .sp-panel-copy h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: clamp(1.35rem, 2.4vw, 1.85rem);
   font-weight: 400;
   color: var(--forest-ink);
@@ -3211,7 +3199,7 @@ html { scroll-behavior: smooth; }
 }
 .sp-panel-subtitle {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 1rem;
   color: var(--ink-soft);
@@ -3373,7 +3361,7 @@ html { scroll-behavior: smooth; }
   gap: 8px;
 }
 .sp-footer-question {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--forest-ink);
@@ -3409,7 +3397,7 @@ html { scroll-behavior: smooth; }
 /* Scrollable track */
 .sp-carousel {
   display: flex;
-  gap: 24px;
+  gap: var(--space-3);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -3472,7 +3460,7 @@ html { scroll-behavior: smooth; }
   z-index: 2;
   padding: 5px 12px;
   border-radius: 999px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 0.11em;
@@ -3483,7 +3471,7 @@ html { scroll-behavior: smooth; }
   color: #3D6B54;
   white-space: nowrap;
 }
-.sp-card--mindset .sp-card-tag { color: #8A5C2A; }
+.sp-card--mindset .sp-card-tag { color: #68602C; }
 
 /* ── Card body ────────────────────────────────────────────── */
 .sp-card-body {
@@ -3499,23 +3487,23 @@ html { scroll-behavior: smooth; }
   gap: 7px;
 }
 .sp-card-body h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #1C2D26;
   margin: 0;
   line-height: 1.38;
 }
 .sp-card-subtitle {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-display);
   font-style: italic;
   font-size: 13px;
   color: #999;
   line-height: 1.5;
 }
 .sp-card-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 13.5px;
   line-height: 1.65;
   color: #555;
@@ -3533,7 +3521,7 @@ html { scroll-behavior: smooth; }
   gap: 6px;
 }
 .sp-card-pills span {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 500;
   padding: 4px 11px;
@@ -3544,7 +3532,7 @@ html { scroll-behavior: smooth; }
 }
 .sp-card--mindset .sp-card-pills span {
   background: rgba(200,150,90,0.08);
-  color: #8A5C2A;
+  color: #68602C;
   border-color: rgba(200,150,90,0.22);
 }
 
@@ -3556,7 +3544,7 @@ html { scroll-behavior: smooth; }
   margin-top: auto;
   padding: 12px 20px;
   border-radius: 11px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 13.5px;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -3665,7 +3653,9 @@ html { scroll-behavior: smooth; }
   overflow: hidden;
   box-shadow:
     0 40px 80px -24px rgba(31,42,37,0.30),
-    0 0 0 4px rgba(239,231,218,0.55);
+    0 0 0 4px rgba(239,231,218,0.55),
+    -22px -14px 44px -18px rgba(94, 134, 118, 0.35),
+    22px 18px 44px -18px rgba(189, 154, 85, 0.32);
   z-index: 2;
 }
 .hero-img-main img {
@@ -3919,7 +3909,7 @@ html { scroll-behavior: smooth; }
   border-color: rgba(189,154,85,0.36) !important;
 }
 .service-tiles-grid--dubai .service-tile h3 {
-  color: #8A5C2A !important;
+  color: #68602C !important;
   padding-right: 2.5rem;
 }
 .service-tiles-grid--dubai .service-tile a {
@@ -3970,11 +3960,11 @@ html { scroll-behavior: smooth; }
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.6rem;
-  color: var(--warm-gold);
+  color: var(--warm-gold-dark);
   opacity: 0.55;
   margin-bottom: 0.9rem;
 }
-#why .feature-card strong { font-size: 1.2rem; }
+#why .feature-card h3 { font-size: 1.2rem; }
 #why .feature-card:hover {
   border-color: var(--mint-300) !important;
 }
@@ -4280,7 +4270,7 @@ html { scroll-behavior: smooth; }
 }
 .testimonial-category-tag--sage { color: var(--sage-teal-deep); background: var(--mint-50, #DFE9E3); }
 .testimonial-rating {
-  color: var(--warm-gold);
+  color: var(--warm-gold-dark);
   font-size: 0.9rem;
   letter-spacing: 2px;
   margin: -0.4rem 0 0.6rem;
@@ -4766,7 +4756,7 @@ html { scroll-behavior: smooth; }
 .sbc-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: var(--space-2);
   margin: 1.75rem 0 1.75rem;
 }
 @media (max-width: 480px) { .sbc-grid { grid-template-columns: 1fr; } }
@@ -4819,7 +4809,7 @@ html { scroll-behavior: smooth; }
 .conf-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: var(--space-2);
   margin: 0 0 1.75rem;
 }
 @media (max-width: 480px) { .conf-row { grid-template-columns: 1fr; } }
@@ -5099,7 +5089,7 @@ html { scroll-behavior: smooth; }
 .breathing-toggle .breathing-toggle-icon { color: var(--white) !important; }
 .breathing-card--box .breathing-toggle {
   /* Deeper than the brand gold so white text clears WCAG AA (4.5:1) */
-  background: linear-gradient(135deg, #8A5C2A 0%, #6E4820 100%);
+  background: linear-gradient(135deg, #68602C 0%, #524B22 100%);
   box-shadow: 0 12px 28px -10px rgba(189, 154, 85, 0.55);
 }
 .breathing-toggle:hover { transform: translateY(-2px) scale(1.02); }
@@ -5398,7 +5388,7 @@ html { scroll-behavior: smooth; }
   white-space: nowrap;
   transition: transform var(--dur-mid) var(--ease-silk), box-shadow var(--dur-mid) var(--ease-silk), background var(--dur-mid) var(--ease-silk);
 }
-.breathe-widget-label--gold { color: #6E4820; }
+.breathe-widget-label--gold { color: #524B22; }
 .breathe-widget-launcher:hover .breathe-widget-label,
 .breathe-widget-launcher:focus-within .breathe-widget-label {
   transform: translateX(-2px);
@@ -5428,7 +5418,7 @@ html { scroll-behavior: smooth; }
 }
 .breathe-widget-fab svg { position: relative; z-index: 1; }
 .breathe-widget-fab--gold {
-  background: linear-gradient(135deg, #8A5C2A 0%, #6E4820 100%);
+  background: linear-gradient(135deg, #68602C 0%, #524B22 100%);
 }
 .breathe-widget-fab--gold .breathe-widget-fab-pulse { background: var(--warm-gold); }
 .breathe-widget-fab-pulse {
@@ -5916,8 +5906,8 @@ body {
   animation-play-state: paused;
 }
 @keyframes statsBandMarquee {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0%); }
+  from { transform: translateX(0%); }
+  to   { transform: translateX(-50%); }
 }
 
 .stats-band-row {
@@ -6104,3 +6094,1098 @@ body {
   #about.section-wellness-intro { padding: 32px 0 40px !important; }
 }
 
+/* ============================================================
+   MATRIX HERO — branded photography beside the India/Dubai
+   section intros (replaces the empty space in those sections
+   with a real photo, ~50/50 with the copy).
+   ============================================================ */
+.matrix-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 4vw, 3.25rem);
+  align-items: center;
+  margin: 0 auto 48px;
+  max-width: 1180px;
+}
+.matrix-hero-media {
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(31, 42, 37, 0.16);
+}
+.matrix-hero-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1400 / 781;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-silk);
+}
+.matrix-hero-media:hover img { transform: scale(1.045); }
+
+/* The intro copy no longer needs to be centered/capped once it
+   sits beside a photo instead of floating alone. */
+.matrix-hero .matrix-intro,
+.matrix-hero .service-market-heading--dubai {
+  text-align: left !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .matrix-hero { gap: 1.75rem; margin-bottom: 40px; }
+}
+@media (max-width: 640px) {
+  .matrix-hero { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 32px; }
+  .matrix-hero-media { order: -1; }
+}
+
+
+/* ============================================================
+   CHOOSE YOUR PATH — hero panel legibility + framing fix (v27)
+   Fixes: title illegible over bright image zones, source photos
+   (1400x781, ~1.79:1) over-cropped inside a taller panel shape,
+   subjects hidden behind overlay. Final authority — appended at
+   true EOF so it wins over earlier .mp-panel rules above.
+   ============================================================ */
+.mp-panel {
+  min-height: clamp(560px, 50vw, 700px) !important;
+}
+
+.mp-panel-media img {
+  object-position: center 32% !important;
+}
+
+/* Earlier + stronger darkening so the whole text zone (title
+   through actions) sits on a legible surface, not just the CTA row. */
+.mp-panel--india .mp-panel-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 24, 19, 0) 0%,
+    rgba(14, 24, 19, 0.1) 30%,
+    rgba(12, 22, 17, 0.62) 50%,
+    rgba(9, 18, 14, 0.85) 68%,
+    rgba(6, 13, 10, 0.95) 100%
+  ) !important;
+}
+.mp-panel--dubai .mp-panel-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(34, 24, 10, 0) 0%,
+    rgba(34, 24, 10, 0.1) 30%,
+    rgba(30, 21, 9, 0.62) 50%,
+    rgba(25, 17, 7, 0.85) 68%,
+    rgba(18, 12, 5, 0.95) 100%
+  ) !important;
+}
+
+/* Prominence + guaranteed contrast for the market title regardless
+   of what part of the photo sits behind it. */
+.mp-panel-title {
+  color: var(--white) !important;
+  font-size: clamp(2.3rem, 3.6vw, 3.35rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 0 20px !important;
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.mp-panel-kicker {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.mp-chip {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.mp-panel-content {
+  padding: clamp(32px, 4.2vw, 44px) !important;
+}
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .mp-panel { min-height: 620px !important; }
+}
+@media (max-width: 900px) {
+  .mp-panel { min-height: 520px !important; }
+}
+@media (max-width: 480px) {
+  .mp-panel { min-height: 480px !important; }
+  .mp-panel-title { font-size: clamp(2rem, 7vw, 2.5rem) !important; }
+}
+
+/* ── Footer licensing note (Section C) ───────────────────────── */
+.footer-licensing {
+  color: rgba(253, 251, 247, 0.55) !important;
+  font-size: 0.78rem !important;
+  line-height: 1.6;
+  margin: 0 0 10px !important;
+  text-align: center;
+  width: 100%;
+}
+
+/* ── Header CTA hierarchy swap: Book = primary (filled), Workbook = secondary (outlined) ── */
+.btn-nav--book.btn-primary {
+  /* Solid dark olive rather than --grad-gold: that gradient runs into
+     a light tan at its far end, and on a wide button like this one the
+     white label text spans into that light zone and loses contrast. */
+  background: linear-gradient(135deg, var(--olive-gold) 0%, var(--olive-gold-dark) 100%) !important;
+  color: var(--white) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
+  border: none !important;
+  box-shadow: 0 8px 22px -8px rgba(189, 154, 85, 0.55) !important;
+}
+.btn-nav--book.btn-primary svg { color: var(--white) !important; }
+.btn-nav--book.btn-primary:hover {
+  background: linear-gradient(135deg, var(--mint-600) 0%, var(--mint-400) 55%, var(--mint-500) 100%) !important;
+  box-shadow: 0 14px 30px -10px rgba(189, 154, 85, 0.6) !important;
+  color: var(--white) !important;
+}
+.btn-nav--workbook.btn-secondary {
+  background: var(--white) !important;
+  color: var(--ink-dark) !important;
+  border: 1.5px solid var(--mint-400) !important;
+  box-shadow: none !important;
+}
+.btn-nav--workbook.btn-secondary:hover {
+  background: var(--mint-50) !important;
+  border-color: var(--mint-600) !important;
+  color: var(--mint-900, #1F2A26) !important;
+}
+
+/* ── Crisis helpline numbers as tappable tel: links ── */
+.footer-helpline-list a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer-helpline-list a:hover,
+.footer-helpline-list a:focus-visible {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   BRAND REBRAND — typography scale, spacing, button padding,
+   utility classes (Cormorant Garamond / Public Sans / olive-gold)
+   Baseline defaults only — bespoke component rules elsewhere in
+   this file (higher specificity and/or !important) still win.
+   ============================================================ */
+h1 { font-size: clamp(2.25rem, 4vw + 1rem, 3rem) !important; line-height: 1.1 !important; }
+h2 { font-size: clamp(1.75rem, 2.5vw + 1rem, 2.25rem) !important; line-height: 1.15 !important; }
+h3 { font-size: 1.5rem !important; line-height: 1.25 !important; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+body {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+}
+small, .text-small { font-size: 0.875rem; line-height: 1.5; }
+.eyebrow, .wellness-eyebrow, .testimonials-eyebrow, .mp-eyebrow,
+.hp-assess-eyebrow, .breathing-eyebrow, .trust-eyebrow,
+.trust-founder-eyebrow, .breathe-popup-eyebrow, .sp-card-tag, .ss-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+@media (max-width: 640px) {
+  h3 { font-size: 1.25rem !important; }
+  body { font-size: 1rem; }
+  small, .text-small { font-size: 0.8125rem; }
+  .eyebrow, .wellness-eyebrow, .testimonials-eyebrow, .mp-eyebrow,
+  .hp-assess-eyebrow, .breathing-eyebrow, .trust-eyebrow,
+  .trust-founder-eyebrow, .breathe-popup-eyebrow, .sp-card-tag, .ss-eyebrow {
+    font-size: 0.6875rem;
+  }
+}
+
+/* Site-wide heading scale enforcement: every h1/h2/h3 across every
+   page — including the bespoke marketing-size headings in team.css,
+   coaching.css, legal.css, assessment.css, relationship.css, and
+   bridge.css — now conforms to the scale above, no per-page
+   exceptions. The !important on the h1/h2/h3 rules above beats
+   those files' class-scoped selectors regardless of specificity,
+   since none of them use !important themselves. Component-level
+   overrides on the homepage (e.g. .mp-panel-title) still win
+   because they combine a class selector with !important, which
+   out-specifies a bare-element !important rule. */
+
+/* Headings never go full bold — Cormorant Garamond loses its
+   high-contrast delicacy above 500/600. */
+h1, h2, h3, h4, h5, h6 { font-weight: 500 !important; }
+
+.accent-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+.hero-title-v2 em,
+.mp-eyebrow em,
+.hero-kicker em,
+.sp-card-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.eyebrow,
+.wellness-eyebrow,
+.testimonials-eyebrow,
+.mp-eyebrow,
+.hp-assess-eyebrow,
+.breathing-eyebrow,
+.trust-eyebrow,
+.trust-founder-eyebrow,
+.breathe-popup-eyebrow {
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--color-olive-gold) !important;
+}
+
+.btn { padding: 14px 28px !important; }
+
+/* ── Card/body/paragraph spacing retrofit (8px scale) ── */
+.sp-card-body { gap: var(--space-2) !important; }
+.sp-card-desc { margin: 0 !important; }
+
+/* ── Footer social links ── */
+.footer-social {
+  list-style: none;
+  display: flex;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
+  padding: 0;
+}
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(253, 251, 247, 0.08);
+  color: rgba(253, 251, 247, 0.75);
+  transition: background var(--dur-fast) var(--ease-silk), color var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  background: var(--color-olive-gold);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* ── Responsive hardening ──────────────────────────────────
+   Defensive safety net: no rule anywhere in this file relied on
+   this previously, but 6,000+ lines of iteratively-added CSS is
+   exactly the situation where one future absolute/negative-margin
+   element could silently cause horizontal scroll on mobile. */
+html, body { overflow-x: hidden; max-width: 100%; }
+
+/* ── Who We Are — real photo replacing the abstract placeholder ── */
+.wellness-photo-primary img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ── Who We Are collage — single photo only (secondary placeholder removed) ── */
+.wellness-photo-solo {
+  width: 78% !important;
+  max-width: 340px !important;
+}
+.wellness-photo-solo img {
+  min-height: 340px;
+}
+
+/* ── Who We Are collage — fix: stack photo + card, no overlap ──
+   (Previous fix enlarged the solo photo without moving the card,
+   which still used its old absolute position tuned for a smaller
+   photo + a second image for balance — they now collide.) */
+.wellness-collage-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 0 !important;
+  padding-bottom: 0 !important;
+}
+.wellness-photo-solo {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  left: auto !important;
+  top: auto !important;
+}
+.wellness-photo-solo img {
+  min-height: 0;
+  aspect-ratio: 16 / 11;
+}
+.wellness-card-dark {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 1.1rem;
+}
+
+/* ============================================================
+   HERO — floating wellness service tags
+   Replaces the old floating avatar-stack card with premium
+   glass pills naming Calmyra's service categories. Positioned
+   around the hero photo/rings, never over the face/copy/CTAs.
+   ============================================================ */
+.hero-wtags { pointer-events: none; }
+
+.hero-wtag {
+  --tag-rot: 0deg;
+  --tag-float: 5px;
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  padding: 9px 16px 9px 12px;
+  border-radius: 16px;
+  background: rgba(250, 247, 241, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(173, 145, 100, 0.35);
+  box-shadow: 0 12px 28px -10px rgba(58, 56, 32, 0.22);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-dark);
+  letter-spacing: 0.01em;
+  pointer-events: auto;
+  transform: rotate(var(--tag-rot));
+  transition: transform 300ms var(--ease-silk), box-shadow 300ms var(--ease-silk), border-color 300ms var(--ease-silk);
+  animation: heroTagFloat 5s ease-in-out infinite;
+}
+.hero-wtag-icon { flex-shrink: 0; color: var(--color-sage); }
+
+/* Speech-bubble tail — small rotated square peeking out from the edge
+   nearest the photo, so each tag reads as a message pointing at it. */
+.hero-wtag::after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 50%;
+  margin-top: -5.5px;
+  background: rgba(250, 247, 241, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(173, 145, 100, 0.35);
+  transform: rotate(45deg);
+  z-index: -1;
+}
+/* Left-side tags: tail points right, into the photo */
+.hero-wtag--1::after,
+.hero-wtag--3::after,
+.hero-wtag--5::after { right: -5px; border-left: none; border-bottom: none; }
+/* Right-side tags: tail points left, into the photo */
+.hero-wtag--2::after,
+.hero-wtag--4::after,
+.hero-wtag--6::after { left: -5px; border-right: none; border-top: none; }
+
+.hero-wtag:hover {
+  transform: translateY(calc(-1 * var(--tag-float))) scale(1.03);
+  box-shadow: 0 18px 36px -12px rgba(58, 56, 32, 0.3);
+  border-color: var(--color-olive-gold);
+  animation-play-state: paused;
+}
+
+@keyframes heroTagFloat {
+  0%, 100% { transform: rotate(var(--tag-rot)) translateY(0); }
+  50%      { transform: rotate(var(--tag-rot)) translateY(calc(-1 * var(--tag-float))); }
+}
+
+/* Two accent groups — colour variety pulled from the existing palette,
+   no new hues. Sage for the clinical-leaning tags, gold for the
+   coaching/performance-leaning ones. */
+.hero-wtag--1, .hero-wtag--2, .hero-wtag--5 {
+  background: rgba(228, 233, 225, 0.78);
+  border-color: rgba(94, 134, 118, 0.38);
+}
+.hero-wtag--1 .hero-wtag-icon,
+.hero-wtag--2 .hero-wtag-icon,
+.hero-wtag--5 .hero-wtag-icon { color: var(--sage-teal-dark); }
+.hero-wtag--1::after, .hero-wtag--2::after, .hero-wtag--5::after {
+  background: rgba(228, 233, 225, 0.78);
+  border-color: rgba(94, 134, 118, 0.38);
+}
+
+.hero-wtag--3, .hero-wtag--4, .hero-wtag--6 {
+  background: rgba(239, 231, 218, 0.8);
+  border-color: rgba(173, 145, 100, 0.42);
+}
+.hero-wtag--3 .hero-wtag-icon,
+.hero-wtag--4 .hero-wtag-icon,
+.hero-wtag--6 .hero-wtag-icon { color: var(--color-olive-gold); }
+.hero-wtag--3::after, .hero-wtag--4::after, .hero-wtag--6::after {
+  background: rgba(239, 231, 218, 0.8);
+  border-color: rgba(173, 145, 100, 0.42);
+}
+
+/* Positions — anchored with calc() to the image's actual known geometry
+   (fixed 268px wide, centered, ~357px tall in a 600px-tall stage) rather
+   than percentages of the much wider surrounding container, so the tags
+   sit a small, predictable distance from the photo's edges regardless
+   of how wide .hero-visual-v2 itself renders. */
+.hero-wtag--1 { top: 90px;  left: calc(50% - 304px); right: auto; --tag-rot: -2deg;   --tag-float: 5px; animation-duration: 5.4s; animation-delay: 0s; }
+.hero-wtag--2 { top: 60px;  left: calc(50% + 154px); right: auto; --tag-rot: 1.5deg;  --tag-float: 4px; animation-duration: 6.2s; animation-delay: .8s; }
+.hero-wtag--3 { top: 260px; left: calc(50% - 314px); right: auto; --tag-rot: 1deg;    --tag-float: 6px; animation-duration: 5.8s; animation-delay: 1.6s; }
+.hero-wtag--4 { top: 240px; left: calc(50% + 149px); right: auto; --tag-rot: -1.5deg; --tag-float: 5px; animation-duration: 5s;   animation-delay: 2.3s; }
+.hero-wtag--5 { top: 430px; left: calc(50% - 309px); right: auto; bottom: auto; --tag-rot: -2.5deg; --tag-float: 4px; animation-duration: 6.5s; animation-delay: .4s; }
+.hero-wtag--6 { top: 470px; left: calc(50% + 159px); right: auto; bottom: auto; --tag-rot: 2deg;    --tag-float: 6px; animation-duration: 5.6s; animation-delay: 1.1s; }
+
+/* Tablet — trim to 5; image shrinks to 240px wide here, so the anchor
+   half-width drops from 134px to 120px accordingly. */
+@media (max-width: 900px) {
+  .hero-wtag { font-size: 0.75rem; padding: 8px 14px 8px 11px; }
+  .hero-wtag--1 { left: calc(50% - 270px); }
+  .hero-wtag--2 { left: calc(50% + 140px); }
+  .hero-wtag--3 { left: calc(50% - 280px); }
+  .hero-wtag--4 { left: calc(50% + 135px); }
+  .hero-wtag--5 { left: calc(50% - 275px); }
+  .hero-wtag--6 { display: none; }
+}
+
+/* Mobile — only the 3 most important, kept clear of the face/copy */
+@media (max-width: 640px) {
+  .hero-wtag { font-size: 0.7rem; padding: 7px 12px 7px 10px; gap: 5px; }
+  .hero-wtag-icon svg { width: 13px; height: 13px; }
+  .hero-wtag--1 { top: 1%; left: -3%; }
+  .hero-wtag--2 { top: -3%; right: 2%; }
+  .hero-wtag--3 { bottom: 6%; left: -2%; }
+  .hero-wtag--4,
+  .hero-wtag--5,
+  .hero-wtag--6 { display: none; }
+}
+
+/* ============================================================
+   HERO — MOBILE REDESIGN (≤767px)
+   Purpose-built mobile layout, not a scaled desktop grid.
+   Order: nav → image → location badge → tagline → heading →
+   description → primary CTA → secondary CTA.
+   Final authority — overrides every earlier hero mobile rule.
+   ============================================================ */
+@media (max-width: 767px) {
+
+  /* ── Section shell ── */
+  .hero-v2 {
+    padding: 120px 0 32px !important; /* 88px fixed navbar + 32px breathing room */
+  }
+  .hero-v2 .hero-panel-v2 {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* ── Visual block: image + location badge, normal flow ── */
+  .hero-v2 .hero-visual-v2 {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    min-height: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .hero-rings { display: none !important; }
+
+  /* Hero image — the primary visual, not a floating arch card */
+  .hero-img-main {
+    position: relative !important;
+    top: auto !important; left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: clamp(320px, 42vw, 380px) !important;
+    aspect-ratio: auto !important;
+    border-radius: 22px !important;
+    box-shadow: 0 20px 44px -18px rgba(31,42,37,0.28) !important;
+  }
+  .hero-img-main img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Floating wellness tags — limit to 2, anchored to the image corners
+     using fixed offsets (the image is now the first flex child, so its
+     top-left corner coincides with hero-visual-v2's own top-left). */
+  .hero-wtags { position: absolute; top: 0; left: 0; right: 0; height: 0; }
+  .hero-wtag { font-size: 0.68rem; padding: 6px 11px 6px 9px; gap: 5px; }
+  .hero-wtag-icon svg { width: 12px; height: 12px; }
+  .hero-wtag--1 { top: 14px; left: 10px; right: auto; bottom: auto; }
+  .hero-wtag--3 { top: auto; bottom: 14px; right: 10px; left: auto; }
+  /* --3 sits at the image's right edge on mobile (unlike its desktop
+     mid-left spot), so its tail needs to flip to point left, not right. */
+  .hero-wtag--3::after { right: auto; left: -5px; border-left: 1px solid rgba(173, 145, 100, 0.35); border-bottom: 1px solid rgba(173, 145, 100, 0.35); border-right: none; border-top: none; }
+  .hero-wtag--2, .hero-wtag--4, .hero-wtag--5, .hero-wtag--6 { display: none !important; }
+
+  /* Location badge — centered, in normal flow below the image */
+  .hero-loc-pill {
+    position: relative !important;
+    bottom: auto !important; left: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    padding: 9px 18px !important;
+  }
+
+  /* ── Copy block: tagline → heading → description → CTAs ── */
+  .hero-v2 .hero-copy-v2 {
+    order: 2 !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 16px !important;
+  }
+  .hero-tag { align-self: center !important; font-size: 12px; padding: 7px 14px; }
+
+  .hero-title-v2 {
+    font-size: clamp(2rem, 6vw, 2.8rem) !important;
+    text-align: center !important;
+    text-wrap: balance;
+  }
+  .hero-text-v2 {
+    max-width: 95% !important;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+  }
+
+  /* CTAs — stacked, equal width, centered, 16px gap, 24px above (16+8 spacing step) */
+  .hero-actions-v2 {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100%;
+    gap: 16px !important;
+    margin-top: 24px !important;
+  }
+  .hero-cta-primary, .hero-cta-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    justify-content: center !important;
+    padding: 16px 24px !important;
+  }
+
+  /* ── Floating breathing widgets — smaller, safely in the corner ── */
+  .breathe-widgets { right: 16px !important; bottom: 16px !important; gap: 8px !important; }
+  .breathe-widget-fab { width: 50px !important; height: 50px !important; }
+  .breathe-widget-label { font-size: 0.68rem !important; padding: 6px 10px !important; }
+}
+
+/* ── Who We Are — calm music banner (wave art + circular play button) ── */
+.wellness-audio-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 84px;
+  margin-top: 16px;
+  padding: 0;
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  background:
+    linear-gradient(115deg, rgba(58, 85, 73, 0.35) 0%, transparent 45%),
+    linear-gradient(135deg, var(--sage-teal-deep) 0%, var(--sage-teal) 45%, var(--sage-teal-dark) 100%);
+  box-shadow: 0 16px 34px -14px rgba(31, 42, 37, 0.45);
+  transition: transform var(--dur-fast) var(--ease-silk), box-shadow var(--dur-fast) var(--ease-silk);
+}
+.wellness-audio-banner:hover { transform: translateY(-2px); box-shadow: 0 20px 40px -12px rgba(31, 42, 37, 0.5); }
+.wellness-audio-banner:focus-visible { outline: 2px solid var(--color-olive-gold); outline-offset: 3px; }
+
+/* Abstract wave field — layered soft blobs standing in for a waveform */
+.wellness-audio-wave {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 140% at 30% 110%, rgba(148, 172, 158, 0.65) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 130% at 55% -10%, rgba(212, 224, 210, 0.5) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 120% at 78% 100%, rgba(58, 85, 73, 0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 110% at 95% 0%, rgba(173, 145, 100, 0.35) 0%, transparent 55%);
+  filter: blur(2px);
+  animation: wellnessWaveDrift 9s ease-in-out infinite alternate;
+}
+@keyframes wellnessWaveDrift {
+  0%   { transform: translateX(0) scale(1); }
+  100% { transform: translateX(-3%) scale(1.06); }
+}
+
+.wellness-audio-circle {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px; height: 46px;
+  margin-left: 18px;
+  border-radius: 50%;
+  background: rgba(20, 30, 25, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  color: var(--white);
+  backdrop-filter: blur(4px);
+  transition: background var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+.wellness-audio-banner:hover .wellness-audio-circle { transform: scale(1.06); background: rgba(20, 30, 25, 0.45); }
+.wellness-audio-circle svg { display: block; }
+.wellness-audio-icon-play { margin-left: 2px; }
+
+/* Soft expanding glow ring — invites the click until music is playing */
+.wellness-audio-circle::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  animation: wellnessAudioPulse 2.2s ease-out infinite;
+}
+.wellness-audio-banner.is-playing .wellness-audio-circle::before { animation: none; opacity: 0; }
+@keyframes wellnessAudioPulse {
+  0%   { transform: scale(0.85); opacity: 0.7; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Equalizer bars — appear to the right of the play circle once playing */
+.wellness-audio-bars {
+  position: relative;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  gap: 4px;
+  height: 22px;
+  margin-left: 16px;
+}
+.wellness-audio-bars span {
+  width: 3.5px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  animation: wellnessAudioBar 1s ease-in-out infinite;
+}
+.wellness-audio-bars span:nth-child(1) { height: 8px;  animation-delay: 0s; }
+.wellness-audio-bars span:nth-child(2) { height: 20px; animation-delay: 0.15s; }
+.wellness-audio-bars span:nth-child(3) { height: 13px; animation-delay: 0.3s; }
+.wellness-audio-bars span:nth-child(4) { height: 17px; animation-delay: 0.45s; }
+@keyframes wellnessAudioBar {
+  0%, 100% { transform: scaleY(0.35); }
+  50%      { transform: scaleY(1); }
+}
+.wellness-audio-banner.is-playing .wellness-audio-bars { display: inline-flex; }
+
+@media (max-width: 640px) {
+  .wellness-audio-banner { height: 68px; border-radius: 16px; }
+  .wellness-audio-circle { width: 38px; height: 38px; margin-left: 14px; }
+  .wellness-audio-bars { height: 18px; margin-left: 12px; }
+}
+
+/* ── Header/footer "Call us" icon buttons + Book-an-Appointment → WhatsApp ── */
+.btn-nav-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--mint-400);
+  color: var(--mint-800);
+  flex-shrink: 0;
+  transition: background var(--dur-fast) var(--ease-silk), border-color var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+.btn-nav-call:hover {
+  background: var(--mint-50);
+  border-color: var(--mint-600);
+  transform: translateY(-2px);
+}
+.btn-nav-call:focus-visible { outline: 2px solid var(--mint-600); outline-offset: 2px; }
+
+.footer-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+}
+.footer-cta-row .footer-cta { margin: 0; }
+.footer-cta-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(253, 251, 247, 0.08);
+  border: 1.5px solid rgba(253, 251, 247, 0.3);
+  color: rgba(253, 251, 247, 0.9);
+  transition: background var(--dur-fast) var(--ease-silk), border-color var(--dur-fast) var(--ease-silk), transform var(--dur-fast) var(--ease-silk);
+}
+.footer-cta-call:hover {
+  background: var(--color-olive-gold);
+  border-color: var(--color-olive-gold);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+.footer-cta-call:focus-visible { outline: 2px solid var(--color-olive-gold); outline-offset: 2px; }
+
+@media (max-width: 1180px) {
+  .btn-nav-call { width: 36px; height: 36px; }
+}
+@media (max-width: 900px) {
+  .nav-actions { flex-wrap: wrap; }
+  .btn-nav-call { order: -1; }
+}
+
+/* ============================================================
+   BOX BREATHING WIDGET — full visual rebuild to match reference
+   (circular gradient ring, leafy badge, 2x2 phase cards, dark
+   forest CTA, Deep Breathing cross-link). Final authority.
+   ============================================================ */
+.breathe-widget-panel--box {
+  width: 320px;
+  padding: 1.75rem 1.5rem 1.25rem;
+}
+
+.breathe-widget-panel--box .breathe-widget-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--olive-gold-dark);
+  background: var(--sage-light);
+}
+
+/* ── Circular progress ring ── */
+.breathe-widget-panel--box .box-breath-wrap {
+  width: 188px;
+  height: 188px;
+  margin: 4px auto 1.5rem;
+}
+.breathe-widget-panel--box .box-breath-svg { transform: rotate(-90deg); }
+.breathe-widget-panel--box .box-breath-track {
+  fill: none;
+  stroke: rgba(58, 56, 32, 0.1);
+  stroke-width: 4;
+}
+.breathe-widget-panel--box .box-breath-progress {
+  fill: none;
+  stroke: url(#boxBreathGradient);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 540;
+  stroke-dashoffset: 540;
+}
+.breathe-widget-panel--box .box-breath-wrap.is-running .box-breath-progress {
+  animation: boxDraw 16s linear infinite;
+}
+
+/* Small marker dot riding the top of the ring, plus faint wave
+   decoration either side — purely atmospheric, like the reference. */
+.box-breath-dot {
+  position: absolute;
+  top: 6px; left: 50%;
+  width: 9px; height: 9px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: var(--warm-gold);
+  box-shadow: 0 0 0 3px var(--white);
+}
+.box-breath-decor {
+  position: absolute;
+  top: 50%;
+  width: 60px; height: 46px;
+  opacity: 0.35;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(transparent 47%, rgba(148, 172, 158, 0.7) 47%, rgba(148, 172, 158, 0.7) 53%, transparent 53%),
+    linear-gradient(transparent 47%, rgba(173, 145, 100, 0.5) 47%, rgba(173, 145, 100, 0.5) 53%, transparent 53%);
+  background-size: 60% 100%, 100% 100%;
+  background-position: left center, right center;
+  mask-image: radial-gradient(ellipse 100% 60% at center, black 40%, transparent 90%);
+}
+.box-breath-decor--a { left: -46px; transform: translateY(-50%) rotate(-8deg); }
+.box-breath-decor--b { right: -46px; transform: translateY(-50%) scaleX(-1) rotate(-8deg); }
+
+.box-breath-center { gap: 3px; }
+.box-breath-leaf { color: var(--color-sage); margin-top: 2px; }
+
+/* ── 2x2 phase cards (replaces the old pill row) ── */
+.box-breath-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+  margin-top: 1.1rem;
+}
+.box-breath-steps span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-dark);
+  background: transparent;
+  border: 1px solid var(--line);
+  padding: 9px 8px;
+  border-radius: 12px;
+}
+.box-breath-steps span svg { flex-shrink: 0; color: var(--color-sage); }
+.box-breath-steps .box-breath-step--hold svg { color: var(--warm-gold-dark); }
+
+/* ── Dark forest CTA (this panel only — brand gold elsewhere is unchanged) ── */
+.breathe-widget-panel--box .breathing-toggle {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 1.4rem;
+  font-size: 0.92rem;
+  background: linear-gradient(135deg, #1F3D2E 0%, #14251C 100%);
+  box-shadow: 0 14px 30px -12px rgba(20, 37, 28, 0.55);
+}
+
+/* ── Deep Breathing cross-link footer ── */
+.breathe-widget-crosslink-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1.1rem 0 0.85rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--warm-gold);
+}
+.breathe-widget-crosslink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 10px 10px 8px;
+  border: none;
+  background: transparent;
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--dur-fast) var(--ease-silk);
+}
+.breathe-widget-crosslink:hover { background: var(--sage-light); }
+.breathe-widget-crosslink-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--sage-light);
+  color: var(--sage-teal-dark);
+}
+.breathe-widget-crosslink-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.breathe-widget-crosslink-text strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink-dark);
+}
+.breathe-widget-crosslink-text small { font-size: 0.75rem; color: var(--ink-soft); }
+.breathe-widget-crosslink-chevron { flex-shrink: 0; color: var(--ink-mute); transition: transform var(--dur-fast) var(--ease-silk); }
+.breathe-widget-crosslink:hover .breathe-widget-crosslink-chevron { transform: translateX(3px); }
+
+@media (max-width: 480px) {
+  .breathe-widget-panel--box { width: calc(100vw - 40px); max-width: 320px; }
+}
+
+/* ============================================================
+   DEEP BREATHING WIDGET — full visual rebuild to match reference
+   (scenic landscape circle, ripple ring + wave decor, 3-step
+   process row, dark forest CTA). Final authority.
+   ============================================================ */
+.breathe-widget-panel--deep {
+  width: 320px;
+  padding: 1.75rem 1.5rem 1.5rem;
+}
+.breathe-widget-panel--deep .breathe-widget-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--olive-gold-dark);
+  background: var(--champagne);
+}
+
+/* ── Stage: wave decor + ripple ring + scenic circle, centered ── */
+.breath-circle-stage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.breath-circle-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 210px; height: 210px;
+  margin: -105px 0 0 -105px;
+  border-radius: 50%;
+  border: 1px solid rgba(148, 172, 158, 0.3);
+}
+
+.breath-circle.breath-circle--scenic {
+  position: relative;
+  z-index: 1;
+  width: 168px;
+  height: 168px;
+  margin-bottom: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: none;
+  box-shadow: 0 0 0 6px var(--white), 0 20px 44px rgba(31, 42, 37, 0.22);
+}
+.breath-circle-scene { position: absolute; inset: 0; overflow: hidden; }
+.breath-circle-scene::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, #E9E5DA 0%, #DAD6C9 40%, #C3C9BD 62%, #9FAA9C 100%);
+}
+.breath-circle-sun {
+  position: absolute;
+  left: 50%; top: 54%;
+  width: 64px; height: 64px;
+  margin: -32px 0 0 -32px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 253, 246, 0.95) 0%, rgba(255, 253, 246, 0.45) 45%, transparent 72%);
+  filter: blur(1.5px);
+}
+.breath-circle-mountains {
+  position: absolute;
+  left: -12%; right: -12%;
+  bottom: 36%;
+  height: 52%;
+}
+.breath-circle-mountains--back {
+  background: #97A594;
+  opacity: 0.55;
+  clip-path: polygon(0% 100%, 0% 58%, 18% 32%, 34% 50%, 50% 22%, 68% 46%, 84% 26%, 100% 52%, 100% 100%);
+}
+.breath-circle-mountains--front {
+  bottom: 32%;
+  height: 44%;
+  background: #63715F;
+  opacity: 0.8;
+  clip-path: polygon(0% 100%, 0% 62%, 20% 38%, 38% 58%, 55% 30%, 72% 56%, 88% 36%, 100% 60%, 100% 100%);
+}
+.breath-circle-water {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 32%;
+  background: linear-gradient(180deg, #9BA598 0%, #7C8878 100%);
+}
+.breath-circle-water::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 0;
+  width: 40%; height: 100%;
+  margin-left: -20%;
+  background: linear-gradient(180deg, rgba(255, 253, 246, 0.55), transparent);
+}
+
+.breath-circle--scenic .breath-circle-label {
+  position: relative;
+  z-index: 1;
+  font-size: 0.72rem;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(20, 30, 25, 0.32);
+  backdrop-filter: blur(3px);
+}
+.breath-circle--scenic.is-running { animation: breathPulse 11s ease-in-out infinite; }
+
+/* Faint wave lines drifting behind the circle — shared with Box Breathing */
+.breathe-widget-decor {
+  position: absolute;
+  top: 50%;
+  width: 70px; height: 50px;
+  opacity: 0.3;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(transparent 47%, rgba(148, 172, 158, 0.7) 47%, rgba(148, 172, 158, 0.7) 53%, transparent 53%),
+    linear-gradient(transparent 47%, rgba(173, 145, 100, 0.45) 47%, rgba(173, 145, 100, 0.45) 53%, transparent 53%);
+  background-size: 60% 100%, 100% 100%;
+  background-position: left center, right center;
+  mask-image: radial-gradient(ellipse 100% 60% at center, black 40%, transparent 90%);
+}
+.breathe-widget-decor--a { left: -50px; transform: translateY(-50%) rotate(-6deg); }
+.breathe-widget-decor--b { right: -50px; transform: translateY(-50%) scaleX(-1) rotate(-6deg); }
+
+/* ── 3-step process row ── */
+.breath-process-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+.breath-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+.breath-process-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.breath-process-icon--sage { background: var(--sage-light); color: var(--sage-teal-dark); }
+.breath-process-icon--peach { background: var(--pastel-peach); color: var(--warm-gold-dark); }
+.breath-process-step strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--ink-dark);
+}
+.breath-process-step small { font-size: 0.72rem; color: var(--ink-soft); }
+.breath-process-arrow {
+  flex-shrink: 0;
+  color: var(--line-gold);
+  margin-top: 18px;
+}
+
+/* ── Dark forest CTA, matching Box Breathing ── */
+.breathe-widget-panel--deep .breathing-toggle {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 1.4rem;
+  font-size: 0.92rem;
+  margin-top: 0.4rem;
+  background: linear-gradient(135deg, #1F3D2E 0%, #14251C 100%);
+  box-shadow: 0 14px 30px -12px rgba(20, 37, 28, 0.55);
+}
+.breathe-widget-panel--deep .breathe-widget-crosslink-divider {
+  margin: 1.1rem 0 0.9rem;
+  padding-top: 0;
+  border-top: none;
+  color: var(--ink-faint);
+}
+
+@media (max-width: 480px) {
+  .breathe-widget-panel--deep { width: calc(100vw - 40px); max-width: 320px; }
+}
+
+/* ── Why Calmyra cards — force equal height regardless of content length ── */
+#why .feature-grid {
+  align-items: stretch !important;
+}
+#why .feature-card {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
