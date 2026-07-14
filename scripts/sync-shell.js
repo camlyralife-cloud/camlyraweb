@@ -119,7 +119,7 @@ const NAVBAR_TEMPLATE = `<nav id="navbar" data-testid="site-nav">
                             <svg class="btn-nav-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 12A8.5 8.5 0 1 1 6.7 4.9L4 20l5.2-2.6A8.47 8.47 0 0 0 20.5 12z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
                             <span>Book an Appointment</span>
                         </a>
-                        <a href="{BASE}assets/downloads/calmyra-workbook.pdf" class="btn btn-secondary btn-nav btn-nav--workbook" download data-testid="header-cta-workbook">
+                        <a href="{BASE}assets/calmyra-workbook.pdf" class="btn btn-secondary btn-nav btn-nav--workbook" download data-testid="header-cta-workbook">
                             <svg class="btn-nav-icon" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true"><path d="M7.5 1.25v8.25M4.1 6.4l3.4 3.4 3.4-3.4M2.25 12.75h10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
                             <span>Download Free Workbook</span>
                         </a>
