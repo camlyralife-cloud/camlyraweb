@@ -186,9 +186,9 @@ const FOOTER_TEMPLATE = `<footer id="footer" class="site-footer" data-testid="si
                         <li><a href="{BASE}team.html">About Us</a></li>
                         <li><a href="{BASE}dr-safina.html">Dr. Safina Naaz</a></li>
                         <li><a href="{BASE}index.html#get-started">Contact Us</a></li>
-                        <li><a href="{BASE}privacy.html">Privacy Policy</a></li>
-                        <li><a href="{BASE}terms.html">Terms &amp; Conditions</a></li>
-                        <li><a href="{BASE}terms.html">Cancellation &amp; Refund Policy</a></li>
+                        <li><a href="{BASE}privacy.html">Privacy &amp; Confidentiality Policy</a></li>
+                        <li><a href="{BASE}terms.html">Terms of Use &amp; Client Agreement</a></li>
+                        <li><a href="{BASE}refund-policy.html">Appointments, Cancellations &amp; Refund Policy</a></li>
                     </ul>
                 </div>
             </div>
