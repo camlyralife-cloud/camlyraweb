@@ -704,3 +704,99 @@ initSpecializedServicesFoldState();
     ripple.addEventListener('animationend', function () { ripple.remove(); });
   });
 })();
+
+/* ---------- Workbook download — lead-capture modal ---------- */
+(function () {
+  'use strict';
+  const triggers = document.querySelectorAll('[data-workbook-trigger]');
+  if (!triggers.length) return;
+
+  const workbookUrl = triggers[0].getAttribute('href');
+
+  const overlay = document.createElement('div');
+  overlay.className = 'workbook-modal-overlay';
+  overlay.id = 'workbook-modal-overlay';
+  overlay.hidden = true;
+  overlay.innerHTML =
+    '<div class="workbook-modal" role="dialog" aria-modal="true" aria-labelledby="workbook-modal-title">' +
+      '<button type="button" class="workbook-modal-close" id="workbook-modal-close" aria-label="Close">' +
+        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
+      '</button>' +
+      '<span class="workbook-modal-eyebrow">Free Resource</span>' +
+      '<h2 id="workbook-modal-title">Get Your Free Workbook</h2>' +
+      '<p>Enter your details below and your download will begin right away.</p>' +
+      '<form class="workbook-modal-form" id="workbook-modal-form" novalidate>' +
+        '<input type="hidden" name="access_key" value="f4c460ac-3f71-4b7c-9ab9-d5a10c698682">' +
+        '<input type="hidden" name="subject" value="Workbook download request — Calmyra website">' +
+        '<input type="hidden" name="from_name" value="Calmyra Website">' +
+        '<input type="checkbox" name="botcheck" class="sr-only" style="display:none" tabindex="-1" autocomplete="off">' +
+        '<label class="sr-only" for="wb-name">Full name</label>' +
+        '<input class="gs-input" id="wb-name" name="name" type="text" autocomplete="name" placeholder="Full name*" required>' +
+        '<label class="sr-only" for="wb-email">Email address</label>' +
+        '<input class="gs-input" id="wb-email" name="email" type="email" autocomplete="email" placeholder="Email address*" required>' +
+        '<button type="submit" class="btn btn-primary workbook-modal-submit">Download the Workbook</button>' +
+        '<p class="get-started-form-note" id="workbook-modal-note" role="status" aria-live="polite" hidden></p>' +
+      '</form>' +
+    '</div>';
+  document.body.appendChild(overlay);
+
+  const closeBtn = overlay.querySelector('#workbook-modal-close');
+  const form = overlay.querySelector('#workbook-modal-form');
+  const note = overlay.querySelector('#workbook-modal-note');
+
+  function openModal(e) {
+    if (e) e.preventDefault();
+    overlay.hidden = false;
+    requestAnimationFrame(function () { overlay.classList.add('is-open'); });
+  }
+  function closeModal() {
+    overlay.classList.remove('is-open');
+    setTimeout(function () { overlay.hidden = true; }, 300);
+  }
+
+  triggers.forEach(function (t) { t.addEventListener('click', openModal); });
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    const submitBtn = form.querySelector('.workbook-modal-submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      const result = await response.json();
+      if (response.ok && result.success) {
+        const dlLink = document.createElement('a');
+        dlLink.href = workbookUrl;
+        dlLink.download = '';
+        document.body.appendChild(dlLink);
+        dlLink.click();
+        dlLink.remove();
+
+        note.hidden = false;
+        note.classList.remove('is-error');
+        note.textContent = 'Thank you — your download has started.';
+        form.reset();
+        setTimeout(closeModal, 1800);
+      } else {
+        throw new Error('Web3Forms submission failed');
+      }
+    } catch (err) {
+      note.hidden = false;
+      note.classList.add('is-error');
+      note.textContent = "Something went wrong — please email us at bangalore@calmyra.com and we'll send the workbook directly.";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+})();

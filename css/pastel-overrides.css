@@ -7399,3 +7399,100 @@ html, body { overflow-x: hidden; max-width: 100%; }
    Dubai: more of the Burj Khalifa/skyline), which center-crop was cutting off. ── */
 .mp-panel--india .mp-panel-media img { object-position: 72% 32% !important; }
 .mp-panel--dubai .mp-panel-media img { object-position: 68% 32% !important; }
+
+/* ── Workbook download lead-capture modal (mirrors .breathe-popup pattern) ── */
+.workbook-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(20, 30, 25, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-silk);
+}
+.workbook-modal-overlay[hidden] { display: none; }
+.workbook-modal-overlay:not([hidden]) { display: flex; }
+.workbook-modal-overlay.is-open { opacity: 1; }
+
+.workbook-modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 28px;
+  padding: 2.75rem 2.25rem 2.25rem;
+  box-shadow: 0 40px 100px rgba(20, 30, 25, 0.35);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(18px) scale(0.97);
+  opacity: 0;
+  transition: transform 0.4s var(--ease-silk), opacity 0.4s var(--ease-silk);
+}
+.workbook-modal-overlay.is-open .workbook-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+.workbook-modal-close {
+  position: absolute;
+  top: 18px; right: 18px;
+  width: 30px; height: 30px;
+  border: none;
+  border-radius: 50%;
+  background: var(--mint-50, #DFE9E3);
+  color: var(--ink-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-silk), color var(--dur-fast) var(--ease-silk);
+}
+.workbook-modal-close:hover { background: var(--sage-teal-dark); color: var(--white); }
+.workbook-modal-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage-teal-dark);
+  margin-bottom: 0.6rem;
+}
+.workbook-modal h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: var(--ink-dark);
+  margin: 0 0 0.6rem;
+}
+.workbook-modal > p {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 1.5rem;
+  max-width: 34ch;
+}
+.workbook-modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.workbook-modal-submit {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem 1.5rem !important;
+  font-size: 0.95rem !important;
+  margin-top: 0.25rem;
+}
+@media (max-width: 480px) {
+  .workbook-modal { padding: 2.25rem 1.5rem 1.75rem; border-radius: 22px; }
+  .workbook-modal h2 { font-size: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .workbook-modal-overlay, .workbook-modal { transition: none; }
+}
