@@ -377,21 +377,54 @@ faqItems.forEach((item) => {
     });
 });
 
-// Get Started form (static site — no backend; show feedback only)
+// Get Started form — submits to Web3Forms (connectmaheenk@gmail.com) via
+// fetch so the visitor stays on the page instead of navigating away.
 const getStartedForm = document.getElementById('get-started-form');
 const getStartedNote = document.getElementById('get-started-form-note');
 
 if (getStartedForm && getStartedNote) {
-    getStartedForm.addEventListener('submit', (e) => {
+    getStartedForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         if (!getStartedForm.checkValidity()) {
             getStartedForm.reportValidity();
             return;
         }
-        getStartedNote.hidden = false;
-        getStartedNote.classList.remove('is-error');
-        getStartedNote.textContent = 'Thank you — we will respond within 4 working hours.';
-        getStartedForm.reset();
+
+        const submitBtn = getStartedForm.querySelector('.btn-get-started-send');
+        const originalBtnText = submitBtn ? submitBtn.textContent : '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+        }
+
+        try {
+            const formData = new FormData(getStartedForm);
+            const response = await fetch(getStartedForm.action, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            });
+            const result = await response.json();
+
+            getStartedNote.hidden = false;
+            if (response.ok && result.success) {
+                getStartedNote.classList.remove('is-error');
+                getStartedNote.textContent = 'Thank you — we will respond within 4 working hours.';
+                getStartedForm.reset();
+            } else {
+                getStartedNote.classList.add('is-error');
+                getStartedNote.textContent = "Something went wrong sending your enquiry — please email us directly at bangalore@calmyra.com or dubai@calmyra.com.";
+            }
+        } catch (err) {
+            getStartedNote.hidden = false;
+            getStartedNote.classList.add('is-error');
+            getStartedNote.textContent = "Something went wrong sending your enquiry — please email us directly at bangalore@calmyra.com or dubai@calmyra.com.";
+        } finally {
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+            }
+        }
     });
 }
 
@@ -649,4 +682,25 @@ initSpecializedServicesFoldState();
       countEls.forEach(el => countIO.observe(el));
     }
   }
+})();
+
+/* ---------- Button click ripple (premium micro-interaction) ---------- */
+(function () {
+  'use strict';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  document.addEventListener('click', function (e) {
+    const target = e.target.closest('.btn, button[type="submit"], .nav-mega-btn, .nav-ns-btn');
+    if (!target) return;
+    const rect = target.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height) * 1.6;
+    const ripple = document.createElement('span');
+    ripple.className = 'btn-ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+    target.appendChild(ripple);
+    ripple.addEventListener('animationend', function () { ripple.remove(); });
+  });
 })();

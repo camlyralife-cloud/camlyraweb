@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/pastel-overrides.css?v=66">
+    <link rel="stylesheet" href="css/pastel-overrides.css?v=71">
     <!-- ACTION REQUIRED: GA4 not yet installed — no Measurement ID provided.
          Once you have one (G-XXXXXXXXXX), add the gtag.js snippet here and
          a conversion event on #get-started-form submit. -->
@@ -1062,10 +1062,11 @@
                 <p class="get-started-body">Your first conversation with our team is entirely complimentary. No commitment, no pressure, no obligation — only an opportunity to understand how we can help, and whether Calmyra is the right fit for you.</p>
             </div>
             <div class="get-started-form-wrap">
-                <!-- ACTION REQUIRED: form does not submit anywhere yet (action="#"). Once you
-                     have a Formspree endpoint (https://formspree.io/f/xxxxxxxx), set it as the
-                     action below so enquiries actually reach bangalore@/dubai@calmyra.com. -->
-                <form class="get-started-form" id="get-started-form" action="#" method="post" novalidate>
+                <form class="get-started-form" id="get-started-form" action="https://api.web3forms.com/submit" method="post" novalidate>
+                    <input type="hidden" name="access_key" value="f4c460ac-3f71-4b7c-9ab9-d5a10c698682">
+                    <input type="hidden" name="subject" value="New enquiry from Calmyra website">
+                    <input type="hidden" name="from_name" value="Calmyra Website">
+                    <input type="checkbox" name="botcheck" class="sr-only" style="display:none" tabindex="-1" autocomplete="off">
                     <div class="get-started-fields">
                         <div class="gs-field-full">
                             <label class="sr-only" for="gs-name">Full name (required)</label>
@@ -1305,6 +1306,7 @@
 
             <div class="footer-bottom-bar">
                 <p class="footer-copyright footer-copyright--wide">Calmyra India: Registered Professionals &nbsp;&middot;&nbsp; Calmyra Dubai: Qualified Coaches &amp; Consultants &nbsp;&middot;&nbsp; &copy; <span data-year>2026</span> Calmyra Mental Wellness. All rights reserved.</p>
+                <p class="footer-credit">Designed &amp; Developed by <a href="https://maheenkehkasha.netlify.app/" target="_blank" rel="noopener noreferrer">Maheen Kehkasha</a></p>
             </div>
         </div>
     </footer>
@@ -1672,7 +1674,13 @@
                 if (e.key === 'Escape' && overlay.classList.contains('is-open')) hidePopup();
             });
 
-            startBtn.addEventListener('click', function () {
+            startBtn.addEventListener('click', function (e) {
+                // Without this, the click event keeps bubbling to document
+                // after the widget panel opens below, and the "click outside
+                // closes the panel" listener (in setupBreatheWidgets) sees
+                // this event's target as outside the widget and immediately
+                // re-closes the panel it just opened.
+                e.stopPropagation();
                 hidePopup();
                 var widget = document.getElementById('breathe-widget-deep');
                 var fab = widget ? widget.querySelector('[data-fab]') : null;
